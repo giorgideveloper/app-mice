@@ -7,7 +7,6 @@ const locales = ['en-US', 'ka-GE', 'ru-RU'];
 const defaultLocale = 'en-US';
 
 function getLocale(request) {
-	// 1. Get headers and parse Accept-Language
 	const headers = {
 		'accept-language': request.headers.get('accept-language') || '',
 	};
