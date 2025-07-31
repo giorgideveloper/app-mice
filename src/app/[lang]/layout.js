@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from '../components/BootstrapClient';
 import { notFound } from 'next/navigation';
-
+import Navbar from '../components/Navbar/Navbar';
+import '../globals.css';
+import { firago } from '../../fonts/Fonts';
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -50,7 +52,8 @@ export default async function RootLayout({ children, params }) {
 
 	return (
 		<html lang={htmlLang}>
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className}`}>
+				<Navbar />
 				{children}
 				<BootstrapClient />
 			</body>

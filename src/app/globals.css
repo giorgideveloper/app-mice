@@ -40,3 +40,12 @@ a {
     color-scheme: dark;
   }
 }
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1216px !important;
+  }
+}
+
+
+

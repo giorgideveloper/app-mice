@@ -1,0 +1,49 @@
+.item {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1000;
+    width: 100%;
+    height: 62vh;
+    border:none;
+    color: #101828;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'FiraGO', sans-serif;
+}
+
+.dropdown:hover {
+    display: block;
+    position: absolute;
+}
+
+.link {
+    color: #101828;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'FiraGO', sans-serif;
+    font-style: normal;
+    transition: all 0.3s ease;
+    &:hover {
+        color: #244267;
+    }
+    &:hover + .dropdown {
+        display: block;
+    }
+}
