@@ -5,13 +5,17 @@
     gap: 1px;
 }
 
+.navbar-nav {
+    position: relative;
+}
+
 .dropdown {
     display: block;
     position: absolute;
-    top: 100%;
+    top: calc(100% - 20px);
     left: 0;
     background-color: #fff;
-    padding: 10px;
+    padding: 40px 10px;
     z-index: 1000;
     width: 100%;
     height: 62vh;
@@ -25,10 +29,10 @@
     font-family: 'FiraGO', sans-serif;
 }
 
-.dropdown:hover {
+/* .dropdown:hover {
     display: block;
     position: absolute;
-}
+} */
 
 .link {
     color: #101828;

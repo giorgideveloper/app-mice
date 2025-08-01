@@ -8,25 +8,57 @@ export default function  Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownItems = [
         {
+            parent:1,
             id: 1,
             title: 'ღონისძიების სივრცე',
             href: '/',
             icon: '/icon.svg'
         },
         {
+            parent:1,
             id: 2,
             title: 'ღონისძიების სივრცე2',
             href: '/',
             icon: '/icon.svg'
         },
         {
+            parent:1,
             id: 3,
+            title: 'ღონისძიების სივრცე3',
+            href: '/',
+            icon: '/icon.svg'
+        },
+        {
+            parent:2,
+            id: 4,
+            title: 'ღონისძიების სივრცე23333',
+            href: '/',
+            icon: '/icon.svg'
+        },
+        {
+            parent:2,
+            id: 5,
+            title: 'ღონისძიების სივრცე2',
+            href: '/',
+            icon: '/icon.svg'
+        },
+        {
+            parent:2,
+            id: 6,
+            title: 'ღონისძიების სივრცე3',
+            href: '/',
+            icon: '/icon.svg'
+        },
+        {
+            parent:2,
+            id: 7,
             title: 'ღონისძიების სივრცე3',
             href: '/',
             icon: '/icon.svg'
         }
 
     ];
+   
 	return (
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
@@ -39,8 +71,8 @@ export default function  Navbar() {
                  </button>
                 <div className="collapse navbar-collapse ms-4" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <NavbarLink href="/" className="nav-link " aria-current="page">რატომ ბათუმი</NavbarLink>
-                    <NavbarLink href="#" className="nav-link" dropdown={dropdownItems}>ღონისძიების სივრცე</NavbarLink>
+                    <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={1} >რატომ ბათუმი</NavbarLink>
+                    <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={2}>ღონისძიების სივრცე</NavbarLink>
                 </ul>
                <Button>ეწვიე ბათუმს</Button>
                 </div>

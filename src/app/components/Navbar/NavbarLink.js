@@ -2,21 +2,21 @@
 import Image from 'next/image';
 import styles from './NavbarLink.module.css';
 import NavbarHover from './NavbarHover';
-const NavbarLink = ({ children, href, className, dropdown }) => {
-    
+import { useState } from 'react';
+const NavbarLink = ({ children, href, className, dropdown, parent }) => {
+    const [isHovered, setIsHovered] = useState(false);
 
-    console.log(dropdown);
         return (
         <>
-        <li className={`nav-item ${styles.item}`}>
+         <li className={`nav-item ${styles.item}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
             <a className={`nav-link ${styles.link} ${className}`} href={href}>
                 {children}
             </a>
-            <Image src="/icon.svg" alt="arrow-right" width={15} height={15} />
-            <NavbarHover dropdown={dropdown} />
+            <Image src="/icon.svg" alt="arrow-right" width={15} height={15} />   
         </li>
+        {isHovered && <NavbarHover setIsHovered={setIsHovered} dropdown={dropdown} parent={parent} />}
         </>
     );
 };
 
-export default NavbarLink;
+export default NavbarLink;  
