@@ -8,6 +8,7 @@ const NavbarLink = ({ children, href, className, dropdown, parent }) => {
 
         return (
         <>
+     
          <li className={`nav-item ${styles.item}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
             <a className={`nav-link ${styles.link} ${className}`} href={href}>
                 {children}
@@ -15,6 +16,8 @@ const NavbarLink = ({ children, href, className, dropdown, parent }) => {
             <Image src="/icon.svg" alt="arrow-right" width={15} height={15} />   
         </li>
         {isHovered && <NavbarHover setIsHovered={setIsHovered} dropdown={dropdown} parent={parent} />}
+        
+        
         </>
     );
 };
