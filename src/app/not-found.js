@@ -1,6 +1,7 @@
 // src/app/not-found.js
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
+
 export default function NotFound() {
 	return (
 		<div className='min-h-screen flex flex-col items-center justify-center bg-gray-50'>
@@ -19,6 +20,6 @@ export default function NotFound() {
 					alt='Picture of the author'
 				/>
 			</div>
-		</div>
-	);
+			</div>
+	)
 }

@@ -7,7 +7,7 @@ import '../globals.css';
 import { firago } from '../../fonts/Fonts';
 
 export async function generateStaticParams() {
-	return [{ lang: 'en-US' }, { lang: 'ka-GE' }, { lang: 'ru-RU' }];
+	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
 }
 
 const geistSans = Geist({
