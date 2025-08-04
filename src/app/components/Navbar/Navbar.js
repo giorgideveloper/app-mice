@@ -4,7 +4,8 @@ import styles from './Navbar.module.css';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
-export default function  Navbar() {
+export default function  Navbar({lang}) {
+    console.log(lang);
     const [isOpen, setIsOpen] = useState(false);
     const dropdownItems = [
         {
@@ -58,6 +59,14 @@ export default function  Navbar() {
         }
 
     ];
+
+    const langMap = {
+        
+        ka: 'ka',
+        en: 'en',
+        ru: 'ru',
+    }
+    const langUrl = langMap[lang] || 'ka' || 'en' || 'ru';
    
 	return (
         <>
@@ -74,7 +83,8 @@ export default function  Navbar() {
                     <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={1} >რატომ ბათუმი</NavbarLink>
                     <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={2}>ღონისძიების სივრცე</NavbarLink>
                 </ul>
-               <Button>ეწვიე ბათუმს</Button>
+               <Button><a href="https://visitbatumi.com/ka"> ეწვიე ბათუმს</a></Button>
+               <a href={`/${langUrl}`}><Image src="https://mice.visitbatumi.com/images/language-ka.svg" alt="visit" width={24} height={24} /></a>
                 </div>
 			</div>
 		</nav>

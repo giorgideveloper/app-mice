@@ -53,7 +53,7 @@ export default async function RootLayout({ children, params }) {
 	return (
 		<html lang={htmlLang}>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className}`}>
-				<Navbar />
+				<Navbar lang={lang} />
 				{children}
 				<BootstrapClient />
 			</body>
