@@ -1,4 +1,3 @@
-
 import { Geist, Geist_Mono } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from '../components/BootstrapClient';
@@ -8,10 +7,8 @@ import '../globals.css';
 import { firago } from '../../fonts/Fonts';
 
 export async function generateStaticParams() {
-	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
+	return [{ lang: 'en-US' }, { lang: 'ka-GE' }, { lang: 'ru-RU' }];
 }
-
-export const dynamicParams = false; 
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -28,30 +25,16 @@ export const metadata = {
 	description: 'Internationalized App Router example',
 };
 
-
 export default async function RootLayout({ children, params }) {
 
 	const { lang } = await params;
 
-
 	const supportedLangs = ['en', 'ka', 'ru'];
 
-	if (!supportedLangs.includes(lang)) {
-		notFound();
-	}
-
-
-	const htmlLangMap = {
-		en: 'en',
-		ka: 'ka',
-		ru: 'ru',
-	};
-
-	
-	const htmlLang = htmlLangMap[lang] || lang;
+	if (!supportedLangs.includes(lang)) return notFound();
 
 	return (
-		<html lang={htmlLang}>
+		<html lang={lang}>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className}`}>
 				<Navbar lang={lang} />
 				{children}

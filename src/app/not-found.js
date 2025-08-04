@@ -18,9 +18,6 @@ export default function NotFound() {
 					height={500}
 					alt='Picture of the author'
 				/>
-				<a href='/ka' className='btn btn-primary'>
-					Go to Home
-				</a>
 			</div>
 		</div>
 	);
