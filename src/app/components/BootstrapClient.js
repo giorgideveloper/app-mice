@@ -1,4 +1,4 @@
-// app/components/BootstrapClient.tsx
+
 'use client';
 
 import { useEffect } from 'react';

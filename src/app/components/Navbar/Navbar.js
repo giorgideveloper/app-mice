@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 import { useState } from 'react';
 import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
+import NavbarLang from './NavbarLang';
 export default function  Navbar({lang}) {
     console.log(lang);
     const [isOpen, setIsOpen] = useState(false);
@@ -60,13 +61,6 @@ export default function  Navbar({lang}) {
 
     ];
 
-    const langMap = {
-        
-        ka: 'ka',
-        en: 'en',
-        ru: 'ru',
-    }
-    const langUrl = langMap[lang] || 'ka' || 'en' || 'ru';
    
 	return (
         <>
@@ -84,7 +78,7 @@ export default function  Navbar({lang}) {
                     <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={2}>ღონისძიების სივრცე</NavbarLink>
                 </ul>
                <Button><a href="https://visitbatumi.com/ka"> ეწვიე ბათუმს</a></Button>
-               <a href={`/${langUrl}`}><Image src="https://mice.visitbatumi.com/images/language-ka.svg" alt="visit" width={24} height={24} /></a>
+               <NavbarLang className={styles.lang} lang={lang} />
                 </div>
 			</div>
 		</nav>

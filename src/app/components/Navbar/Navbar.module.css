@@ -1,3 +1,11 @@
 .navbar {
     background-color: #fff;
 }
+.lang{
+    margin-left: 40px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+.lang img{
+    border-radius: 50%;
+}

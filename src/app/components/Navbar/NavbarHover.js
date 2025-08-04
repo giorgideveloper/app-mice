@@ -1,5 +1,4 @@
-'use client';
-import { use, useEffect } from 'react';
+
 import styles from './NavbarLink.module.css';
 
 const NavbarHover = ({ dropdown, setIsHovered, parent }) => {
