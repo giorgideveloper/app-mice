@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar/Navbar';
 import '../globals.css';
 import { firago } from '../../fonts/Fonts';
+import { fetchMenu } from '@/service/service';
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -20,14 +21,14 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export const metadata = {
-	title: 'MICE Platform',
-	description: 'Internationalized App Router example',
-};
+
 
 export default async function RootLayout({ children, params }) {
 
 	const { lang } = await params;
+	// i need menu ssr
+	const menu = await fetchMenu(lang);
+
 
 	const supportedLangs = ['en', 'ka', 'ru'];
 
@@ -36,7 +37,7 @@ export default async function RootLayout({ children, params }) {
 	return (
 		<html lang={lang}>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className}`}>
-				<Navbar lang={lang} />
+				<Navbar lang={lang} menu={menu} />
 				{children}
 				<BootstrapClient />
 			</body>

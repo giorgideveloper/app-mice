@@ -4,83 +4,11 @@ import styles from './Navbar.module.css';
 import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
 import NavbarLang from './NavbarLang';
-import { fetchMenu } from '@/service/service';
-import { useEffect, useState } from 'react';
-export default function  Navbar({lang}) {
-const [menu, setMenu] = useState([]);
 
-    // Fetch menu data when the component mounts
-    useEffect(() => {  
-        const fetchData = async () => {
-            try {
-                const response = await fetchMenu();
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setMenu(data); // Handle the fetched menu data
-            } catch (error) {
-                console.error('Error fetching menu:', error);
-            }
-        };
-        fetchData();
-    }, []);
-
-
-    const dropdownItems = [
-        {
-            parent:1,
-            id: 1,
-            title: 'ღონისძიების სივრცე',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:1,
-            id: 2,
-            title: 'ღონისძიების სივრცე2',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:1,
-            id: 3,
-            title: 'ღონისძიების სივრცე3',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:2,
-            id: 4,
-            title: 'ღონისძიების სივრცე23333',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:2,
-            id: 5,
-            title: 'ღონისძიების სივრცე2',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:2,
-            id: 6,
-            title: 'ღონისძიების სივრცე3',
-            href: '/',
-            icon: '/icon.svg'
-        },
-        {
-            parent:2,
-            id: 7,
-            title: 'ღონისძიების სივრცე3',
-            href: '/',
-            icon: '/icon.svg'
-        }
-
-    ];
-console.log("menu", menu);
-   
+export default function  Navbar({lang,menu}) {
+ if (!menu || menu.length === 0) {
+        return null;
+    }
 	return (
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
