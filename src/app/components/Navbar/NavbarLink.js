@@ -5,10 +5,8 @@ import NavbarHover from './NavbarHover';
 import { useState } from 'react';
 const NavbarLink = ({ children, href, className, dropdown, parent }) => {
     const [isHovered, setIsHovered] = useState(false);
-
-        return (
+        return ( 
         <>
-     
          <li className={`nav-item ${styles.item}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
             <a className={`nav-link ${styles.link} ${className}`} href={href}>
                 {children}

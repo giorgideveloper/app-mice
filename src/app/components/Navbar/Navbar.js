@@ -1,13 +1,32 @@
 'use client';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
-import { useState } from 'react';
 import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
 import NavbarLang from './NavbarLang';
+import { fetchMenu } from '@/service/service';
+import { useEffect, useState } from 'react';
 export default function  Navbar({lang}) {
-    console.log(lang);
-    const [isOpen, setIsOpen] = useState(false);
+const [menu, setMenu] = useState([]);
+
+    // Fetch menu data when the component mounts
+    useEffect(() => {  
+        const fetchData = async () => {
+            try {
+                const response = await fetchMenu();
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setMenu(data); // Handle the fetched menu data
+            } catch (error) {
+                console.error('Error fetching menu:', error);
+            }
+        };
+        fetchData();
+    }, []);
+
+
     const dropdownItems = [
         {
             parent:1,
@@ -60,7 +79,7 @@ export default function  Navbar({lang}) {
         }
 
     ];
-
+console.log("menu", menu);
    
 	return (
         <>
@@ -74,8 +93,11 @@ export default function  Navbar({lang}) {
                  </button>
                 <div className="collapse navbar-collapse ms-4" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={1} >რატომ ბათუმი</NavbarLink>
-                    <NavbarLink href="#" className="nav-link" dropdown={dropdownItems} parent={2}>ღონისძიების სივრცე</NavbarLink>
+                    {menu?.map(item => (
+                        <NavbarLink key={item.id} href={item.href} className="nav-link" dropdown={item.children} parent={item.id} id={item.id}>
+                            {item.name}
+                        </NavbarLink>
+                    ))}
                 </ul>
                <Button><a href="https://visitbatumi.com/ka"> ეწვიე ბათუმს</a></Button>
                <NavbarLang className={styles.lang} lang={lang} />
