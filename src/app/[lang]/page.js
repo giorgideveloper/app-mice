@@ -1,3 +1,4 @@
+import { MainPage } from '../components/MainPage/MainPage';
 import { getDictionary } from './dictionaries';
 
 export const metadata = {
@@ -11,12 +12,13 @@ export default async function Page({ params }) {
 	const dict = await getDictionary(lang); // en
 	return (
 		<>
-			<button className='btn btn-primary'>{dict?.products?.cart}</button>
+			{/* <button className='btn btn-primary'>{dict?.products?.cart}</button>
 			<div className="container">
 				<div className="row">
 					<h1>helooo</h1>
 				</div>
-			</div>
+			</div> */}
+			<MainPage />
 		</>
 	); 
 }

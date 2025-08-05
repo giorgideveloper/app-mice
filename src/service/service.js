@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 const API_URL = process.env.BASE_URL;
 
 export const fetchMenu = async(local) => {
@@ -6,7 +8,7 @@ export const fetchMenu = async(local) => {
             next: {revalidate: 300}
         });
         if (!res.ok) {
-            throw new Error('Failed to fetch menu data');
+           return notFound(); // Handle the case where the menu is not found
         }
         return await res.json(); 
     }
