@@ -1,0 +1,43 @@
+/* .textContainer{
+    display: flex;
+  
+    
+} */
+
+/* .wigetEventContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .textContainer h1 {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+*/
+/* .wigetEventContainer{
+    display: flex;
+ 
+}
+.textContainer{
+    max-width: 560px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+.textContainer h1{
+   
+    padding: 20px 0px;
+    font-weight: 600;
+    font-size: 51px;
+    line-height: 72px;
+    color: #101828;
+
+} 
