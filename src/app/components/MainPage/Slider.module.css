@@ -22,6 +22,16 @@
     display: flex;
 
 }
+@media (max-width: 426px) {
+    .slider h1 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .slider p {
+        font-size: 14px !important;
+        line-height: 18px;
+    }
+}
 
 .slider p {
     font-size: 20px;
