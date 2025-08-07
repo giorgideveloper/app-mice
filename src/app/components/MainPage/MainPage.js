@@ -3,6 +3,7 @@ import WhyBatumi from "./WhyBatumi";
 import { WigetEvent } from "./WigetEvent";
 import styles from './WhyBatumi.module.css'; // Assuming you have a CSS module for MainPage styles
 import { WigetBlog } from "./WigetBlog";
+import WigetEvents from "./WigetEvents";
 
  export  const MainPage = () => {
     return (
@@ -16,6 +17,9 @@ import { WigetBlog } from "./WigetBlog";
             </section>
             <section>
                 <WigetBlog />
+            </section>
+            <section>
+                <WigetEvents />
             </section>
         </>
     );
