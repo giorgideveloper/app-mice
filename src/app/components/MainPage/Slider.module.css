@@ -10,7 +10,6 @@
     flex-direction: column;
 }
 
-
 .slider h1 {
     font-size: 72px;
     font-style: normal;
@@ -20,8 +19,8 @@
     color: #fcfcfd;
     margin-bottom: 0.5em;
     display: flex;
-
 }
+
 @media (max-width: 426px) {
     .slider h1 {
         font-size: 36px;
@@ -40,5 +39,4 @@
     line-height: 28px;
     color: #fcfcfd;
     max-width: 600px;
-
 }

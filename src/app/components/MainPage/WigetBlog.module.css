@@ -1,0 +1,14 @@
+.textContainer h1 {
+    padding: 20px 0px;
+    font-weight: 600;
+    font-size: 51px;
+    line-height: 72px;
+    color: #101828;
+}
+
+@media (max-width: 426px) {
+    .textContainer h1 {
+        font-size: 29px;
+        line-height: 44px;
+    }
+}
