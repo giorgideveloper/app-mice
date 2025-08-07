@@ -32,6 +32,7 @@
     justify-content: center;
     flex-direction: column;
 } */
+
 .textContainer h1{
    
     padding: 20px 0px;
@@ -43,13 +44,17 @@
 } 
 
 
-@media (max-width: 400px) {
+@media (max-width: 426px) {
     .textContainer h1 {
         font-size: 29px;
         line-height: 44px;
+      
     }
     .textContainer p{
     font-size: 14px !important;
     line-height: 18px;
 }
+ .textContainer button{
+    font-size: 12px;
+ }
 }
