@@ -16,33 +16,34 @@ export const WigetBlog = () => {
         }}
       ></div>
       
-      {/* Main content container - text on left */}
-      <div className="container py-md-5 py-3 h-100 position-relative" style={{ zIndex: 2 }}>
-        <div className="row h-100">
-          <div className={`col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start  p-md-5 ${styles.textContainer}`}>
-            <h1 className="display-1 fw-bold mb-4" style={{ lineHeight: 1.1 }}>
-              ტოპ 5 ლოკაცია <br /> გარე ივენთებისთვის
-            </h1>
-            <p className="mb-4 fs-5 text-secondary">
-              ბათუმი განსაკუთრებულ ცოცხალი ქალაქია სადაც მუდამ იგრძნობა ტარდება სხვადასხვა სახის ივენთები გარეთ სივრცეებში.
-            </p>
-            <button className="btn btn-dark btn-lg ">სრულად</button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Image for desktop - shown on right side */}
+      {/* Image for desktop - shown on left side */}
       <div
-        className="d-none d-lg-block position-absolute top-0 end-0 h-100"
+        className="d-none d-lg-block position-absolute top-0 start-0 h-100"
         style={{
           width: "50vw", 
           backgroundImage: `url(${event.src || event.default || event})`,
           backgroundSize: "cover",
-          backgroundPosition: "right center",
+          backgroundPosition: "left center",
           backgroundRepeat: "no-repeat",
           zIndex: 1,
         }}
       ></div>
+      
+      {/* Main content container - text on right */}
+      <div className="container py-md-5 py-3 h-100 position-relative" style={{ zIndex: 2 }}>
+        <div className="row h-100 justify-content-end">
+          <div className={`col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start p-md-5 ${styles.textContainer}`}>
+            <h1 className="display-1 fw-bold fs-1 mb-4" style={{ lineHeight: 1.1 }}>
+              რატომ არის ბათუმი სწორი არჩევანი
+
+            </h1>
+            <p className="mb-4 fs-5 text-secondary">
+              ბათუმი ნამდვილად შეხვედრების ქალაქია, რომელიც ქმნის შთაბეჭდილებებსა და მოგონებებს. ამ ქალაქში ადამიანები და ემოციები ერთმანეთს ხვდებიან, მათთვის ეს შეხვედრები ახალი, უფრო საინტერესო გზის დასაწყისია.
+            </p>
+            <button className="btn btn-dark btn-lg ">გაიგე მეტი</button>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

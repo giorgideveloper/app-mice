@@ -1,6 +1,7 @@
 .whyBatumiSection{
     background-color: #EAECF0;
     height:auto ;
+    min-height: 500px;
 }
 .whyBatumiSection strong{
     color: #101828;
