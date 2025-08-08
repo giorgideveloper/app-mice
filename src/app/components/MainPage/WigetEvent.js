@@ -1,7 +1,7 @@
 import styles from './WigetEvent.module.css';
 import event from '../../image/event.webp';
 
-export const WigetEvent = () => {
+export const WigetEvent = ({dict}) => {
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}
@@ -26,7 +26,7 @@ export const WigetEvent = () => {
             <p className="mb-4 fs-5 text-secondary">
               ბათუმი განსაკუთრებულ ცოცხალი ქალაქია სადაც მუდამ იგრძნობა ტარდება სხვადასხვა სახის ივენთები გარეთ სივრცეებში.
             </p>
-            <button className="btn btn-dark btn-lg ">სრულად</button>
+            <button className="btn btn-dark btn-lg ">{dict?.button?.more}</button>
           </div>
         </div>
       </div>

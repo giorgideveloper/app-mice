@@ -1,7 +1,7 @@
 import styles from './WigetBlog.module.css';
 import event from '../../image/event.webp';
 
-export const WigetBlog = () => {
+export const WigetBlog = ({dict }) => {
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}
@@ -40,7 +40,7 @@ export const WigetBlog = () => {
             <p className="mb-4 fs-5 text-secondary">
               ბათუმი ნამდვილად შეხვედრების ქალაქია, რომელიც ქმნის შთაბეჭდილებებსა და მოგონებებს. ამ ქალაქში ადამიანები და ემოციები ერთმანეთს ხვდებიან, მათთვის ეს შეხვედრები ახალი, უფრო საინტერესო გზის დასაწყისია.
             </p>
-            <button className="btn btn-dark btn-lg ">გაიგე მეტი</button>
+            <button className="btn btn-dark btn-lg ">{dict?.button?.more}</button>
           </div>
         </div>
       </div>

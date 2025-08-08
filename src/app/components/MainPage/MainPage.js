@@ -5,21 +5,21 @@ import styles from './WhyBatumi.module.css'; // Assuming you have a CSS module f
 import { WigetBlog } from "./WigetBlog";
 import WigetEvents from "./WigetEvents";
 
- export  const MainPage = () => {
+ export  const MainPage = ({ dict }) => {
     return (
         <>
-            <Slider />
+            <Slider dict={dict} />
             <section >
-                <WigetEvent />
+                <WigetEvent dict={dict} />
             </section>
             <section className={styles.whyBatumiSection}>
-                <WhyBatumi />
+                <WhyBatumi  />
             </section>
             <section>
-                <WigetBlog />
+                <WigetBlog dict={dict} />
             </section>
             <section>
-                <WigetEvents />
+                <WigetEvents dict={dict} />
             </section>
         </>
     );

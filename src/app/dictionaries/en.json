@@ -1,5 +1,18 @@
 {
 	"products": {
 		"cart": "Add to Cart"
+	},
+	"button":{
+		"main": "VISIT BATUMI",
+		"add": "Add",
+		"edit": "Edit",
+		"delete": "Delete",
+		"save": "Save",
+		"cancel": "Cancel",
+		"confirm": "Confirm",
+		"close": "Close",
+		"back": "Back",
+		"more": "Learn More",
+		"view": "Explore"
 	}
 }

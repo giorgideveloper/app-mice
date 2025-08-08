@@ -7,6 +7,7 @@ import '../globals.css';
 import { firago } from '../../fonts/Fonts';
 import { fetchMenu } from '@/service/service';
 import { arialCaps } from '../../fonts/Fonts';
+import { getDictionary } from './dictionaries';
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -27,7 +28,7 @@ export default async function RootLayout({ children, params }) {
 	const { lang } = await params;
 	// i need menu ssr
 	const menu = await fetchMenu(lang);
-
+	const dict = await getDictionary(lang);
 
 	const supportedLangs = ['en', 'ka', 'ru'];
 
@@ -36,7 +37,7 @@ export default async function RootLayout({ children, params }) {
 	return (
 		<html lang={lang}>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className} ${arialCaps.className}`}>
-				<Navbar lang={lang} menu={menu} />
+				<Navbar lang={lang} menu={menu}  dict={dict}/>
 				{children}
 				<BootstrapClient />
 			</body>

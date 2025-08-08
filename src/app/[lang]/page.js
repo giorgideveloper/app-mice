@@ -18,7 +18,7 @@ export default async function Page({ params }) {
 					<h1>helooo</h1>
 				</div>
 			</div> */}
-			<MainPage />
+			<MainPage dict={dict} />
 		</>
 	); 
 }

@@ -5,15 +5,16 @@ import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
 import NavbarLang from './NavbarLang';
 
-export default function  Navbar({lang,menu}) {
+export default function  Navbar({lang,menu,dict}) {
  if (!menu || menu.length === 0) {
         return null;
     }
+    
 	return (
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
 			<div className="container align-items-end py-2">
-				<a className={`navbar-brand ${styles.brand}`} href="#">
+				<a className={`navbar-brand ${styles.brand}`} href="/">
                     <Image src="/logo.svg" alt="logo" width={130} height={100} />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +28,7 @@ export default function  Navbar({lang,menu}) {
                         </NavbarLink>
                     ))}
                 </ul>
-               <Button><a href="https://visitbatumi.com/ka"> ეწვიე ბათუმს</a></Button>
+               <Button><a href="https://visitbatumi.com/ka"> {dict?.button?.main}</a></Button>
                <NavbarLang className={styles.lang} lang={lang} />
                 </div>
 			</div>

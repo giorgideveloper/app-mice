@@ -8,7 +8,7 @@ import EventOverlay from './EventOverlay';
 import { useState } from 'react';
 
 
-export default function WigetEvents() {
+export default function WigetEvents({dict}) {
     const [isHovered, setIsHovered] = useState(false);
     
     return (
@@ -21,7 +21,7 @@ export default function WigetEvents() {
                 <div className="col-12 col-md-4"  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                     <div className={styles.imageContainer}>
                         {isHovered ? (
-                            <EventOverlay />
+                            <EventOverlay dict={dict} />
                         ) : (
                             <>
                                 <Image
