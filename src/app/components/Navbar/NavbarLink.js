@@ -4,7 +4,7 @@ import styles from './NavbarLink.module.css';
 import NavbarHover from './NavbarHover';
 import { useState } from 'react';
 import icon from '../../../../public/Icon.svg'; // Fixed capitalization in file name
-const NavbarLink = ({ children, href, className, dropdown, parent }) => {
+const NavbarLink = ({ children, href, className, dropdown, parent,lang }) => {
     const [isHovered, setIsHovered] = useState(false);
         return ( 
         <>
@@ -14,9 +14,7 @@ const NavbarLink = ({ children, href, className, dropdown, parent }) => {
             </a>
             <Image src={icon} alt="arrow-right" width={15} height={15} />   
         </li>
-        {isHovered && <NavbarHover setIsHovered={setIsHovered} dropdown={dropdown} parent={parent} />}
-        
-        
+        {isHovered && <NavbarHover setIsHovered={setIsHovered} dropdown={dropdown} parent={parent} lang={lang} />}
         </>
     );
 };

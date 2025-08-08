@@ -23,7 +23,7 @@ export default function  Navbar({lang,menu,dict}) {
                 <div className="collapse navbar-collapse ms-4" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     {menu?.map(item => (
-                        <NavbarLink key={item.id} href={item.href} className="nav-link" dropdown={item.children} parent={item.id} id={item.id}>
+                        <NavbarLink key={item.id} href={item.href} className="nav-link" dropdown={item.children} parent={item.id} id={item.id} lang={lang}>
                             {item.name}
                         </NavbarLink>
                     ))}

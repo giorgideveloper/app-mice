@@ -5,10 +5,11 @@ import styles from './WhyBatumi.module.css'; // Assuming you have a CSS module f
 import { WigetBlog } from "./WigetBlog";
 import WigetEvents from "./WigetEvents";
 
- export  const MainPage = ({ dict }) => {
+ export  const MainPage = ({data, dict }) => {
+    console.log('dict', data.slider);
     return (
         <>
-            <Slider dict={dict} />
+            <Slider data={data} dict={dict} />
             <section >
                 <WigetEvent dict={dict} />
             </section>

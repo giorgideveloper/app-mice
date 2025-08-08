@@ -1,6 +1,6 @@
 import styles from './NavbarLink.module.css';
 
-const NavbarHover = ({ dropdown, setIsHovered }) => {
+const NavbarHover = ({ dropdown, setIsHovered ,lang}) => {
 
     return (
         <ul className={`dropdown ${styles.dropdown}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -15,7 +15,7 @@ const NavbarHover = ({ dropdown, setIsHovered }) => {
                            
                                 {item?.children?.map((child,index) => (
                                       <li className={styles.dropdownItem} key={index}>
-                                  <a id={child.id} href={child.slug}>{child.name}  </a>
+                                  <a id={child.id} href={`${lang}/article/${child.slug}`}>{child.name}  </a>
                                   </li>
                                 ))}
                              
