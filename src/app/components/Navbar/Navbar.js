@@ -13,7 +13,7 @@ export default function  Navbar({lang,menu}) {
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
 			<div className="container align-items-end py-2">
-				<a className="navbar-brand" href="#">
+				<a className={`navbar-brand ${styles.brand}`} href="#">
                     <Image src="/logo.svg" alt="logo" width={130} height={100} />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

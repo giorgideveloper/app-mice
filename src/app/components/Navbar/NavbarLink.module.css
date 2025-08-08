@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     gap: 1px;
+    padding: 5px 0px;
 }
 
 .navbar-nav {
@@ -35,7 +36,7 @@
 } */
 
 .link {
-    color: #101828;
+    color: #101828bd;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -58,10 +59,24 @@
 .mainTitle h4{
     margin-bottom: 12px;
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     line-height: 30px;
     color: #0c2d57;
     font-family: 'FiraGO', sans-serif;
     font-style: normal;
+}
+.dropdownItem a{
+	font-family: 'FiraGO', sans-serif;
+	font-style: normal;
+	color: #667085;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	&:hover {
+		color: #244267;
+	}
 }
