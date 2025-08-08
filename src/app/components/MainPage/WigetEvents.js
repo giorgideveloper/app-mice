@@ -3,6 +3,7 @@
 import styles from './WigetEvents.module.css'; 
 import Image from 'next/image'; 
 import card from '../../image/card.webp'; 
+import image2 from '../../image/event.webp'
 import EventOverlay from './EventOverlay';
 import { useState } from 'react';
 
@@ -26,7 +27,7 @@ export default function WigetEvents() {
                                 <Image
                                     src={card}
                                     alt="Event Card"
-                                    style={{ width: '100%', height: 'auto' }}
+                                    
                                 />
                                 <div className={styles.overlayContent}>
                                     <h3>სპორტული ვენიუები</h3>
@@ -38,9 +39,9 @@ export default function WigetEvents() {
                 <div className="col-12 col-md-4">
                     <div className={styles.imageContainer}>
                         <Image
-                            src={card}
+                            src={image2}
                             alt="Event Card"
-                            style={{ width: '100%', height: 'auto' }}
+                          
                         />
                         <div className={styles.overlayContent}>
                             <h3>სპორტული ვენიუები</h3>
@@ -52,7 +53,7 @@ export default function WigetEvents() {
                         <Image
                             src={card}
                             alt="Event Card"
-                            style={{ width: '100%', height: 'auto' }}
+                           
                         />
                         <div className={styles.overlayContent}>
                             <h3>სპორტული ვენიუები</h3>
