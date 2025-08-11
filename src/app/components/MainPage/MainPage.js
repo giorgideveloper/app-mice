@@ -10,15 +10,17 @@ import WigetEvents from "./WigetEvents";
     return (
         <>
             <Slider data={data} dict={dict} />
-            <section >
-                <WigetEvent dict={dict} />
+              <section >
+                <WigetEvent data={data} dict={dict} />
             </section>
+               <section>
+                <WigetBlog data={data} dict={dict} />
+            </section>
+          
             <section className={styles.whyBatumiSection}>
                 <WhyBatumi  />
             </section>
-            <section>
-                <WigetBlog dict={dict} />
-            </section>
+         
             <section>
                 <WigetEvents dict={dict} />
             </section>

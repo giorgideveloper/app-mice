@@ -2,10 +2,10 @@ import Link from 'next/link';
 import styles from './NavbarLink.module.css';
 
 const resolveTemplate = (tpl) => {
-  if (tpl === 'blank_page.html') return 'article';
-  if (tpl === 'venue.html') return 'venue';
-  if (tpl === 'event.html') return 'event';
-  if (tpl === 'media_blog.html') return 'blog';
+  if (tpl === 'blank_page') return 'article';
+  if (tpl === 'venue') return 'venue';
+  if (tpl === 'event') return 'event';
+  if (tpl === 'media_blog') return 'blog';
   return tpl || '';
 };
 

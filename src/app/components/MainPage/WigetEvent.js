@@ -1,7 +1,8 @@
 import styles from './WigetEvent.module.css';
 import event from '../../image/event.webp';
 
-export const WigetEvent = ({dict}) => {
+export const WigetEvent = ({dict, data}) => {
+  console.log(data.media_blog[0]);
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}
@@ -9,7 +10,7 @@ export const WigetEvent = ({dict}) => {
         className="d-block d-lg-none w-100" 
         style={{
           height: "300px",
-          backgroundImage: `url(${event.src || event.default || event})`,
+          backgroundImage: `url(${data?.media_blog[0]?.main_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
@@ -21,11 +22,14 @@ export const WigetEvent = ({dict}) => {
         <div className="row h-100">
           <div className={`col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start  p-md-5 ${styles.textContainer}`}>
             <h1 className="display-1 fw-bold mb-4" style={{ lineHeight: 1.1 }}>
-              ტოპ 5 ლოკაცია <br /> გარე ივენთებისთვის
+             {data?.media_blog[0]?.title}
             </h1>
-            <p className="mb-4 fs-5 text-secondary">
-              ბათუმი განსაკუთრებულ ცოცხალი ქალაქია სადაც მუდამ იგრძნობა ტარდება სხვადასხვა სახის ივენთები გარეთ სივრცეებში.
-            </p>
+                         {data?.media_blog[0]?.short_description ? (
+                                <div className="mb-4 fs-5 text-secondary" dangerouslySetInnerHTML={{ __html: data?.media_blog[0]?.short_description }} />
+                            ) : (
+                                <p></p>
+                            )}
+
             <button className="btn btn-dark btn-lg ">{dict?.button?.more}</button>
           </div>
         </div>
@@ -36,7 +40,7 @@ export const WigetEvent = ({dict}) => {
         className="d-none d-lg-block position-absolute top-0 end-0 h-100"
         style={{
           width: "50vw", 
-          backgroundImage: `url(${event.src || event.default || event})`,
+              backgroundImage: `url(${ data?.media_blog[0]?.main_image})`,
           backgroundSize: "cover",
           backgroundPosition: "right center",
           backgroundRepeat: "no-repeat",

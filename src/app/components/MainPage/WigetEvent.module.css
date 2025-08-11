@@ -33,28 +33,24 @@
     flex-direction: column;
 } */
 
-.textContainer h1{
-   
-    padding: 20px 0px;
-    font-weight: 600;
-    font-size: 51px;
-    line-height: 72px;
-    color: #101828;
-
-} 
-
+.textContainer h1 {
+  padding: 20px 0px;
+  font-weight: 600;
+  font-size: 51px;
+  line-height: 72px;
+  color: #101828;
+}
 
 @media (max-width: 426px) {
-    .textContainer h1 {
-        font-size: 29px;
-        line-height: 44px;
-      
-    }
-    .textContainer p{
+  .textContainer h1 {
+    font-size: 29px;
+    line-height: 44px;
+  }
+  .textContainer p {
     font-size: 14px !important;
     line-height: 18px;
-}
- .textContainer button{
+  }
+  .textContainer button {
     font-size: 12px;
- }
+  }
 }
