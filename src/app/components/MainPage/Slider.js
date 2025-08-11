@@ -11,7 +11,7 @@ import Image from 'next/image';
 import image1 from '../../image/slider1.webp';
 import Button from '../Button/Button';
 
-export const Slider = ({data}) => {
+export const Slider = ({data, dict}) => {
     const swiperRef = useRef(null);
     const swiperInstanceRef = useRef(null);
     
@@ -41,15 +41,15 @@ return (
     <>
         <div className={`swiper ${styles.slider}`} ref={swiperRef} style={{ width: '100vw', height: '84.4vh', position: 'relative' }}>
             <div className="swiper-wrapper">
-                {data?.slider.map((slide, index) => (
+                {data?.slider && data.slider.map((slide, index) => (
                     <div className="swiper-slide" key={index} style={{ width: '100%', height: '100%', position: 'relative' }}>
                         <Image
-                            src={slide.image}
+                            src={slide?.image || ''}
                             alt={`Slide ${index + 1}`}
                             fill
-                        style={{ objectFit: 'cover', height: '100%', width: '100%' }}
-                        priority
-                    />
+                            style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+                            priority
+                        />
                     {/* Black overlay */}
                     <div style={{
                         position: 'absolute',
@@ -63,8 +63,12 @@ return (
                     <div className="container">
                         <div className="row">
                             <div className={styles.textOverlay}>
-                        <h1>{slide?.title}</h1>
-                        <p>{slide?.description}</p>
+                        <h1>{slide?.title || ''}</h1>
+                        {slide?.description ? (
+                            <div dangerouslySetInnerHTML={{ __html: slide?.description }} />
+                        ) : (
+                            <p></p>
+                        )}
                         {/* <Button>მეტი ინფორმაცია</Button> */}
                     </div>
                         </div>

@@ -6,7 +6,7 @@ import { WigetBlog } from "./WigetBlog";
 import WigetEvents from "./WigetEvents";
 
  export  const MainPage = ({data, dict }) => {
-    console.log('dict', data.slider);
+ 
     return (
         <>
             <Slider data={data} dict={dict} />

@@ -1,31 +1,48 @@
+import Link from 'next/link';
 import styles from './NavbarLink.module.css';
 
-const NavbarHover = ({ dropdown, setIsHovered ,lang}) => {
+const resolveTemplate = (tpl) => {
+  if (tpl === 'blank_page.html') return 'article';
+  if (tpl === 'venue.html') return 'venue';
+  if (tpl === 'event.html') return 'event';
+  if (tpl === 'media_blog.html') return 'blog';
+  return tpl || '';
+};
 
-    return (
-        <ul className={`dropdown ${styles.dropdown}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <div className="container">
-                <div className="row">
-                    {dropdown.map((item) => (
-                        <div className="col" key={item.id}> 
-                        <div className={styles.mainTitle}>
-                            <a href={item.slug}><h4>{item.name}</h4></a>
-                        </div>
-                        <div className={styles.hoverItems}>
-                           
-                                {item?.children?.map((child,index) => (
-                                      <li className={styles.dropdownItem} key={index}>
-                                  <a id={child.id} href={`${lang}/article/${child.slug}`}>{child.name}  </a>
-                                  </li>
-                                ))}
-                             
-                        </div>
-                    </div>
-                ))}
-                </div>
+const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
+  return (
+    <ul
+      className={`dropdown ${styles.dropdown}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="container">
+        <div className="row">
+          {dropdown.map((item) => (
+            <div className="col" key={item.id}>
+              <div className={styles.mainTitle}>
+                <Link href={`/${item.slug}`}>
+                  <h4>{item.name}</h4>
+                </Link>
+              </div>
+
+              <div className={styles.hoverItems}>
+                {item?.children?.map((child) => {
+                  const section = resolveTemplate(child.page_template);
+                  const href = `/${lang}/${section}/${child.slug}`;
+                  return (
+                    <li className={styles.dropdownItem} key={child.id}>
+                      <a href={href}>{child.name}</a>
+                    </li>
+                  );
+                })}
+              </div>
             </div>
-        </ul>
-    );
+          ))}
+        </div>
+      </div>
+    </ul>
+  );
 };
 
 export default NavbarHover;

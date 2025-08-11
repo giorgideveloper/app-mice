@@ -34,3 +34,40 @@ export const fetchMainPage = async (local) => {
         throw error;
     }
 }
+
+// Fetches the article by ID
+export const fetchArticleById = async (id, local) => {
+    try {
+        const res = await fetch(`${API_URL}${local}/pages/list/${id}/`, {
+            next: { revalidate: 300 }
+        });
+        if (!res.ok) {
+            return notFound(); // Handle the case where the article is not found
+        }
+        return await res.json();
+    }
+    catch (error) {
+        console.log("Error fetching article by ID", error);
+        throw error;
+    }
+}
+
+// Fetches the blog by id
+
+export const fetchBlogById = async (id, local) => {
+    try {
+        const res = await fetch(`${API_URL}${local}/pages/media-blog/${id}/`, {
+            next: { revalidate: 300 }
+        });
+        if (!res.ok) {
+            return notFound(); // Handle the case where the blog is not found
+        }
+        return await res.json();
+    }
+    catch (error) {
+        console.log("Error fetching blog by ID", error);
+        throw error;
+    }
+}
+
+        
