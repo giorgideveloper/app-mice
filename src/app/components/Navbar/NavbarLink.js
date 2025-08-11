@@ -10,7 +10,7 @@ const NavbarLink = ({ children, href, className, dropdown, parent,lang }) => {
         return ( 
         <>
          <li className={`nav-item ${styles.item}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
-            <Link className={`nav-link ${styles.link} ${className}`} href={href}>
+            <Link className={`nav-link ${styles.link} ${className}`} href={'/'}>
                 {children}
             </Link>
             <Image src={icon} alt="arrow-right" width={15} height={15} />   

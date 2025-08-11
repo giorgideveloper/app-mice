@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 import Button from '../Button/Button';
 import NavbarLink from './NavbarLink';
 import NavbarLang from './NavbarLang';
+import Link from 'next/link';
 
 export default function  Navbar({lang,menu,dict}) {
  if (!menu || menu.length === 0) {
@@ -14,9 +15,9 @@ export default function  Navbar({lang,menu,dict}) {
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
 			<div className="container align-items-end py-2">
-				<a className={`navbar-brand ${styles.brand}`} href="/">
+				<Link className={`navbar-brand ${styles.brand}`} href="/">
                     <Image src="/logo.svg" alt="logo" width={130} height={100} />
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                  </button>
