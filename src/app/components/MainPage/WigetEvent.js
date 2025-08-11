@@ -2,7 +2,7 @@ import styles from './WigetEvent.module.css';
 import event from '../../image/event.webp';
 
 export const WigetEvent = ({dict, data}) => {
-  console.log(data.media_blog[0]);
+
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}

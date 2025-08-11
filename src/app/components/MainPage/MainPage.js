@@ -22,7 +22,7 @@ import WigetEvents from "./WigetEvents";
             </section>
          
             <section>
-                <WigetEvents dict={dict} />
+                <WigetEvents data={data} dict={dict} />
             </section>
         </>
     );

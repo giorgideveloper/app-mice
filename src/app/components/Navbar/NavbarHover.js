@@ -21,9 +21,9 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
           {dropdown.map((item) => (
             <div className="col" key={item.id}>
               <div className={styles.mainTitle}>
-                <Link href={`/${item.slug}`}>
+                <a href={`/${item.slug}`}>
                   <h4>{item.name}</h4>
-                </Link>
+                </a>
               </div>
 
               <div className={styles.hoverItems}>
@@ -32,7 +32,10 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
                   const href = `/${lang}/${section}/${child.slug}`;
                   return (
                     <li className={styles.dropdownItem} key={child.id}>
-                      <a href={href}>{child.name}</a>
+                      <Link onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = href;
+                      }} href={href}>{child.name}</Link>
                     </li>
                   );
                 })}

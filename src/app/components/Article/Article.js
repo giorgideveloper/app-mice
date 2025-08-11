@@ -4,7 +4,7 @@ import image from '../../image/image.png'
 import mainImage from '../../image/mainimage.png';
 
 export default function Article({article}) {
-    console.log(article.template)
+
 return (
     <div>
   
