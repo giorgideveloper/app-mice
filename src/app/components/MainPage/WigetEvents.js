@@ -10,7 +10,6 @@ import { useState } from 'react';
 
 export default function WigetEvents({dict,data}) {
     const [isHovered, setIsHovered] = useState(false);
-    console.log(data?.business_venues);
     const EventsVenues = ({imageSrc, title}) => {
         return (
             <div className="col-12 col-md-4"  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>

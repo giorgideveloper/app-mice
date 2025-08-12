@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }) {
-  const { lang } = params;
+  const { lang } = await params;
   return {
     htmlAttributes: {
       lang,

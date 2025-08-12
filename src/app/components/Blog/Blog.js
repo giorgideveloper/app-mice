@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import styles from './Blog.module.css'; 
 import BlogCard from './BlogCard';
+import ClientLink from './ClientLink';
 
 
 export default function Blog({data, lang}) {
-  console.log("Blog data:", data);
   return (
     <>
     <div className="container-fluid px-0">
@@ -14,14 +13,17 @@ export default function Blog({data, lang}) {
     </div>
     <div className="container">
       <div className="row">
-        {data?.results?.map((item) => (
+        {data?.results?.map((item) => {
+          const href = `/${lang}/blog/${item.slug}`;
+          return (
           <div className="col-12 col-lg-4" key={item.id}>
-            <Link href={`/${lang}/blog/${item.slug}`}>
+            <ClientLink href={href}>
               <BlogCard data={item} />
-            </Link>
+            </ClientLink>
           </div>
 
-        ))}
+         );
+                })}
       </div>
     </div>
     </>
