@@ -24,7 +24,16 @@ const geistMono = Geist_Mono({
 	subsets: ['latin'],
 });
 
-export default async function RootLayout({ children, params }) {
+export async function generateMetadata({ params }) {
+  const { lang } = params;
+  return {
+    htmlAttributes: {
+      lang,
+    },
+  };
+}
+
+export default async function LangLayout({ children, params }) {
 
 	const { lang } = await params;
 	// i need menu ssr
@@ -36,12 +45,10 @@ export default async function RootLayout({ children, params }) {
 	if (!supportedLangs.includes(lang)) return notFound();
 
 	return (
-		<html lang={lang}>
-			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className} ${arialCaps.className} `}>
-				<Navbar lang={lang} menu={menu}  dict={dict}/>
-				{children}
-				<BootstrapClient />
-			</body>
-		</html>
+		<>
+			<Navbar lang={lang} menu={menu} dict={dict}/>
+			{children}
+			<BootstrapClient />
+		</>
 	);
 }

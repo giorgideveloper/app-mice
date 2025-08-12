@@ -24,7 +24,7 @@ export default function Article({ article }) {
           </div>
         </div>
       </div>
-      {article.template === "2" ? (
+      {article.small_image? (
         <>
           {" "}
           <div className="container-fluid px-0">

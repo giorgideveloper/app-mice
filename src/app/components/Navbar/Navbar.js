@@ -15,7 +15,10 @@ export default function  Navbar({lang,menu,dict}) {
         <>
 		<nav className={`navbar fixed-top navbar-expand-lg navbar-light ${styles.navbar}`}>
 			<div className="container align-items-end py-2">
-				<Link className={`navbar-brand ${styles.brand}`} href="/">
+				<Link className={`navbar-brand ${styles.brand}`} onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = "/";
+                    }} href={'/'}>
                     <Image src="/logo.svg" alt="logo" width={130} height={100} />
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
