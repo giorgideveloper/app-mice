@@ -1,7 +1,9 @@
+import HeaderVenues from "@/app/components/venues/HeaderVenues";
+
 export default function page() {
   return (
     <div>
-      <h1>Venue Page</h1>
+      <HeaderVenues />
     </div>
   )
 }
