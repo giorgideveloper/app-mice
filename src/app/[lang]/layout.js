@@ -9,6 +9,7 @@ import { fetchMenu } from '@/service/service';
 import { arialCaps } from '../../fonts/Fonts';
 import { getDictionary } from './dictionaries';
 
+
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
 }
@@ -36,7 +37,7 @@ export default async function RootLayout({ children, params }) {
 
 	return (
 		<html lang={lang}>
-			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className} ${arialCaps.className}`}>
+			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className} ${arialCaps.className} `}>
 				<Navbar lang={lang} menu={menu}  dict={dict}/>
 				{children}
 				<BootstrapClient />

@@ -1,0 +1,48 @@
+.card {
+  position: relative;
+  height: 400px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  height: 100px;
+  backdrop-filter: blur(12px);
+  background: hsla(0, 0%, 100%, 0.6);
+  bottom: 0px;
+  left: 0px;
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.title h2 {
+  font-family: "FiraGo", sans-serif !important;
+  font-weight: 500;
+  font-size: 20px;
+  color: #101828;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+.title svg {
+  margin-top: -10px;
+}
+@media (max-width: 1440px) {
+  .card {
+    height: 350px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    height: 300px;
+    margin-top: 30px;
+  }
+}

@@ -5,7 +5,7 @@ const resolveTemplate = (tpl) => {
   if (tpl === 'blank_page') return 'article';
   if (tpl === 'venue') return 'venue';
   if (tpl === 'event') return 'event';
-  if (tpl === 'media_blog') return 'blog';
+  if (tpl === 'media_blog.html') return '';
   return tpl || '';
 };
 

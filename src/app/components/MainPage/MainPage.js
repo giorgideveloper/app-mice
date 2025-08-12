@@ -1,24 +1,24 @@
 import { Slider } from "./Slider";
 import WhyBatumi from "./WhyBatumi";
 import { WigetEvent } from "./WigetEvent";
-import styles from './WhyBatumi.module.css'; // Assuming you have a CSS module for MainPage styles
+import styles from './WhyBatumi.module.css'; 
 import { WigetBlog } from "./WigetBlog";
 import WigetEvents from "./WigetEvents";
 
- export  const MainPage = ({data, dict }) => {
+ export  const MainPage = ({data, dict, lang }) => {
  
     return (
         <>
             <Slider data={data} dict={dict} />
               <section >
-                <WigetEvent data={data} dict={dict} />
+                <WigetEvent data={data} dict={dict} lang={lang} />
             </section>
                <section>
-                <WigetBlog data={data} dict={dict} />
+                <WigetBlog data={data} dict={dict} lang={lang} />
             </section>
           
             <section className={styles.whyBatumiSection}>
-                <WhyBatumi  />
+                <WhyBatumi data={data} />
             </section>
          
             <section>

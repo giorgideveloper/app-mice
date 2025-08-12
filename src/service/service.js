@@ -52,6 +52,26 @@ export const fetchArticleById = async (id, local) => {
     }
 }
 
+// Fetches the blog 
+export const fetchBlog = async (local) => {
+    try {
+        const res = await fetch(`${API_URL}${local}/pages/media-blog/`, {
+            next: { revalidate: 300 }
+        });
+        if (!res.ok) {
+            return notFound(); // Handle the case where the blog  is not found
+        }
+        return await res.json();
+    }
+    catch (error) {
+        console.log("Error fetching blog by ID", error);
+        throw error;
+    }
+}
+
+
+
+
 // Fetches the blog by id
 
 export const fetchBlogById = async (id, local) => {

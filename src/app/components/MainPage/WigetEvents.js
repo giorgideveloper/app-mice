@@ -43,6 +43,7 @@ export default function WigetEvents({dict,data}) {
             <div className="row g-0">
               
                 <EventsVenues imageSrc={image2} title={<h3>სპორტული ვენიუები</h3>} />
+                
            
             </div>
         </div>

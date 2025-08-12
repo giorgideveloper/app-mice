@@ -9,6 +9,7 @@ export default async function page({params}) {
   return (
     <div>
       <Article id={id} lang={lang} article={mediaBlog} />
+
     </div>
   )
 }

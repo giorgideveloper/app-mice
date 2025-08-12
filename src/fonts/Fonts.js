@@ -25,3 +25,13 @@ export const arialCaps = localFont({
         
     ],
 })
+
+export const party = localFont({
+    src: [
+        {
+            path: './party/Party-Confetti.ttf',
+            weight: '400',
+            style: 'normal',
+        },
+    ],
+})

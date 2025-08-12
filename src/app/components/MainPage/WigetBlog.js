@@ -1,7 +1,8 @@
 import styles from './WigetBlog.module.css';
 import event from '../../image/event.webp';
+import Link from 'next/link';
 
-export const WigetBlog = ({dict, data }) => {
+export const WigetBlog = ({dict, data,lang }) => {
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}
@@ -41,8 +42,10 @@ export const WigetBlog = ({dict, data }) => {
                             ) : (
                                 <p></p>
                             )}
-           
-            <button className="btn btn-dark btn-lg ">{dict?.button?.more}</button>
+
+                            <Link href={`/${lang}/blog/${data?.media_blog[1]?.slug}`}>
+                                <button className="btn btn-dark btn-lg ">{dict?.button?.more}</button>
+                            </Link>
           </div>
         </div>
       </div>
