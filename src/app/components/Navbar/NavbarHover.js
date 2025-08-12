@@ -8,6 +8,12 @@ const resolveTemplate = (tpl) => {
   if (tpl === 'media_blog.html') return '';
   return tpl || '';
 };
+const resolveSlug = (slug) => {
+  if (slug === 'cultural-venues') return 'venues';
+  if (slug === 'business-corporate-venues') return 'venues';
+  if (slug === 'sport-venues') return 'venues';
+  return slug || '';
+};
 
 const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
   return (
@@ -18,11 +24,17 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
     >
       <div className="container">
         <div className="row">
-          {dropdown.map((item) => (
-            <div className="col" key={item.id}>
-              <div className={styles.mainTitle}>
-                <Link href={`/${item.slug}`}>
-                  <h4>{item.name}</h4>
+          {dropdown.map((item) => {
+            const section = resolveSlug(item.slug);
+            const href = `/${lang}/${section}/${item.slug}`;
+            return (
+              <div className="col" key={item.id}>
+                <div className={styles.mainTitle}>
+                  <Link onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href = href;
+                      }} href={href}>
+                        <h4>{item.name}</h4>
                 </Link>
               </div>
 
@@ -41,7 +53,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
                 })}
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </ul>

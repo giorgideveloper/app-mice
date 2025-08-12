@@ -90,4 +90,20 @@ export const fetchBlogById = async (id, local) => {
     }
 }
 
-        
+// Fetches the venues by id
+export const fetchVenues = async (local, id, slug) => {
+    try {
+        const res = await fetch(`${API_URL}${local}/venues/${id}/${slug}`, {
+            next: { revalidate: 300 }
+        });
+        if (!res.ok) {
+            return notFound(); // Handle the case where the venues are not found
+        }
+        return await res.json();
+    }
+    catch (error) {
+        console.log("Error fetching venues", error);
+        throw error;
+    }
+}
+// Fetches the venue by slug
