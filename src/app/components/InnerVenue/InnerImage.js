@@ -1,11 +1,10 @@
-import Image from "next/image";
-import card from "../../image/card.webp";
-import style from "./InnerImage.module.css";
+import style from './InnerImage.module.css';
+import ImageApp from '@/app/plugins/ImageApp';
 
-export default function InnerImage() {
-return (
-    <div className={style.innerImage}>
-        <Image src={card} alt="Venue Image" width={1920} height={1080} />
-    </div>
-)
+export default function InnerImage({ image }) {
+	return (
+		<div className={style.innerImage}>
+			<ImageApp img={image} alt='Venue Image' />
+		</div>
+	);
 }

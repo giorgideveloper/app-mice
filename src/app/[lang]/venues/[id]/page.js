@@ -1,15 +1,20 @@
-import Venues from "@/app/components/venues/Venues";
-import { party } from '@/fonts/Fonts'
-import { fetchVenues } from "@/service/service";
-export default async function page({params}) {
-  const { lang, id, slug } = await params;
+import Venues from '@/app/components/venues/Venues';
+import { party } from '@/fonts/Fonts';
+import { fetchVenues } from '@/service/service';
 
-  const data = await fetchVenues(lang, id )
+export const metadata = {
+	title: 'Venues | Visit Batumi',
+	description: 'Internationalized App Router example',
+};
 
-  
-  return (
-    <div className={`${party.className}`}>
-      <Venues data={data}  lang={lang} id={id} />
-    </div>
-  )
+export default async function page({ params }) {
+	const { lang, id, slug } = await params;
+
+	const data = await fetchVenues(lang, id);
+
+	return (
+		<div className={`${party.className}`}>
+			<Venues data={data} lang={lang} id={id} />
+		</div>
+	);
 }
