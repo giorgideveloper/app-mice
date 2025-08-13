@@ -91,9 +91,10 @@ export const fetchBlogById = async (id, local) => {
 }
 
 // Fetches the venues by id
-export const fetchVenues = async (local, id, slug) => {
+export const fetchVenues = async (local, id,) => {
+  
     try {
-        const res = await fetch(`${API_URL}${local}/venues/${id}/${slug}`, {
+        const res = await fetch(`${API_URL}${local}/venues/${id}/`, {
             next: { revalidate: 300 }
         });
         if (!res.ok) {

@@ -9,9 +9,9 @@ const resolveTemplate = (tpl) => {
   return tpl || "";
 };
 const resolveSlug = (slug) => {
-  if (slug === "cultural-venues") return "venues";
-  if (slug === "business-corporate-venues") return "venues";
-  if (slug === "sport-venues") return "venues";
+  if (slug === "cultural") return "venues";
+  if (slug === "conference") return "venues";
+  if (slug === "sport") return "venues";
   return slug || "";
 };
 

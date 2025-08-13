@@ -1,0 +1,96 @@
+.venuesFilter {
+  max-width: 330px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e66f;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0 2px 4px -2px rgba(16, 24, 40, 0.06);
+}
+
+.filterMap {
+  background: url("../../image/map.webp") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filterMap button {
+  height: 48px;
+  padding: 0 20px;
+  background-color: #fff;
+  border: 1px solid #2a5996;
+  border-radius: 24px;
+  font-family: "FiraGo", sans-serif;
+  color: #2a5996;
+  font-weight: 500;
+}
+.filterMap button:hover {
+  background-color: #2a5996;
+  color: #fff;
+}
+.border {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #eaecf0;
+}
+.border h4 {
+  font-family: "FiraGo", sans-serif;
+  font-weight: bold;
+  color: #6c6c6c;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.roundCheckbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+.roundCheckbox:checked {
+  background-color: white;
+  border-color: #2a5996;
+}
+
+.roundCheckbox:checked::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #2a5996;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+}
+
+.checkboxList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkboxList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkboxList label {
+  font-family: "FiraGo", sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}

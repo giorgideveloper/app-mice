@@ -1,0 +1,52 @@
+.cardImage img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.title {
+  font-family: "FiraGo", sans-serif;
+  font-size: 20px;
+  color: #656565;
+  font-weight: bold;
+}
+
+.cardBody {
+  padding: 20px;
+  font-family: "FiraGo", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBody h3 {
+  font-size: 18px;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.cardBody button {
+  font-size: 14px;
+  color: #666;
+  background-color: #f0eeee;
+  padding: 0 0px;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 45%;
+  margin-bottom: 20px;
+}
+.cardBody button:hover {
+  background-color: #fdb022;
+  color: #fff;
+}
+.cardFooter ul {
+  display: flex;
+  color: #666;
+  font-family: "FiraGo", sans-serif;
+  list-style: none;
+  padding: 0 20px;
+}
+.cardFooter ul li {
+  margin-right: 20px;
+}

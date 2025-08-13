@@ -6,6 +6,7 @@ export default function HeaderVenues() {
         <div className="row">
           <div className="col">
             <h1 className={styles.title}>Header Venues</h1>
+            <p className={styles.description}>Discover a variety of venues for your events.</p>
           </div>
         </div>
       </div>

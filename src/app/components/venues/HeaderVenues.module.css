@@ -1,5 +1,6 @@
 .header {
-  background: url("../../image/slider1.webp") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../image/slider1.webp") no-repeat center center;
   background-size: cover;
   height: 400px;
   display: flex;
@@ -8,5 +9,30 @@
 }
 .title {
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 700;
+  font-size: 72px;
+  line-height: 86px;
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+}
+.description {
+  color: white;
+  font-family: "fiRago", Courier, monospace;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #fcfcfd;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 200px;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
 }

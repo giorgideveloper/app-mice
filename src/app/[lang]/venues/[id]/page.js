@@ -1,9 +1,15 @@
-import HeaderVenues from "@/app/components/venues/HeaderVenues";
+import Venues from "@/app/components/venues/Venues";
+import { party } from '@/fonts/Fonts'
+import { fetchVenues } from "@/service/service";
+export default async function page({params}) {
+  const { lang, id, slug } = await params;
 
-export default function page() {
+  const data = await fetchVenues(lang, id )
+
+  
   return (
-    <div>
-      <HeaderVenues />
+    <div className={`${party.className}`}>
+      <Venues data={data}  lang={lang} id={id} />
     </div>
   )
 }
