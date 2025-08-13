@@ -14,7 +14,7 @@ export default function VenuesCard({data, lang, id}) {
           </div>
           {data?.results?.map(item =>(
        
-              <div className="col-lg-4 col-12">
+              <div key={item.id} className="col-lg-4 col-12">
                      <ClientLink href={`/${lang}/venues/${id}/${item.slug}`} >
                        <div className="card border-0 rounded-4 bg-white shadow-sm">
                          <div className={styles.cardImage}>
