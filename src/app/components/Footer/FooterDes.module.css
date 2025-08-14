@@ -1,0 +1,19 @@
+.logo {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 20px;
+}
+.description {
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #344054;
+}
+.minLogos {
+  margin-top: 40px;
+}
+.minLogos img {
+  width: 90px;
+  height: 90px;
+}

@@ -4,10 +4,9 @@ import BootstrapClient from '../components/BootstrapClient';
 import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar/Navbar';
 import '../globals.css';
-import { firago } from '../../fonts/Fonts';
 import { fetchMenu } from '@/service/service';
-import { arialCaps } from '../../fonts/Fonts';
 import { getDictionary } from './dictionaries';
+import Footer from '../components/Footer/Footer';
 
 
 export async function generateStaticParams() {
@@ -49,6 +48,7 @@ export default async function LangLayout({ children, params }) {
 			<Navbar lang={lang} menu={menu} dict={dict}/>
 			{children}
 			<BootstrapClient />
+			<Footer />
 		</>
 	);
 }

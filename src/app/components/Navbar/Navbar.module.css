@@ -1,17 +1,16 @@
 .navbar {
-    background-color: #fff;
-   
+  background-color: #fff;
+  box-shadow: 0 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0 2px 4px -2px rgba(16, 24, 40, 0.06);
 }
-.lang{
-    margin-left: 40px;
-    position: relative;
-    transition: all 0.2s ease;
+.lang {
+  margin-left: 40px;
+  position: relative;
+  transition: all 0.2s ease;
 }
-.lang img{
-    border-radius: 50%;
+.lang img {
+  border-radius: 50%;
 }
-.brand img{
-    
-    height: auto;
+.brand img {
+  height: auto;
 }
-

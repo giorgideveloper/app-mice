@@ -1,0 +1,25 @@
+.footerLinks {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.footerLinks h5 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #344054;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.footerLinks ul {
+  padding-left: 0 !important;
+}
+.footerLinks li {
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+.footerLinks a {
+  color: #344054;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+}
