@@ -1,30 +1,27 @@
 
 'use client';
 import styles from './WigetEvents.module.css'; 
-import Image from 'next/image'; 
-import card from '../../image/card.webp'; 
-import image2 from '../../image/event.webp'
 import EventOverlay from './EventOverlay';
 import { useState } from 'react';
+import ImageApp from '@/app/plugins/ImageApp';
 
 
 export default function WigetEvents({dict,data}) {
-    const [isHovered, setIsHovered] = useState(false);
-    const EventsVenues = ({imageSrc, title}) => {
+
+    const EventsVenues = ({imageSrc, title, index}) => {
+        const [isHovered, setIsHovered] = useState(false);
+        
         return (
-            <div className="col-12 col-md-4"  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+           
+            <div className="col-12 col-md-4" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 <div className={styles.imageContainer}>
                     {isHovered ? (
                         <EventOverlay dict={dict} />
                         ) : (
                             <>
-                                <Image
-                                    src={card}
-                                    alt="Event Card"
-                                    
-                                />
+                                <ImageApp img={imageSrc} alt={title} />
                                 <div className={styles.overlayContent}>
-                                    <h3>სპორტული ვენიუები</h3>
+                                   <h3>{title}</h3>
                                 </div>
                             </>
                         )}
@@ -40,8 +37,11 @@ export default function WigetEvents({dict,data}) {
                 <p>აქ შეგიძლიათ მოიძიოთ და მოაწყოთ ღონისძიებები</p>
             </div>
             <div className="row g-0">
-              
-                <EventsVenues imageSrc={image2} title={<h3>სპორტული ვენიუები</h3>} />
+              {data.venues.map(item => {
+                console.log(item.image);
+                return <EventsVenues key={item.id} imageSrc={item.image} title={item.title} />;
+              })}
+
                 
            
             </div>
