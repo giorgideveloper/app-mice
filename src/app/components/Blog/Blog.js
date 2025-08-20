@@ -12,7 +12,7 @@ export default function Blog({data, lang}) {
       </div>
     </div>
     <div className="container">
-      <div className="row">
+      <div className="row g-4">
         {data?.results?.map((item) => {
           const href = `/${lang}/blog/${item.slug}`;
           return (

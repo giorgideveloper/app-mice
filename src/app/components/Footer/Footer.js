@@ -2,13 +2,13 @@ import Image from "next/image";
 import style from "./Footer.module.css";
 import FooterDes from "./FooterDes";
 import FooterLink from "./FooterLink";
-export default function Footer() {
+export default function Footer({data}) {
   return (
     <div className={style.footer}>
       <div className="container">
         <div className="row">
             <div className="col-12 col-lg-5 mt-4">
-                <FooterDes />
+                <FooterDes data={data.footer} />
             </div>
             <div className="col-12 col-lg-5 mt-4">
                 <FooterLink />

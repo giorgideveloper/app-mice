@@ -4,7 +4,7 @@ import BootstrapClient from '../components/BootstrapClient';
 import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar/Navbar';
 import '../globals.css';
-import { fetchMenu } from '@/service/service';
+import { fetchMainPage, fetchMenu } from '@/service/service';
 import { getDictionary } from './dictionaries';
 import Footer from '../components/Footer/Footer';
 
@@ -38,6 +38,7 @@ export default async function LangLayout({ children, params }) {
 	// i need menu ssr
 	const menu = await fetchMenu(lang);
 	const dict = await getDictionary(lang);
+	const footerData = await fetchMainPage(lang);
 
 	const supportedLangs = ['en', 'ka', 'ru'];
 
@@ -48,7 +49,7 @@ export default async function LangLayout({ children, params }) {
 			<Navbar lang={lang} menu={menu} dict={dict}/>
 			{children}
 			<BootstrapClient />
-			<Footer />
+			<Footer data={footerData} />
 		</>
 	);
 }

@@ -3,14 +3,15 @@ import style from './FooterDes.module.css'
 import Image from 'next/image'
 
 
-export default function FooterDes() {
+export default function FooterDes({data}) {
+  console.log(data[0].description)
   return (
     <>
     <div className={style.logo}>
-        <Image src='/logo.svg' width={125} height={125} alt='Footer logo' />
+        <Image src='/logo.svg' width={180} height={180} alt='Footer logo' />
     </div>
       <div className={style.description}>
-        <div dangerouslySetInnerHTML={{ __html: '<p>The official tourism portal of the Ajara region, www.visitbatumi.com, is owned by the Department of A/R Tourism and Resorts of Ajara, which is responsible for the marketing, planning, and implementation of the tourism policy of the region.</p>' }}></div>
+        <div dangerouslySetInnerHTML={{ __html: data[0]?.description || '' }}></div>
       </div>
       <div className={style.minLogos}>
         <ImageApp src='/minLogo1.svg' width={50} height={50} alt='Min logo 1' />
