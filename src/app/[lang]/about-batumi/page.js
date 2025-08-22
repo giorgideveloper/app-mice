@@ -1,3 +1,4 @@
+import AboutBatumi from '@/app/components/AboutBatumi/AboutBatumi';
 import React from 'react'
 
 export default async function page({params}) {
@@ -5,7 +6,7 @@ export default async function page({params}) {
    
   return (
     <div>
-        <h1>About Page</h1>
+        <AboutBatumi />
     </div>
   )
 }
