@@ -6,9 +6,9 @@ import { useState } from 'react';
 import ImageApp from '@/app/plugins/ImageApp';
 
 
-export default function WigetEvents({dict,data}) {
+export default function WigetEvents({dict,data,lang}) {
 
-    const EventsVenues = ({imageSrc, title, index}) => {
+    const EventsVenues = ({imageSrc, title, category}) => {
         const [isHovered, setIsHovered] = useState(false);
         
         return (
@@ -16,7 +16,7 @@ export default function WigetEvents({dict,data}) {
             <div className="col-12 col-md-4" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                 <div className={styles.imageContainer}>
                     {isHovered ? (
-                        <EventOverlay dict={dict} title={title} />
+                        <EventOverlay dict={dict} title={title} lang={lang} category={category} />
                         ) : (
                             <>
                                 <ImageApp img={imageSrc} alt={title} />
@@ -38,8 +38,7 @@ export default function WigetEvents({dict,data}) {
             </div>
             <div className="row g-0">
               {data?.venues?.map(item => {
-                console.log(item.image);
-                return <EventsVenues key={item?.id} imageSrc={item?.image} title={item?.title} />;
+                return <EventsVenues key={item?.id} imageSrc={item?.image} title={item?.title} category={item?.venue_category} />;
               })}              
             </div>
         </div>

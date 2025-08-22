@@ -6,8 +6,10 @@ const resolveTemplate = tpl => {
 	if (tpl === 'venue') return 'venue';
 	if (tpl === 'event') return 'event';
 	if (tpl === 'media_blog') return '';
+	if (tpl === 'about_batumi') return '';
 	return tpl || '';
 };
+
 const resolveSlug = slug => {
 	if (slug === 'cultural') return 'venues';
 	if (slug === 'conference') return 'venues';
@@ -16,6 +18,7 @@ const resolveSlug = slug => {
 };
 
 const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
+	console.log(dropdown);
 	return (
 		<ul
 			className={`dropdown ${styles.dropdown}`}

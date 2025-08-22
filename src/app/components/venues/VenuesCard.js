@@ -29,11 +29,11 @@ export default function VenuesCard({ data, lang, id }) {
 									<div className={styles.cardFooter}>
 										<ul>
 											<li>
-												<Image src={location} width={20} height={20} alt="" />
+												<Image src={location} width={20} height={20} alt="location" />
 												address
 											</li>
 											<li>
-												<Image src={reserve} width={20} height={20} alt="" />{id}</li>
+												<Image src={reserve} width={20} height={20} alt="reserve" />{id}</li>
 										</ul>
 									</div>
 								</div>
