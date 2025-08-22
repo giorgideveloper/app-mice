@@ -115,9 +115,9 @@ export const fetchVenuesSlug = async (local, id, slug) => {
 
 // Fetches the venues filter
 
-export const fetchVenuesFilter = async (local, location, categories) => {
+export const fetchVenuesFilter = async (local, id, location, categories) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/cultural/?location=${location}&category=${categories}`, {
+		const res = await fetch(`${API_URL}${local}/venues/${id}/?location=${location}&category=${categories}`, {
 			next: { revalidate: 300 },
 		});
 		if (!res.ok) {

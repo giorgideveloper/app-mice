@@ -1,7 +1,11 @@
 import styles from './VenuesCard.module.css';
 import ClientLink from './ClientLink';
 import ImageApp from '@/app/plugins/ImageApp';
+import location from '../../image/location.svg'
+import reserve from '../../image/reserve.svg'
+import Image from 'next/image';
 export default function VenuesCard({ data, lang, id }) {
+	console.log(data);
 	return (
 		<>
 			<div className='container'>
@@ -24,8 +28,12 @@ export default function VenuesCard({ data, lang, id }) {
 									</div>
 									<div className={styles.cardFooter}>
 										<ul>
-											<li>address</li>
-											<li>capacity</li>
+											<li>
+												<Image src={location} width={20} height={20} alt="" />
+												address
+											</li>
+											<li>
+												<Image src={reserve} width={20} height={20} alt="" />{id}</li>
 										</ul>
 									</div>
 								</div>

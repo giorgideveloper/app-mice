@@ -10,12 +10,10 @@ export default function Venues({ data, lang, id, dict }) {
 	const [categories, setCategories] = useState('');
 	const [locations, setLocations] = useState('');
 	const [result, setResult] = useState(null);
-	console.log('Selected Category: ', categories);
-	console.log('Selected Location: ', locations);
 	
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await fetchVenuesFilter(lang, locations, categories);
+			const result = await fetchVenuesFilter(lang, id, locations, categories);
 			console.log('Filtered Venues: ', result);
 			setResult(result);
 		};
