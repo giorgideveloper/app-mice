@@ -5,7 +5,7 @@ export default function EventOverlay({dict, title}) {
     <>
         <div className={styles.eventHover}>
          <h3 className='fs-1'>{title}</h3>
-             <button className="btn btn-light btn-lg ">{dict?.button?.view}</button>
+             <button className="btn btn-light btn-lg">{dict?.button?.view}</button>
         </div>
     </>
   )

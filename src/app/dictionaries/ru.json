@@ -14,5 +14,23 @@
 		"back": "Назад",
 		"more": "Узнать больше",
 		"view": "Читать Далее"
+	},
+
+	"filter": {
+		"locationName": "Расположение",
+		"location": {
+			"Batumi": "Батуми",
+			"Kobuleti Municipality": "Кобулети Муниципалитет",
+			"Khelvachauri Municipality": "Хелвачаури Муниципалитет",
+			"Kheda Municipality": "Кеда Муниципалитет",
+			"Shuakhevi Municipality": "Шуакахеви Муниципалитет",
+			"Khulo Municipality": "Хуло Муниципалитет"
+		},
+		"categoryName": "Категория",
+		"category": {
+			"Indoor": "Закрытое",
+			"Outdoor": "Открытое"
+		}
+		
 	}
 }

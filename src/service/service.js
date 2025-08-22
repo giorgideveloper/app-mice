@@ -112,3 +112,20 @@ export const fetchVenuesSlug = async (local, id, slug) => {
 		throw error;
 	}
 };
+
+// Fetches the venues filter
+
+export const fetchVenuesFilter = async (local, location, categories) => {
+	try {
+		const res = await fetch(`${API_URL}${local}/venues/cultural/?location=${location}&category=${categories}`, {
+			next: { revalidate: 300 },
+		});
+		if (!res.ok) {
+			return notFound(); // Handle the case where the venues filter is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching venues filter', error);
+		throw error;
+	}
+};

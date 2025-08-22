@@ -14,5 +14,24 @@
 		"back": "უკან",
 		"more": "გაიგე მეტი",
 		"view": "სრულად"
+	},
+
+	"filter": {
+		"locationName": "ადგილმდებარეობა",
+		"location": {
+			"Batumi": "ბათუმი",
+			"Kobuleti Municipality": "კობულეთი",
+			"Khelvachauri Municipality": "ხულოს მუნიციპალიტეტი",
+			"Kheda Municipality": "ქედის მუნიციპალიტეტი",
+			"Shuakhevi Municipality": "შუახევი მუნიციპალიტეტი",
+			"Khulo Municipality": "ხულო მუნიციპალიტეტი"
+		},
+		"categoryName": "კატეგორია",
+		"category": {
+			"Indoor": "შიდა",
+			"Outdoor": "გარე"
+		}
+		
 	}
+	
 }

@@ -14,5 +14,23 @@
 		"back": "Back",
 		"more": "Learn More",
 		"view": "Explore"
+	},
+
+	"filter": {
+		"locationName": "Location",
+		"location": {
+			"Batumi": "Batumi",
+			"Kobuleti Municipality": "Kobuleti Municipality",
+			"Khelvachauri Municipality": "Khelvachauri Municipality",
+			"Kheda Municipality": "Kheda Municipality",
+			"Shuakhevi Municipality": "Shuakhevi Municipality",
+			"Khulo Municipality": "Khulo Municipality"
+		},
+		"categoryName": "Category",
+		"category": {
+			"Indoor": "Indoor",
+			"Outdoor": "Outdoor"
+		}
+		
 	}
 }

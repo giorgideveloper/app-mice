@@ -5,7 +5,7 @@ const resolveTemplate = tpl => {
 	if (tpl === 'blank_page') return 'article';
 	if (tpl === 'venue') return 'venue';
 	if (tpl === 'event') return 'event';
-	if (tpl === 'media_blog') return '';
+	if (tpl === 'media_blog') return 'media_blog';
 	return tpl || '';
 };
 const resolveSlug = slug => {
