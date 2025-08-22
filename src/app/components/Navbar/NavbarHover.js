@@ -36,15 +36,16 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 									<Link
 										onClick={e => {
 											e.preventDefault();
-											window.location.href = href;
+											window.location.href = item.is_active === false ? "#" : href;
 										}}
-										href={href}
+										href={item.is_active === false ? "#" : href}
 									>
 										<h4>{item.name}</h4>
 									</Link>
 								</div>
 								<div className={styles.hoverItems}>
 									{item?.children?.map(child => {
+									
 										const section = resolveTemplate(child.page_template);
 										const href = `/${lang}/${section}/${child.slug}`;
 										return (
@@ -52,9 +53,9 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 												<Link
 													onClick={e => {
 														e.preventDefault();
-														window.location.href = href;
+														window.location.href = child.redirect ? child.redirect : href;
 													}}
-													href={href}
+													href={child.redirect ? child.redirect : href}
 												>
 													{child.name}
 												</Link>

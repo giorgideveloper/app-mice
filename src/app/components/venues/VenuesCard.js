@@ -5,13 +5,18 @@ import location from '../../image/location.svg'
 import reserve from '../../image/reserve.svg'
 import Image from 'next/image';
 export default function VenuesCard({ data, lang, id }) {
-	console.log(data);
+	const formatTitle = (id) => {
+		if (id === 'cultural') return 'Cultural Venues';
+		if (id === 'conference') return 'Conference Venues';
+		if (id === 'sport') return 'Sport Venues';
+		return id;
+	};
 	return (
 		<>
 			<div className='container'>
-				<div className='row'>
+				<div className='row g-4'>
 					<div className='col-12'>
-						<h4 className={`pb-4 ${styles.title}`}>{id}</h4>
+						<h4 className={`${styles.title}`}>{formatTitle(id)}</h4>
 					</div>
 					{data?.results?.map(item => (
 						<div key={item.id} className='col-lg-4 col-12'>
