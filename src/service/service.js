@@ -115,9 +115,23 @@ export const fetchVenuesSlug = async (local, id, slug) => {
 
 // Fetches the venues filter
 
-export const fetchVenuesFilter = async (local, id, location, categories) => {
+export const fetchVenuesFilter = async (local, id, location = '', categories = '') => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/${id}/?location=${location}&category=${categories}`, {
+		// Create a URL with query parameters only if they have values
+		let url = `${API_URL}${local}/venues/${id}/`;
+		
+		// Add query parameters only if they exist
+		const params = new URLSearchParams();
+		if (location) params.append('location', location);
+		if (categories) params.append('category', categories);
+		
+		// Add the parameters to the URL if any exist
+		const queryString = params.toString();
+		if (queryString) {
+			url += `?${queryString}`;
+		}
+		
+		const res = await fetch(url, {
 			next: { revalidate: 300 },
 		});
 		if (!res.ok) {

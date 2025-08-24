@@ -8,7 +8,8 @@ import { IoMdAirplane } from 'react-icons/io';
 import { FaDoorClosed } from 'react-icons/fa6';
 import useFancybox from './useFancybox';
 
-export default function InnerVenue({ data }) {
+
+export default function InnerVenue({ data, backLink }) {
 	const groupByMeetingSpace = (data = []) => {
 		return data.reduce((acc, item) => {
 			const id = item.meeting_space?.id;
@@ -24,7 +25,7 @@ export default function InnerVenue({ data }) {
 	};
 
 	const grouped = groupByMeetingSpace(data?.seating_types || []);
-	// First: get unique seating types
+	
 	const uniqueSeatingNames = [
 		...new Set(
 			Object.values(grouped).flatMap(group =>

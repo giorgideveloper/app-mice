@@ -1,6 +1,6 @@
 import Venues from '@/app/components/venues/Venues';
 import { party } from '@/fonts/Fonts';
-import { fetchVenues } from '@/service/service';
+import { fetchVenues, fetchVenuesFilter } from '@/service/service';
 import { getDictionary } from '../../dictionaries';
 
 export const metadata = {
@@ -8,10 +8,22 @@ export const metadata = {
 	description: 'Internationalized App Router example',
 };
 
-export default async function page({ params }) {
-	const { lang, id, slug } = await params;
+export default async function page({ params, searchParams }) {
+	const { lang, id } = params;
     const dict = await getDictionary(lang); 
-	const data = await fetchVenues(lang, id);
+    
+    // Get filter parameters from URL
+    const category = searchParams?.category || '';
+    const location = searchParams?.location || '';
+    
+    // If filter parameters exist, fetch filtered data
+    let data;
+    if (category || location) {
+        data = await fetchVenuesFilter(lang, id, location, category);
+    } else {
+        // Otherwise fetch all venues
+        data = await fetchVenues(lang, id);
+    }
 
 	return (
 		<div className={`${party.className}`}>

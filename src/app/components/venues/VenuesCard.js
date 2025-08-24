@@ -4,13 +4,36 @@ import ImageApp from '@/app/plugins/ImageApp';
 import location from '../../image/location.svg'
 import reserve from '../../image/reserve.svg'
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
+
 export default function VenuesCard({ data, lang, id }) {
+	const searchParams = useSearchParams();
+	const category = searchParams.get('category');
+	const locationParam = searchParams.get('location');
+	
+	// Create a URL with preserved filter parameters
+	const createVenueUrl = (slug) => {
+		let baseUrl = `/${lang}/venues/${id}/${slug}`;
+		
+		// If we have filter parameters, add them to the URL
+		const params = new URLSearchParams();
+		if (category) params.set('category', category);
+		if (locationParam) params.set('location', locationParam);
+		
+		if (params.toString()) {
+			baseUrl += `?${params.toString()}`;
+		}
+		
+		return baseUrl;
+	};
+
 	const formatTitle = (id) => {
 		if (id === 'cultural') return 'Cultural Venues';
 		if (id === 'conference') return 'Conference Venues';
 		if (id === 'sport') return 'Sport Venues';
 		return id;
 	};
+	
 	return (
 		<>
 			<div className='container'>
@@ -20,7 +43,7 @@ export default function VenuesCard({ data, lang, id }) {
 					</div>
 					{data?.results?.map(item => (
 						<div key={item.id} className='col-lg-4 col-12'>
-							<ClientLink href={`/${lang}/venues/${id}/${item.slug}`}>
+							<ClientLink href={createVenueUrl(item.slug)}>
 								<div className='card border-0 rounded-4 bg-white shadow-sm'>
 									<div className={styles.cardImage}>
 										<ImageApp img={item?.image} alt={item?.name} />
