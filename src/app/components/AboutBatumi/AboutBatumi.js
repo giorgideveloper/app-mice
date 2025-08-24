@@ -52,7 +52,7 @@ export default function AboutBatumi({ data }) {
                 </div>
             </div>
              <div className="col-12 col-lg-6 pt-3  order-1 order-lg-2 g-0">
-            <div className={styles.textContainer}>
+            <div className={styles.textContainerRight}>
                   {filterRightIcons.map((icon, index) => (
                     <div key={index} className={styles.iconItem}>
                         {/* <img src={icon.image} alt={icon.title} className={styles.iconImage} /> */}
@@ -66,8 +66,11 @@ export default function AboutBatumi({ data }) {
     </div>
     <div className="container">
         <div className="row">
-            <div dangerouslySetInnerHTML={{ __html: data.about_batumi.description }} className={styles.description}>
+            <div className="col-12">
+                   <div dangerouslySetInnerHTML={{ __html: data.about_batumi.description }} className={styles.description}>
             </div>
+            </div>
+         
         </div>
     </div>
 

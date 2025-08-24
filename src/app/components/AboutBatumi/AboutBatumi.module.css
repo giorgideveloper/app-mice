@@ -80,3 +80,28 @@
   color: #666;
   font-weight: 400;
 }
+.textContainerRight {
+  max-width: 599px;
+  padding-left: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 769px) {
+  .textContainerRight {
+    padding-left: 155px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 426px) {
+  .textContainerRight {
+    padding-left: 43px;
+    padding-right: 30px;
+  }
+}
