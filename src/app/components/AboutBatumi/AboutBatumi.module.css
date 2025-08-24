@@ -20,6 +20,7 @@
   align-items: flex-start;
   justify-content: center;
   height: 100%;
+  color: #666;
 }
 @media (max-width: 991px) {
   .textContainer {
@@ -28,12 +29,54 @@
   }
 }
 
+.containerLeft {
+  display: flex;
+  justify-content: flex-end;
+  /* width: 50%; */
+  padding: 20px 50px;
+  color: #000;
+}
 .textContainerLeft {
-  max-width: 599px;
-  padding-left: 62px;
+  max-width: 560px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  height: 100%;
+}
+.description {
+  padding: 40px 0px;
+  text-align: justify;
+  font-size: 22px;
+}
+@media (max-width: 991px) {
+  .description {
+    font-size: 18px;
+    padding: 20px 0px;
+  }
+}
+
+.iconItem {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.iconImage {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+.iconTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.iconDescription {
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+  font-weight: 400;
 }

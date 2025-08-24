@@ -129,3 +129,19 @@ export const fetchVenuesFilter = async (local, id, location, categories) => {
 		throw error;
 	}
 };
+
+// Fetches the about-batumi
+export const fetchAboutBatumi = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/pages/about-batumi/`, {
+			next: { revalidate: 300 },
+		});
+		if (!res.ok) {
+			return notFound(); // Handle the case where the about-batumi page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching about-batumi', error);
+		throw error;
+	}
+};
