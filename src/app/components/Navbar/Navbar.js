@@ -7,6 +7,10 @@ import NavbarLang from './NavbarLang';
 import Link from 'next/link';
 
 export default function  Navbar({lang,menu,dict}) {
+
+
+
+    
  if (!menu || menu.length === 0) {
         return null;
     }
@@ -17,7 +21,7 @@ export default function  Navbar({lang,menu,dict}) {
 			<div className="container align-items-end py-2">
 				<Link className={`navbar-brand ${styles.brand}`} onClick={(e) => {
                         e.preventDefault();
-                        window.location.href = "/";
+                        window.location.href = `/${lang}`;
                     }} href={'/'}>
                     <Image src="/logo.svg" alt="logo" width={130} height={100} />
                 </Link>

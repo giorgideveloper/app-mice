@@ -4,10 +4,14 @@ import ka from '../../../../public/language-ka.svg'
 import en from '../../../../public/language-en.svg'
 import ru from '../../../../public/language-ru.svg'
 import styles from './NavbarLang.module.css'
-import {  useState } from "react"
+import { useState } from "react"
+import { usePathname } from "next/navigation"
+import { getTranslatedPath } from "@/app/utils/languageUtils"
 
 export default function NavbarLang({lang, className }) {
     const [isHovered, setIsHovered] = useState(false);
+    const pathname = usePathname();
+    
     const langMap = [
         {
             id: 1,
@@ -32,16 +36,21 @@ export default function NavbarLang({lang, className }) {
         ...langMap.filter(item => item.lang === lang),
         ...langMap.filter(item => item.lang !== lang)
       ];
+    
+  
+    const generateLangUrl = (targetLang) => {
+        return getTranslatedPath(pathname, lang, targetLang);
+    };
       
     return (
         <div className={className} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <a href={`/${langUrl.lang}`}><Image src={langUrl.image} alt="visit" width={24} height={24} /></a>
+            <a href={generateLangUrl(langUrl.lang)}><Image src={langUrl.image} alt="visit" width={24} height={24} /></a>
             <div className={styles.dropdownLang}> 
                 { isHovered && (
                 <ul className={styles.dropdownLangList}>
                     {reordered.map(item => (
                         <li key={item.id} className={styles.dropdownLangItem}>
-                            <a href={`/${item.lang}`}><Image src={item.image} alt="visit" width={24} height={24} /></a>
+                            <a href={generateLangUrl(item.lang)}><Image src={item.image} alt="visit" width={24} height={24} /></a>
                         </li>
                     ))}
                 </ul>
