@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import style from './VenuesFilter.module.css';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-export default function VenuesFilter({ dict, id, setCategories, setLocations }) {
+export default function VenuesFilter({ dict, id, setCategories, setLocations, locationData, categoryVenues }) {
+        console.log(categoryVenues);
         const router = useRouter();
         const searchParams = useSearchParams();
         const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
@@ -53,40 +54,48 @@ export default function VenuesFilter({ dict, id, setCategories, setLocations }) 
                 <div className={style.border}>
                         <h4>{dict.filter.categoryName}</h4>
                                 <ul className={style.checkboxList}>
-                                       {dict?.filter?.category && Object.entries(dict.filter.category).map(([key, value], index) => (
-                                        <li key={index}>
-                                             <input 
-                                                id={`venue${index + 5}`} 
-                                                className={style.roundCheckbox} 
-                                                value={key} 
-                                                name='category' 
-                                                onChange={(e) => handleCategories(e)} 
-                                                type="radio"
-                                                checked={selectedCategory === key} 
-                                             /> 
-                                             <label htmlFor={`venue${index + 5}`}>{value}</label>
-                                        </li>
-                                ))}
+                                         {categoryVenues?.results?.map(item => {
+                                            
+                                                return (
+                                                <li key={item.id}>
+                                                     <input 
+                                                        id={`category${item.id}`} 
+                                                        className={style.roundCheckbox} 
+                                                        value={item.name} 
+                                                        name='category' 
+                                                        onChange={(e) => handleCategories(e)} 
+                                                        type="radio"
+                                                        checked={selectedCategory === item.name}
+                                                     /> 
+                                                     <label htmlFor={`category${item.id}`}>{item.name}</label>
+                                                </li>
+                                                );
+                                        })}
                                 </ul>
                 </div>
 : ""}
                 <div className={style.border}>
                         <h4>{dict.filter.locationName}</h4>
                                 <ul className={style.checkboxList}>
-                                        {dict?.filter?.location && Object.entries(dict.filter.location).map(([key, value], index) => (
-                                        <li key={index}>
-                                             <input 
-                                                id={`venue${index + 3}`} 
-                                                className={style.roundCheckbox} 
-                                                value={key} 
-                                                name='location' 
-                                                onChange={(e) => handleLocation(e)} 
-                                                type="radio"
-                                                checked={selectedLocation === key}
-                                             /> 
-                                             <label htmlFor={`venue${index + 3}`}>{value}</label>
-                                        </li>
-                                ))}
+                                        {locationData?.results?.map(item => {
+                                            
+                                                return (
+                                                <li key={item.id}>
+                                                     <input 
+                                                        id={`venue${item.id}`} 
+                                                        className={style.roundCheckbox} 
+                                                        value={item.name} 
+                                                        name='location' 
+                                                        onChange={(e) => handleLocation(e)} 
+                                                        type="radio"
+                                                        checked={selectedLocation === item.name}
+                                                     /> 
+                                                     <label htmlFor={`venue${item.id}`}>{item.name}</label>
+                                                </li>
+                                                );
+                                        })}
+                                       
+                             
                                 </ul>
                 </div>
                 <div className={style.resetFilters}>

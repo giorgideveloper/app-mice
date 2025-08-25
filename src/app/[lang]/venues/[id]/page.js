@@ -1,6 +1,6 @@
 import Venues from '@/app/components/venues/Venues';
 import { party } from '@/fonts/Fonts';
-import { fetchVenues, fetchVenuesFilter } from '@/service/service';
+import { fetchCategory, fetchLocation, fetchVenues, fetchVenuesFilter } from '@/service/service';
 import { getDictionary } from '../../dictionaries';
 
 export const metadata = {
@@ -28,9 +28,12 @@ export default async function page({ params, searchParams }) {
         data = await fetchVenues(lang, id);
     }
 
+    const locationData = await fetchLocation(lang);
+    const categoryVenues = await fetchCategory(lang)
+
 	return (
 		<div className={`${party.className}`}>
-			<Venues data={data} lang={lang} id={id} dict={dict} />
+			<Venues data={data} lang={lang} id={id} dict={dict} locationData={locationData} categoryVenues={categoryVenues} />
 		</div>
 	);
 }

@@ -159,3 +159,36 @@ export const fetchAboutBatumi = async local => {
 		throw error;
 	}
 };
+
+
+// Fetches the location
+export const fetchLocation = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/venues/locations/`, {
+			next: { revalidate: 300 },
+		});
+		if (!res.ok) {
+			return notFound(); // Handle the case where the location page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching location', error);
+		throw error;
+	}
+};
+
+// Fetches category
+export const fetchCategory = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/venues/category/`, {
+			next: { revalidate: 300 },
+		});
+		if (!res.ok) {
+			return notFound(); // Handle the case where the category page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching category', error);
+		throw error;
+	}
+};

@@ -7,7 +7,7 @@ import VenuesFilter from './VenuesFilter';
 import { fetchVenuesFilter } from '@/service/service';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-export default function Venues({ data, lang, id, dict }) {
+export default function Venues({ data, lang, id, dict, locationData, categoryVenues }) {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	
@@ -48,7 +48,7 @@ export default function Venues({ data, lang, id, dict }) {
 					<div className='container-fluid'>
 						<div className='row g-0'>
 							<div className='col-md-3'>
-								<VenuesFilter data={data} id={id} setCategories={setCategories}  setLocations={setLocations}  dict={dict} />
+								<VenuesFilter data={data} id={id} setCategories={setCategories} setLocations={setLocations} dict={dict} locationData={locationData} categoryVenues={categoryVenues} />
 							</div>
 							<div className='col-md-9'>
 								<VenuesCard data={result ? result : data} lang={lang} id={id} />
