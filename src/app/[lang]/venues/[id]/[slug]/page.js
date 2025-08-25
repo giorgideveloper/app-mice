@@ -3,12 +3,15 @@ import { fetchVenuesSlug } from '@/service/service';
 import Link from 'next/link';
 
 export default async function page({ params, searchParams }) {
-	const { lang, id, slug } = params;
+	// Await params since it's a promise in newer Next.js
+	const paramsResolved = await params;
+	const { lang, id, slug } = paramsResolved;
 	const data = await fetchVenuesSlug(lang, id, slug);
 
 	const filterParams = new URLSearchParams();
-	if (searchParams?.category) filterParams.set('category', searchParams.category);
-	if (searchParams?.location) filterParams.set('location', searchParams.location);
+	const searchParamsResolved = await searchParams;
+	if (searchParamsResolved?.category) filterParams.set('category', searchParamsResolved.category);
+	if (searchParamsResolved?.location) filterParams.set('location', searchParamsResolved.location);
 	
 
 	const backToVenuesLink = `/${lang}/venues/${id}${filterParams.toString() ? `?${filterParams.toString()}` : ''}`;

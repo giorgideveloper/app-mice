@@ -9,12 +9,15 @@ export const metadata = {
 };
 
 export default async function page({ params, searchParams }) {
-	const { lang, id } = params;
+	// Await both params and searchParams since they're promises in newer Next.js
+	const paramsResolved = await params;
+	const { lang, id } = paramsResolved;
     const dict = await getDictionary(lang); 
     
-    // Get filter parameters from URL
-    const category = searchParams?.category || '';
-    const location = searchParams?.location || '';
+    // Get filter parameters from URL - await searchParams since it's a promise in newer Next.js
+    const searchParamsResolved = await searchParams;
+    const category = searchParamsResolved?.category || '';
+    const location = searchParamsResolved?.location || '';
     
     // If filter parameters exist, fetch filtered data
     let data;
