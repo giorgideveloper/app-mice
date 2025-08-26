@@ -58,16 +58,20 @@
 .iconItem {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+
   margin-bottom: 20px;
 }
 
 .iconImage {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   margin-right: 12px;
+  margin-top: 5px;
 }
-
+.iconText {
+  display: flex;
+  flex-direction: column;
+}
 .iconTitle {
   font-size: 18px;
   font-weight: bold;

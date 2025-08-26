@@ -68,6 +68,7 @@ export default function VenuesCard({ data, lang, id }) {
 							</ClientLink>
 						</div>
 					))}
+					<div className='mb-5'></div>
 				</div>
 			</div>
 		</>

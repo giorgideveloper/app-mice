@@ -2,24 +2,29 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 
+
 export default function NotFound() {
 	return (
-		<div className='min-h-screen flex flex-col items-center justify-center bg-gray-50'>
-			<div className='max-w-md w-full bg-white p-8 rounded-lg shadow-md text-center'>
-				<h1 className='text-3xl font-bold text-gray-800 mb-4'>
-					404 - Page Not Found
-					<div className='alert alert-primary' role='alert'>
-						A simple primary alert—check it out!
+		<div className='container'>
+			<div className='row justify-content-center align-items-center' style={{ height: '100vh' }}>
+				<div className='col-lg-6 col-12'>
+					<h1 className='fs-1 font-bold text-gray-800 mb-4 fw-bold'>Page not found</h1>
+					<p>Sorry, the page you are looking for does not exist. Here are some helpful links:</p>
+					<div className='d-flex gap-2'>
+						<a href="/"><button className='btn border-1 border-dark rounded-5 '>Go to back</button></a>
+						<a href="/"><button className='btn btn-danger rounded-5'>Home</button></a>
 					</div>
-				</h1>
-				<p className='text-gray-600 mb-6'>The page you</p>
-				<Image
-					src='./image/notfound.svg'
-					width={500}
-					height={500}
-					alt='Picture of the author'
-				/>
+				</div>
+				<div className='col-lg-6 col-12'>
+					<Image
+						src='./notfound.svg'
+						width={500}
+						height={500}
+						alt='Picture of the author'
+					/>
+				</div>
 			</div>
-			</div>
+		</div>
 	)
 }
+

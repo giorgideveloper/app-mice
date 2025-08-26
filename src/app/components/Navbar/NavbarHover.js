@@ -4,7 +4,7 @@ import styles from './NavbarLink.module.css';
 const resolveTemplate = tpl => {
 	if (tpl === 'blank_page') return 'article';
 	if (tpl === 'venue') return 'venue';
-	if (tpl === 'event') return 'event';
+	if (tpl === 'events') return 'events';
 	if (tpl === 'media_blog') return '';
 	if (tpl === 'about_batumi') return '';
 	return tpl || '';
@@ -14,6 +14,7 @@ const resolveSlug = slug => {
 	if (slug === 'cultural') return 'venues';
 	if (slug === 'conference') return 'venues';
 	if (slug === 'sport') return 'venues';
+	if (slug === 'events') return '';
 	return slug || '';
 };
 

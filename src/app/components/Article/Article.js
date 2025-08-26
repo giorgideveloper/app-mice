@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Article.module.css";
 import image from "../../image/image.png";
 import mainImage from "../../image/mainimage.png";
+import Gallery from "../Gallery/Gallery";
 
 export default function Article({ article }) {
   return (
@@ -14,7 +15,7 @@ export default function Article({ article }) {
               <>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: article?.short_description,
+                    __html: article?.short_description || '',
                   }}
                 ></div>
               </>
@@ -92,6 +93,7 @@ export default function Article({ article }) {
           </div>
         </div>
       </div>
+      {/* <Gallery images={article?.main_image} /> */}
     </div>
   );
 }
