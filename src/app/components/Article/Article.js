@@ -10,7 +10,7 @@ export default function Article({ article }) {
       <div className="container">
         <div className="row gap-row-3">
           <div className={`col-12 ${styles.article}`}>
-            <h1 className="fs-1">{article?.title}</h1>
+            <h1 className="fs-1 text-uppercase">{article?.title}</h1>
             {article.template === "2" ? (
               <>
                 <div

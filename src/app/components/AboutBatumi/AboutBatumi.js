@@ -3,8 +3,8 @@ import styles from './AboutBatumi.module.css'
 import ImageApp from '@/app/plugins/ImageApp'
 
 export default function AboutBatumi({ data }) {
-    const filterLeftIcons = data.about_batumi.icons.filter(icon => icon.id < 4);
-    const filterRightIcons = data.about_batumi.icons.filter(icon => icon.id >= 4);
+    const filterLeftIcons = data.about_batumi.icons.filter(icon => icon.id < 5);
+    const filterRightIcons = data.about_batumi.icons.filter(icon => icon.id >= 5);
 
 
   return (
