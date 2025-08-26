@@ -6,7 +6,6 @@ export default function AboutBatumi({ data }) {
     const filterLeftIcons = data.about_batumi.icons.filter(icon => icon.id < 4);
     const filterRightIcons = data.about_batumi.icons.filter(icon => icon.id >= 4);
 
-    console.log(data?.about_batumi?.image_1)
 
   return (
     <>
