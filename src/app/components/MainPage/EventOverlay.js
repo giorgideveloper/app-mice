@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import styles from './WigetEvents.module.css'; 
 
-export default function EventOverlay({dict, title, lang, category}) {
+export default function EventOverlay({dict, title, lang, category, data, description}) {
+  console.log('EventOverlay data', data.venues[0].description);
 
   const categorySlug = (slug) =>{
     if(slug === 'cultural') return 'cultural';
@@ -17,6 +18,7 @@ export default function EventOverlay({dict, title, lang, category}) {
     <>
         <div className={styles.eventHover}>
          <h3 className='fs-1'>{title}</h3>
+         <div className={styles.eventDescription} dangerouslySetInnerHTML={{ __html: description || '' }}></div>
          <Link onClick={e => {
 											e.preventDefault();
 											window.location.href = href;

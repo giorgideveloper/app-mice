@@ -19,3 +19,11 @@
     font-size: 12px;
   }
 }
+.button {
+  background-color: #0c2d57;
+  color: white;
+  &:hover {
+    background-color: #244267;
+    color: white;
+  }
+}

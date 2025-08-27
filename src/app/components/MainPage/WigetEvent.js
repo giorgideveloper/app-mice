@@ -39,7 +39,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
               <p></p>
             )}
             <Link href={`/${lang}/blog/${data?.media_blog[0]?.slug}`}>
-              <button className="btn btn-dark btn-lg ">
+              <button className={`btn btn-lg ${styles.button}`}>
                 {dict?.button?.more}
               </button>
             </Link>
