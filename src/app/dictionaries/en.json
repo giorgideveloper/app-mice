@@ -32,5 +32,19 @@
 			"Outdoor": "Outdoor"
 		}
 		
+	},
+	"venue-header": {
+		"cultural": {
+			"title": "Cultural Venues",
+			"subtitle": "Trip to Crossroads"
+		},
+		"conference": {
+			"title": "BUSINESS / CORPORATE VENUES",
+			"subtitle": "Meeting and Conference venues, where ideas meet success"
+		},
+		"sports": {
+			"title": "Sports Venues",
+			"subtitle": "Celebrating every moment of victory"
+		}
 	}
 }

@@ -23,7 +23,7 @@ export default async function page({ params, searchParams }) {
 					← Back to {id} venues
 				</Link>
 			</div>
-			<InnerVenue data={data} backLink={backToVenuesLink} />
+			<InnerVenue data={data} id={id}  backLink={backToVenuesLink} />
 		</>
 	);
 }

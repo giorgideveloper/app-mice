@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 export default function VenuesCard({ data, lang, id }) {
+	console.log(data)
 	const searchParams = useSearchParams();
 	const category = searchParams.get('category');
 	const locationParam = searchParams.get('location');
@@ -58,7 +59,7 @@ export default function VenuesCard({ data, lang, id }) {
 										<ul>
 											<li>
 												<Image src={location} width={20} height={20} alt="location" />
-												address
+												{item?.address?.slice(0, 10) + ' ...'}
 											</li>
 											<li>
 												<Image src={reserve} width={20} height={20} alt="reserve" />{id}</li>

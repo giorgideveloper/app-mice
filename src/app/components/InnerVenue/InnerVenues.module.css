@@ -81,8 +81,6 @@
   font-size: 1rem;
   color: #495057;
   margin: 0;
-
-
 }
 
 .description {
@@ -120,7 +118,8 @@
 }
 
 .meetingSpacesContainer {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
   background-color: #fff;
   border-radius: 8px;
   padding: 1.5rem;
@@ -177,8 +176,6 @@
     flex-direction: column;
     align-items: center;
   }
-
-
 }
 
 .contactInfo {
@@ -219,6 +216,7 @@
 .contactLogo img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .imageGalleryImage img {

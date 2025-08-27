@@ -30,6 +30,7 @@ export default async function page({ params, searchParams }) {
 
     const locationData = await fetchLocation(lang);
     const categoryVenues = await fetchCategory(lang)
+    
 
 	return (
 		<div className={`${party.className}`}>
