@@ -1,5 +1,4 @@
 import styles from './WigetBlog.module.css';
-import event from '../../image/event.webp';
 import Link from 'next/link';
 
 export const WigetBlog = ({dict, data,lang }) => {
