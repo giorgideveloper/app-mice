@@ -1,51 +1,78 @@
-'use client'
+'use client';
 
 /**
- * Helps translate the current URL path to a new language
- * This function handles various page structures and preserves dynamic segments
+ * Fast path translator for simple routes. Keeps path (minus the lang) and swaps lang.
+ * Does NOT resolve per-language slugs.
  */
 export const getTranslatedPath = (currentPath, currentLang, targetLang) => {
-  // If the path is empty or just a slash, return the base language path
-  if (!currentPath || currentPath === '/') {
-    return `/${targetLang}`;
-  }
+	if (!currentPath || currentPath === '/') return `/${targetLang}`;
 
-  // Remove the current language prefix and get the rest of the path
-  const pathWithoutLang = currentPath.replace(new RegExp(`^\\/${currentLang}`), '') || '/';
-  
-  // For simple paths without dynamic segments, just replace the language
-  if (!pathWithoutLang.includes('[') && !pathWithoutLang.includes(':')) {
-    return `/${targetLang}${pathWithoutLang}`;
-  }
+	const pathWithoutLang =
+		currentPath.replace(new RegExp(`^\/${currentLang}`), '') || '/';
+	return `/${targetLang}${pathWithoutLang}`;
+};
 
-  // Extract the base route without dynamic segments
-  // For example: /blog/[id] -> /blog/
-  let baseRoute = pathWithoutLang.split('/').filter(segment => 
-    !segment.startsWith('[') && !segment.includes(':')
-  ).join('/');
-  
-  if (!baseRoute.startsWith('/')) {
-    baseRoute = '/' + baseRoute;
-  }
-  
-  // Special case for various sections like venues, blog, etc.
-  if (currentPath.includes('/venues/') || 
-      currentPath.includes('/blog/') || 
-      currentPath.includes('/article/')) {
-    
-    // Extract the ID parameter if it exists
-    // Example: /venues/123/some-slug -> we extract 123
-    const matches = currentPath.match(/\/([^\/]+)\/([^\/]+)(\/|$)/);
-    
-    if (matches && matches.length >= 3) {
-      const section = matches[1]; // e.g., 'venues', 'blog'
-      const id = matches[2]; // e.g., '123'
-      
-      // Return the path with the same ID but new language
-      return `/${targetLang}/${section}/${id}`;
-    }
-  }
-  
-  // Default fallback - just replace the language prefix
-  return `/${targetLang}${baseRoute}`;
+/**
+ * Resolves a translated path dynamically using the API when needed.
+ * - On venue list pages: swaps language and preserves filters.
+ * - On venue detail pages: looks up the same venue in target language to get its slug.
+ * - Fallback: simple prefix swap.
+ */
+export const getTranslatedPathDynamic = async (
+	currentPath,
+	currentLang,
+	targetLang,
+	search = ''
+) => {
+	try {
+		const searchStr =
+			search && search.startsWith('?') ? search.slice(1) : search;
+
+		// Detail: /:lang/venues/:category/:slug
+		const detailRegex = new RegExp(
+			`^\/${currentLang}\/venues\/([^\/]+)\/([^\/?#]+)`
+		);
+		const detailMatch = currentPath.match(detailRegex);
+		if (detailMatch) {
+			const category = detailMatch[1];
+			const currentSlug = detailMatch[2];
+
+			const u = new URL(window.location.origin + `/api/translate-venue-slug`);
+			u.searchParams.set('currentLang', currentLang);
+			u.searchParams.set('targetLang', targetLang);
+			u.searchParams.set('category', category);
+			u.searchParams.set('slug', currentSlug);
+			if (searchStr) u.searchParams.set('search', searchStr);
+
+			const res = await fetch(u.toString(), { cache: 'no-store' });
+			if (res.ok) {
+				const json = await res.json();
+				if (json?.path) return json.path;
+			}
+
+			return `/${targetLang}/venues/${category}${
+				searchStr ? `?${searchStr}` : ''
+			}`;
+		}
+
+		// List: /:lang/venues/:category
+		const listRegex = new RegExp(`^\/${currentLang}\/venues\/([^\/?#]+)`);
+		const listMatch = currentPath.match(listRegex);
+		if (listMatch) {
+			const category = listMatch[1];
+			return `/${targetLang}/venues/${category}${
+				searchStr ? `?${searchStr}` : ''
+			}`;
+		}
+
+		const pathWithoutLang =
+			currentPath.replace(new RegExp(`^\/${currentLang}`), '') || '/';
+		return `/${targetLang}${pathWithoutLang}${
+			searchStr ? `?${searchStr}` : ''
+		}`;
+	} catch (e) {
+		const pathWithoutLang =
+			currentPath.replace(new RegExp(`^\/${currentLang}`), '') || '/';
+		return `/${targetLang}${pathWithoutLang}`;
+	}
 };

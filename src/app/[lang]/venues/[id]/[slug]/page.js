@@ -10,20 +10,24 @@ export default async function page({ params, searchParams }) {
 
 	const filterParams = new URLSearchParams();
 	const searchParamsResolved = await searchParams;
-	if (searchParamsResolved?.category) filterParams.set('category', searchParamsResolved.category);
-	if (searchParamsResolved?.location) filterParams.set('location', searchParamsResolved.location);
-	
+	if (searchParamsResolved?.category)
+		filterParams.set('category', searchParamsResolved.category);
+	if (searchParamsResolved?.location)
+		filterParams.set('location', searchParamsResolved.location);
 
-	const backToVenuesLink = `/${lang}/venues/${id}${filterParams.toString() ? `?${filterParams.toString()}` : ''}`;
-	
+	console.log(data);
+	const backToVenuesLink = `/${lang}/venues/${id}${
+		filterParams.toString() ? `?${filterParams.toString()}` : ''
+	}`;
+
 	return (
 		<>
-			<div className="container mb-4 mt-4">
-				<Link href={backToVenuesLink} className="btn btn-outline-secondary">
+			<div className='container mb-4 mt-4'>
+				<Link href={backToVenuesLink} className='btn btn-outline-secondary'>
 					← Back to {id} venues
 				</Link>
 			</div>
-			<InnerVenue data={data} id={id}  backLink={backToVenuesLink} />
+			<InnerVenue data={data} id={id} backLink={backToVenuesLink} />
 		</>
 	);
 }

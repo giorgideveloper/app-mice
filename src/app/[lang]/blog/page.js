@@ -1,13 +1,14 @@
-import Blog from "@/app/components/Blog/Blog";
-import { party } from '@/fonts/Fonts'
-import { fetchBlog } from "@/service/service";
+import Blog from '@/app/components/Blog/Blog';
+import { party } from '@/fonts/Fonts';
+import { fetchBlog } from '@/service/service';
 
-export default async function page({params}) {
-  const { lang } = await params;
-  const  data = await fetchBlog(lang);
-  return (
-    <div className={`${party.className}`}>
-      <Blog data={data} lang={lang} />
-    </div>
-  )
+export default async function page({ params }) {
+	const { lang } = await params;
+	const data = await fetchBlog(lang);
+	console.log(data);
+	return (
+		<div className={`${party.className}`}>
+			<Blog data={data} lang={lang} />
+		</div>
+	);
 }
