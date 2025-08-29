@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from '../components/BootstrapClient';
 import { notFound } from 'next/navigation';
 import Navbar from '../components/Navbar/Navbar';
+import { Suspense } from 'react';
 import '../globals.css';
 import { fetchMainPage, fetchMenu } from '@/service/service';
 import { getDictionary } from './dictionaries';
 import Footer from '../components/Footer/Footer';
-
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -24,16 +24,15 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }) {
-  const { lang } = await params;
-  return {
-    htmlAttributes: {
-      lang,
-    },
-  };
+	const { lang } = await params;
+	return {
+		htmlAttributes: {
+			lang,
+		},
+	};
 }
 
 export default async function LangLayout({ children, params }) {
-
 	const { lang } = await params;
 	// i need menu ssr
 	const menu = await fetchMenu(lang);
@@ -46,7 +45,9 @@ export default async function LangLayout({ children, params }) {
 
 	return (
 		<>
-			<Navbar lang={lang} menu={menu} dict={dict}/>
+			<Suspense fallback={null}>
+				<Navbar lang={lang} menu={menu} dict={dict} />
+			</Suspense>
 			{children}
 			<BootstrapClient />
 			<Footer data={footerData} />
