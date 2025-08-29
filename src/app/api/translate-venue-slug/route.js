@@ -31,7 +31,7 @@ export async function GET(request) {
 		if (venueNumericId != null) {
 			try {
 				const list = await fetchVenues(targetLang, category);
-				const results = Array.isArray(list?.results) ? list.results : [];
+				const results = Array.isArray(list?.venues) ? list?.venues : [];
 				const sameItem = results.find(it => it?.id === venueNumericId);
 				if (sameItem?.slug) {
 					return NextResponse.json(

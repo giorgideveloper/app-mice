@@ -9,9 +9,12 @@ import { FaDoorClosed } from 'react-icons/fa6';
 import useFancybox from './useFancybox';
 import InnerTable from './InnerTable';
 
+export default function InnerVenue({ data, backLink, id }) {
+	const galleryImages = [
+		...(data?.image ? [{ image: data.image }] : []),
+		...(data?.image_gallery || []),
+	];
 
-export default function InnerVenue({ data, backLink, id, }) {
-	
 	const [fancyboxRef] = useFancybox({
 		// Your custom options
 	});
@@ -22,9 +25,9 @@ export default function InnerVenue({ data, backLink, id, }) {
 				<div className='row'>
 					<div className='col-12 mt-5'>
 						<div className={style.imageContainer} ref={fancyboxRef}>
-							{data?.image_gallery && data?.image_gallery.length > 0 && (
+							{galleryImages && galleryImages.length > 0 && (
 								<div className={style.imageGallery}>
-									{data.image_gallery.map((image, index) => (
+									{galleryImages.map((image, index) => (
 										<a
 											key={index}
 											className={style.imageGalleryImage}
