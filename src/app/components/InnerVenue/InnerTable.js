@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styles from './InnerVenues.module.css';
 
-export default function InnerTable({data, id}) {
- 
-
-const groupByMeetingSpace = (data = []) => {
+export default function InnerTable({ data, id }) {
+	const groupByMeetingSpace = (data = []) => {
 		return data.reduce((acc, item) => {
 			const id = item.meeting_space?.id;
 			if (!acc[id]) {
@@ -19,7 +17,7 @@ const groupByMeetingSpace = (data = []) => {
 	};
 
 	const grouped = groupByMeetingSpace(data?.seating_types || []);
-	
+
 	const uniqueSeatingNames = [
 		...new Set(
 			Object.values(grouped).flatMap(group =>
@@ -27,68 +25,81 @@ const groupByMeetingSpace = (data = []) => {
 			)
 		),
 	];
-    
-  return (
-    <>
-       <table className={styles.meetingSpacesTable}>
-              <thead>
-                <tr>
-                  {(id === 'sport' ) && (
-                    <>
-                      <th> Meeting Space</th>
-                      <th>M²</th>
-                      <th>Capacity</th>
-                      <th>Sportsmen Capacity</th>
 
-                   </>
-                   )}
-                   {(id === 'cultural') && (
-                   <>
-                     <th> Meeting Space</th>
-                      <th>M²</th>
-                      <th>Capacity</th>
-                   </>
-                   )}
-                  {id === 'conference' && (
-                 <>
-                      <th>Room</th>
-                      {uniqueSeatingNames.map((name) => (
-                        <th key={name}>{name}</th>
-                      ))}
-                  </>
-                   )}
-                   
-                </tr>
-              </thead>
-              <tbody>
-                {id !== 'conference' && (
-                  <>
-                    {data?.meeting_space?.map((space, index) => (
-                      <tr key={index}>
-                        <td>{space?.meeting_space_name}</td>
-                        <td>{space?.square_meters}</td>
-                        <td>{space?.Attendees_capacity}</td>
-                        <td>{space?.Sportsmen_capacity }</td>
-                      </tr>
-                    ))}
-                  </>
-                )}
+	return (
+		<>
+			<table className={styles.meetingSpacesTable}>
+				<thead>
+					<tr>
+						{id === 'sport' && (
+							<>
+								<th> Meeting Space</th>
+								<th>M²</th>
+								<th>Capacity</th>
+								<th>Sportsmen Capacity</th>
+							</>
+						)}
+						{id === 'cultural' && (
+							<>
+								<th> Meeting Space</th>
+								<th>M²</th>
+								<th>Capacity</th>
+							</>
+						)}
+						{id === 'conference' && (
+							<>
+								<th>Room</th>
+								{uniqueSeatingNames.map(name => (
+									<th key={name}>{name}</th>
+								))}
+							</>
+						)}
+					</tr>
+				</thead>
+				<tbody>
+					{id === 'sport' && (
+						<>
+							{data?.meeting_space?.map((space, index) => (
+								<tr key={index}>
+									<td>{space?.meeting_space_name || '-'}</td>
+									<td>{space?.square_meters || '-'}</td>
+									<td>{space?.Attendees_capacity || '-'}</td>
+									<td>{space?.Sportsmen_capacity || '-'}</td>
+								</tr>
+							))}
+						</>
+					)}
+					{id === 'cultural' && (
+						<>
+							{data?.meeting_space?.map((space, index) => (
+								<tr key={index}>
+									<td>{space?.meeting_space_name || '-'}</td>
+									<td>{space?.square_meters || '-'}</td>
+									<td>{space?.Attendees_capacity || '-'}</td>
+								</tr>
+							))}
+						</>
+					)}
 
-                {id === 'conference' && (
-                  <>
-                    {Object.values(grouped).map((group) => (
-                      <tr key={group.meeting_space_name}>
-                        <td>{group.meeting_space_name}</td>
-                        {uniqueSeatingNames.map((name) => {
-                          const match = group.items.find((i) => i.seating_name === name);
-                          return <td key={name}>{match ? match.capacity : '-'}</td>;
-                        })}
-                      </tr>
-                    ))}
-                  </>
-                )}
-              </tbody>
-            </table>
-    </>
-  )
+					{id === 'conference' && (
+						<>
+							{Object.values(grouped).map(group => (
+								<tr key={group.meeting_space_name}>
+									<td>{group.meeting_space_name}</td>
+									{uniqueSeatingNames.map(name => {
+										const match = group.items.find(
+											i => i.seating_name === name
+										);
+										return (
+											<td key={name}>{match ? match.capacity || '-' : '-'}</td>
+										);
+									})}
+								</tr>
+							))}
+						</>
+					)}
+				</tbody>
+			</table>
+		</>
+	);
 }
