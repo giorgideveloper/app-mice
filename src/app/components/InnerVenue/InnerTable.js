@@ -83,8 +83,8 @@ export default function InnerTable({ data, id }) {
 
 					{id === 'conference' && (
 						<>
-							{Object.values(grouped).map(group => (
-								<tr key={group.meeting_space_name}>
+							{Object.values(grouped).map((group, index) => (
+								<tr key={index}>
 									<td>{group.meeting_space_name}</td>
 									{uniqueSeatingNames.map(name => {
 										const match = group.items.find(

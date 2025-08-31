@@ -1,6 +1,5 @@
 'use client';
 import ImageApp from '@/app/plugins/ImageApp';
-import InnerImage from './InnerImage';
 import style from './InnerVenues.module.css';
 import { CiGlobe, CiLocationOn, CiMail } from 'react-icons/ci';
 import { CiPhone } from 'react-icons/ci';

@@ -54,6 +54,11 @@
     font-size: 12px;
   }
 }
+@media (max-width: 400px) {
+  .des {
+    font-size: 14px !important; 
+  }
+}
 .button {
   background-color: #0c2d57;
   color: white;

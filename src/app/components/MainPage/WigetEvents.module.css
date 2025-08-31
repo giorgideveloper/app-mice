@@ -7,7 +7,6 @@
 .imageContainer {
   position: relative;
   height: 100%;
-
   overflow: hidden;
 }
 
@@ -41,6 +40,12 @@
   font-size: 16px;
   margin-bottom: 20px;
   text-align: justify;
+}
+@media (max-width: 425px) {
+  .eventDescription {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+  }
 }
 
 @media (max-width: 1440px) {
