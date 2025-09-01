@@ -8,6 +8,7 @@ import '../globals.css';
 import { fetchMainPage, fetchMenu } from '@/service/service';
 import { getDictionary } from './dictionaries';
 import Footer from '../components/Footer/Footer';
+import { firago } from '@/fonts/Fonts';
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -50,7 +51,7 @@ export default async function LangLayout({ children, params }) {
 			</Suspense>
 			{children}
 			<BootstrapClient />
-			<Footer data={footerData} />
+			<Footer className={`${firago.className}`} data={footerData} />
 		</>
 	);
 }

@@ -1,10 +1,12 @@
 import ImageApp from '@/app/plugins/ImageApp'
 import style from './FooterDes.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function FooterDes({data}) {
-  console.log(data[0].description)
+  console.log('footer data', data?.footer_logos?.description )
+  
   return (
     <>
     <div className={style.logo}>
@@ -14,9 +16,11 @@ export default function FooterDes({data}) {
         <div dangerouslySetInnerHTML={{ __html: data[0]?.description || '' }}></div>
       </div>
       <div className={style.minLogos}>
-        <ImageApp src='/minLogo1.svg' width={50} height={50} alt='Min logo 1' />
-        <ImageApp src='/minLogo2.svg' width={50} height={50} alt='Min logo 2' />
-        <ImageApp src='/minLogo3.svg' width={50} height={50} alt='Min logo 3' />
+        {data[0]?.logos?.map((logo, index) => (
+          <Link key={index} href={logo?.link || '#'} target='_blank' rel='noopener noreferrer'>
+            <ImageApp img={logo?.logo} width={100} height={100} alt={`Min logo ${index + 1}`} />
+          </Link>
+        ))}
       </div>
     </>
   )

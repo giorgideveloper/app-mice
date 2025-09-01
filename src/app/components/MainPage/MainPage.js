@@ -10,7 +10,7 @@ import WigetEvents from "./WigetEvents";
     return (
         <>
             <Slider data={data} dict={dict} />
-              <section >
+              <section  >
                 <WigetEvent data={data} dict={dict} lang={lang} />
             </section>
                <section>

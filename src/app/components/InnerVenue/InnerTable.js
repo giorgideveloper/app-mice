@@ -24,7 +24,20 @@ export default function InnerTable({ data, id }) {
 				group.items.map(item => item.seating_name)
 			)
 		),
-	];
+	].sort((a, b) => {
+		if (a === 'School') return -1;
+		if (b === 'School') return 1;
+		if (a === 'Square') return -2;
+		if (b === 'Square') return 2;
+		if (a === 'U-Shape') return -3;
+		if (b === 'U-Shape') return 3;
+		if (a === 'Theatre') return -4;
+		if (b === 'Theatre') return 4;
+		if (a === 'Banquet') return -5;
+		if (b === 'Banquet') return 5;
+
+		return a.localeCompare(b);	
+	});
 
 	return (
 		<>
@@ -89,7 +102,9 @@ export default function InnerTable({ data, id }) {
 									{uniqueSeatingNames.map(name => {
 										const match = group.items.find(
 											i => i.seating_name === name
+											
 										);
+										
 										return (
 											<td key={name}>{match ? match.capacity || '-' : '-'}</td>
 										);

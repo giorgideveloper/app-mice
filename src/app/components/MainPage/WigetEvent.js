@@ -51,7 +51,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
       <div
         className="d-none d-lg-block position-absolute top-0 end-0 h-100"
         style={{
-          width: "49.3vw",
+          width: "50vw",
           backgroundImage: `url(${data?.media_blog[0]?.main_image})`,
           backgroundSize: "cover",
           backgroundPosition: "right center",

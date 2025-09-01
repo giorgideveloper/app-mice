@@ -4,9 +4,9 @@
   padding: 20px 0;
 }
 .footerLinks h5 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
-  color: #344054;
+  color: #1b1f28;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -15,11 +15,12 @@
 }
 .footerLinks li {
   padding-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 .footerLinks a {
-  color: #344054;
+  color: #667085;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
 }
