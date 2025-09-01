@@ -17,7 +17,7 @@ export default function FooterDes({data}) {
       </div>
       <div className={style.minLogos}>
         {data[0]?.logos?.map((logo, index) => (
-          <Link key={index} href={logo?.link || '#'} target='_blank' rel='noopener noreferrer'>
+          <Link key={index} href={logo?.url || '#'} target='_blank' rel='noopener noreferrer'>
             <ImageApp img={logo?.logo} width={100} height={100} alt={`Min logo ${index + 1}`} />
           </Link>
         ))}
