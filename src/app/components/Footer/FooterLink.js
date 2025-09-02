@@ -14,7 +14,7 @@ export default function FooterLink({data}) {
                 </ul>
             </div>
             <div className="col-lg-6">
-                <h5>Our Other Websites</h5>
+                <h5 className='uppercase'>Contact Us</h5>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>

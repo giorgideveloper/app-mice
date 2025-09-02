@@ -28,6 +28,9 @@ export default async function page({ params, searchParams }) {
         data = await fetchVenues(lang, id);
     }
 
+    
+
+
     const locationData = await fetchLocation(lang);
     const categoryVenues = await fetchCategory(lang)
     

@@ -2,9 +2,26 @@ import Image from "next/image";
 import styles from "./Article.module.css";
 import mainImage from "../../image/mainimage.png";
 import Gallery from "../Gallery/Gallery";
+import Head from 'next/head';
 
 export default function Article({ article }) {
+
+  // Add meta title and description from article data
+  const metaTitle = article?.title || 'Article';
+  // Strip HTML tags from description for meta tag
+  const stripHtmlTags = (html) => html?.replace(/<[^>]*>/g, '') || '';
+  const metaDescription = stripHtmlTags(article?.short_description) || 'Read our latest article';
+
+  // Include Head component with meta tags
   return (
+    <>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+      </Head>
+ 
     <div>
       <div className="container">
         <div className="row gap-row-3">
@@ -94,5 +111,6 @@ export default function Article({ article }) {
       </div>
       {/* <Gallery images={article?.main_image} /> */}
     </div>
+    </>
   );
 }
