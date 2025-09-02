@@ -8,6 +8,8 @@ import { FaDoorClosed } from 'react-icons/fa6';
 import useFancybox from './useFancybox';
 import InnerTable from './InnerTable';
 
+import MapApp from '../MapApp/MapApp';
+
 export default function InnerVenue({ data, backLink, id }) {
 	const galleryImages = [
 		...(data?.image ? [{ image: data.image }] : []),
@@ -115,6 +117,10 @@ export default function InnerVenue({ data, backLink, id }) {
 						</div>
 					</div>
 				</div>
+				
+			</div>
+			<div className="container-fluid px-0">
+				<MapApp data={data} />
 			</div>
 		</>
 	);

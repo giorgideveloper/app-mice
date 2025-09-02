@@ -26,13 +26,12 @@ export default function WigetEvents({dict,data,lang}) {
                         )}
                     </div>
                 </div>
-
     )}
     
     return (
         <div className={`container-fluid px-0 py-5 ${styles.eventsSection}`}>
             <div className="row text-center py-5">
-                <h1>ღონისძიებების ადგილები</h1>
+                <h1>{dict?.["venue-title"]}</h1>
                 <p>აქ შეგიძლიათ მოიძიოთ და მოაწყოთ ღონისძიებები</p>
             </div>
             <div className="row g-0">

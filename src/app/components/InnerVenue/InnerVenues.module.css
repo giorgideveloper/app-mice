@@ -224,3 +224,53 @@
   height: 100% !important;
   object-fit: cover !important;
 }
+.mapContainer {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.mapContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.mapImage{
+  position: relative;
+
+}
+.mapImageBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border-radius: 30px;
+  border: 1px solid rgb(56, 86, 177);
+}
+
+.mapImageBtn button{
+    color: rgb(56, 86, 177); 
+    font-family: "FiraGo", sans-serif;
+}
+.mapImage::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 70, 95, 0.545);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .mapContainer img {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media (max-width: 321px) {
+  .mapImageBtn button{
+    font-size: 12px !important;
+  }
+}
