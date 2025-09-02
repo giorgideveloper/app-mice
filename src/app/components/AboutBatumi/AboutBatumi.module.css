@@ -28,12 +28,12 @@
     max-width: 100%;
   }
 }
-
+/* TODO: SimplifyS */
 .containerLeft {
   display: flex;
   justify-content: flex-end;
   /* width: 50%; */
-  padding: 20px 50px;
+  padding: 10px 50px;
   color: #000;
 }
 .textContainerLeft {
@@ -58,7 +58,6 @@
 .iconItem {
   display: flex;
   align-items: flex-start;
-
   margin-bottom: 20px;
 }
 

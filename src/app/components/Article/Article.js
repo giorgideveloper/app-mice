@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./Article.module.css";
-import image from "../../image/image.png";
 import mainImage from "../../image/mainimage.png";
 import Gallery from "../Gallery/Gallery";
 
@@ -46,10 +45,10 @@ export default function Article({ article }) {
             <div className="row">
               <div className={`col-12 ${styles.articleText}`}>
                 <p className=" fs-6">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                   vulputate libero et velit interdum, ac aliquet odio mattis.
                   Class aptent taciti sociosqu ad litora torquent per conubia
-                  nostra, per inceptos himenaeos.
+                  nostra, per inceptos himenaeos. */}
                 </p>
               </div>
             </div>

@@ -27,7 +27,6 @@ export default function AboutBatumi({ data }) {
              <div className="col-12 col-lg-6 justify-content-end g-0">
                 <div className={styles.containerLeft}>
 
-                
             <div className={styles.textContainerLeft}>
                 {filterLeftIcons.map((icon, index) => (
                     <div key={index} className={styles.iconItem}>
