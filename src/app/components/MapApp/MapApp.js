@@ -24,11 +24,12 @@ const markers = [
 ];
   return (
     <div className="row">
-      <div className={style.mapContainer}>
-        {map ? (
-          <div className={style.mapImage}>
-            <a
-              href={
+      {data?.longitude ? (
+        <div className={style.mapContainer}>
+          {map ? (
+            <div className={style.mapImage}>
+              <a
+                href={
                 data?.latitude && data?.longitude
                   ? `https://www.google.com/maps?q=${data?.latitude},${data?.longitude}`
                   : "#"
@@ -64,7 +65,7 @@ const markers = [
             </GoogleMap>
           </LoadScript>
         )}
-      </div>
+      </div>) : ''}
     </div>
   )
 }

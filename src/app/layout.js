@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export default function RootLayout({children}) {
 	return (
 		<html>
-			<body className={`${geistSans.variable} ${geistMono.variable} ${firago.className} ${arialCaps.className}`}>
+			<body>
 				{children}
 			</body>
 		</html>
