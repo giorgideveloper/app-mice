@@ -19,7 +19,6 @@ const resolveSlug = slug => {
 };
 
 const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
-	console.log(dropdown);
 	return (
 		<ul
 			className={`dropdown ${styles.dropdown}`}
