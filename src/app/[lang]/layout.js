@@ -9,6 +9,7 @@ import { fetchMainPage, fetchMenu } from '@/service/service';
 import { getDictionary } from './dictionaries';
 import Footer from '../components/Footer/Footer';
 import { firago } from '@/fonts/Fonts';
+import {arialCaps} from '@/fonts/Fonts';
 
 export async function generateStaticParams() {
 	return [{ lang: 'en' }, { lang: 'ka' }, { lang: 'ru' }];
@@ -47,7 +48,7 @@ export default async function LangLayout({ children, params }) {
 	return (
 		<>
 			<Suspense fallback={null}>
-				<Navbar lang={lang} menu={menu} dict={dict} />
+				<Navbar className={lang === 'ka' ? `${arialCaps.className}` : `${firago.className}`} lang={lang} menu={menu} dict={dict} />
 			</Suspense>
 			{children}
 			<BootstrapClient />
