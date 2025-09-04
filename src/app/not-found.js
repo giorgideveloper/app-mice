@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import notFoundImage from '@/app/image/notfound.svg'
+import Link from 'next/link';
 
 
 export default function NotFound() {
@@ -13,7 +14,7 @@ export default function NotFound() {
 					<p>Sorry, the page you are looking for does not exist. Here are some helpful links:</p>
 					<div className='d-flex gap-2'>
 						<button className='btn border-1 border-dark rounded-5 '>Go to back</button>
-					<a href="/"><button className='btn btn-danger rounded-5'>Home</button></a>
+					<Link href="/"><button className='btn btn-danger rounded-5'>Home</button></Link>
 					</div>
 				</div>
 				<div className='col-lg-6 col-12'>
