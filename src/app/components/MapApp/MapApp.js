@@ -24,7 +24,7 @@ const markers = [
 ];
   return (
     <div className="row">
-      {data?.longitude ? (
+      {data?.map_cover ? (
         <div className={style.mapContainer}>
           {map ? (
             <div className={style.mapImage}>

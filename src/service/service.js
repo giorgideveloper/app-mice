@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 
 const API_URL = process.env.BASE_URL;
+const cacheDuration = 300;
 
 export const fetchMenu = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/menu/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the menu is not found
@@ -21,7 +22,7 @@ export const fetchMenu = async local => {
 export const fetchMainPage = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/pages/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the main page is not found
@@ -37,7 +38,7 @@ export const fetchMainPage = async local => {
 export const fetchArticleById = async (id, local) => {
 	try {
 		const res = await fetch(`${API_URL}${local}/pages/list/${id}/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the article is not found
@@ -53,7 +54,7 @@ export const fetchArticleById = async (id, local) => {
 export const fetchBlog = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/pages/media-blog/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the blog  is not found
@@ -70,7 +71,7 @@ export const fetchBlog = async local => {
 export const fetchBlogById = async (id, local) => {
 	try {
 		const res = await fetch(`${API_URL}${local}/pages/media-blog/${id}/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the blog is not found
@@ -86,7 +87,7 @@ export const fetchBlogById = async (id, local) => {
 export const fetchVenues = async (local, id) => {
 	try {
 		const res = await fetch(`${API_URL}${local}/venues/${id}/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the venues are not found
@@ -101,7 +102,7 @@ export const fetchVenues = async (local, id) => {
 export const fetchVenuesSlug = async (local, id, slug) => {
 	try {
 		const res = await fetch(`${API_URL}${local}/venues/${id}/${slug}/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the venues are not found
@@ -132,7 +133,7 @@ export const fetchVenuesFilter = async (local, id, location = '', categories = '
 		}
 		
 		const res = await fetch(url, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the venues filter is not found
@@ -148,7 +149,7 @@ export const fetchVenuesFilter = async (local, id, location = '', categories = '
 export const fetchAboutBatumi = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/pages/about-batumi/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the about-batumi page is not found
@@ -165,7 +166,7 @@ export const fetchAboutBatumi = async local => {
 export const fetchLocation = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/venues/locations/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the location page is not found
@@ -181,7 +182,7 @@ export const fetchLocation = async local => {
 export const fetchCategory = async local => {
 	try {
 		const res = await fetch(`${API_URL}${local}/venues/category/`, {
-			next: { revalidate: 300 },
+			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {
 			return notFound(); // Handle the case where the category page is not found

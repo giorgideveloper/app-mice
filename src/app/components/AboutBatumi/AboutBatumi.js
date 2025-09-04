@@ -18,9 +18,9 @@ export default function AboutBatumi({ data }) {
             </div>
              <div className="col-12 col-lg-6  order-1 order-lg-2 g-0">
             <div  className={styles.textContainer}>
-               <h2>{data.about_batumi.title}</h2>
+               <h2 className={styles.title}>{data.about_batumi.title}</h2>
                <div className='pt-3' dangerouslySetInnerHTML={{ __html: data.about_batumi.small_description || '' }}></div>
-                </div>
+            </div>
             </div>
         </div>
         <div className="row">
@@ -77,10 +77,6 @@ export default function AboutBatumi({ data }) {
          
         </div>
     </div>
-
-    
-     
- 
     </>
   )
 }
