@@ -2,12 +2,11 @@ import { notFound } from 'next/navigation';
 
 const API_URL = process.env.BASE_URL;
 const cacheDuration = 300;
+const noStore = { cache: 'no-store' };
 
 export const fetchMenu = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/menu/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/menu/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the menu is not found
 		}
@@ -21,9 +20,7 @@ export const fetchMenu = async local => {
 // Fetches the main page for a specific restaurant
 export const fetchMainPage = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/pages/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/pages/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the main page is not found
 		}
@@ -37,9 +34,7 @@ export const fetchMainPage = async local => {
 // Fetches the article by ID
 export const fetchArticleById = async (id, local) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/pages/list/${id}/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/pages/list/${id}/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the article is not found
 		}
@@ -53,9 +48,7 @@ export const fetchArticleById = async (id, local) => {
 // Fetches the blog
 export const fetchBlog = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/pages/media-blog/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/pages/media-blog/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the blog  is not found
 		}
@@ -70,9 +63,7 @@ export const fetchBlog = async local => {
 
 export const fetchBlogById = async (id, local) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/pages/media-blog/${id}/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/pages/media-blog/${id}/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the blog is not found
 		}
@@ -86,9 +77,7 @@ export const fetchBlogById = async (id, local) => {
 // Fetches the venues by id
 export const fetchVenues = async (local, id) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/${id}/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/venues/${id}/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the venues are not found
 		}
@@ -101,9 +90,7 @@ export const fetchVenues = async (local, id) => {
 // Fetches the venue by slug
 export const fetchVenuesSlug = async (local, id, slug) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/${id}/${slug}/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/venues/${id}/${slug}/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the venues are not found
 		}
@@ -148,9 +135,7 @@ export const fetchVenuesFilter = async (local, id, location = '', categories = '
 // Fetches the about-batumi
 export const fetchAboutBatumi = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/pages/about-batumi/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/pages/about-batumi/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the about-batumi page is not found
 		}
@@ -165,9 +150,7 @@ export const fetchAboutBatumi = async local => {
 // Fetches the location
 export const fetchLocation = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/locations/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/venues/locations/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the location page is not found
 		}
@@ -181,9 +164,7 @@ export const fetchLocation = async local => {
 // Fetches category
 export const fetchCategory = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/venues/category/`, {
-			next: { revalidate: cacheDuration },
-		});
+		const res = await fetch(`${API_URL}${local}/venues/category/`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the category page is not found
 		}
