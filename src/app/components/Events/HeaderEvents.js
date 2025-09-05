@@ -10,11 +10,10 @@ export default function HeaderEvents() {
         <div className="col-12">
           <div className={styles.headerImage}>
           <ImageApp img={eventsHeader} alt="Events Header" />
-          <div className="container"></div>
            <div className={styles.headerContent}>
                   <h1 className="">Events</h1>
+                  <p className="">Discover upcoming events, workshops, and activities to engage with our community and enhance your experience.</p>
           </div>
-
           </div>
          
         </div>

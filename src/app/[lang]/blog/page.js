@@ -10,7 +10,6 @@ export const metadata = {
 export default async function page({ params }) {
 	const { lang } = await params;
 	const data = await fetchBlog(lang);
-	console.log(data);
 	return (
 		<div className={`${party.className}`}>
 			<Blog data={data} lang={lang} />

@@ -1,0 +1,18 @@
+.btnContainer{
+    padding: 60px 0;
+}
+.btnContainer button{
+    font-size: 40px;
+    font-family: 'firaGo', sans-serif;
+    font-weight: 700;
+    line-height: 60px;
+    color: #667085;
+}
+.btnContainer button:hover{
+    color: #6c6c6c;
+}
+
+.active{
+    color: #000000 !important;
+
+}

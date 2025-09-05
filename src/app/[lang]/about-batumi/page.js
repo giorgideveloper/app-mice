@@ -1,7 +1,7 @@
 import AboutBatumi from '@/app/components/AboutBatumi/AboutBatumi';
 import { fetchAboutBatumi } from '@/service/service';
-import React from 'react'
-import { firago } from '@/fonts/Fonts'
+import { party } from '@/fonts/Fonts';
+
 
 export default async function page({params}) {
      const { lang } = await params;
@@ -10,7 +10,7 @@ export default async function page({params}) {
 
   return (
     <div>
-        <AboutBatumi  data={aboutBatumi}  />
+        <AboutBatumi className={party.className}  data={aboutBatumi}  />
     </div>
   )
 }

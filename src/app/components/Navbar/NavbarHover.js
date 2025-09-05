@@ -34,6 +34,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 							<div className='col' key={item.id}>
 								<div className={styles.mainTitle}>
 									<Link
+										style={{ cursor: item.is_active ? 'pointer' : 'default' }}
 										onClick={e => {
 											e.preventDefault();
 											window.location.href = item.redirect ? item.redirect :  item.is_active === false ? "#" : href;
@@ -53,9 +54,15 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 										return (
 											<li className={styles.dropdownItem} key={child.id}>
 												<Link
+													target={child.redirect? '_blank' : '_self'}
+													// style={{ cursor: child.redirect ? 'pointer' : 'default' }}
 													onClick={e => {
 														e.preventDefault();
-														window.location.href = child.redirect ? child.redirect : href;
+														if (child.redirect) {
+															window.open(child.redirect, '_blank');
+														} else {
+															window.location.href = href;
+														}
 													}}
 													href={child.redirect ? child.redirect : href}
 												>

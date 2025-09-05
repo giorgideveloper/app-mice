@@ -1,0 +1,24 @@
+
+.filterItem{
+    padding-bottom: 40px
+    
+}
+.filterItem button{
+  margin-right: 10px;
+    background-color: #EAECF0;
+}
+.filterItem button:hover{
+    background-color: #D0D5DD;
+    color: black;
+}
+
+.filterItem button:focus{
+    background-color: #101828;
+    color: white;
+}
+.filterItem span{
+    font-family: 'firaGo', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}

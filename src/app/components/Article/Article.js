@@ -4,7 +4,7 @@ import mainImage from "../../image/mainimage.png";
 import Gallery from "../Gallery/Gallery";
 import Head from 'next/head';
 
-export default function Article({ article }) {
+export default function Article({ article, lang }) {
 
   // Add meta title and description from article data
   const metaTitle = article?.title || 'Article';
@@ -26,7 +26,7 @@ export default function Article({ article }) {
       <div className="container">
         <div className="row gap-row-3">
           <div className={`col-12 ${styles.article}`}>
-            <h1 className="fs-1 text-uppercase">{article?.title}</h1>
+            <h1 className="fs-1 text-uppercase" style={{fontFamily: lang === 'en' ? 'party' : 'arialCaps'}}>{article?.title}</h1>
             {article.template === "2" ? (
               <>
                 <div

@@ -12,7 +12,7 @@ const article = await fetchArticleById(id, lang);
   return (
     <div>
 
-        <Article className={party.className} article={article}/>
+        <Article className={party.className} article={article} lang={lang} />
     </div>
   )
 }

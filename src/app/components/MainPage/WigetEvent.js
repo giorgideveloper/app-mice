@@ -9,7 +9,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
         className="d-block d-lg-none w-100"
         style={{
           height: "300px",
-          backgroundImage: `url(${data?.media_blog[0]?.main_image})`,
+          backgroundImage: `url(${data?.media_blog[1]?.main_image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -26,9 +26,9 @@ export const WigetEvent = ({ dict, data, lang }) => {
             className={`col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start  p-md-5 ${styles.textContainer}`}
           >
             <h1 className="display-1 fw-bold mb-4" style={{ lineHeight: 1.1 }}>
-              {data?.media_blog[0]?.title}
+              {data?.media_blog[1]?.title}
             </h1>
-            {data?.media_blog[0]?.short_description ? (
+            {data?.media_blog[1]?.short_description ? (
               <div
                 className={`mb-4 fs-5 text-secondary ${styles.des}`}
                 dangerouslySetInnerHTML={{
@@ -38,7 +38,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
             ) : (
               <p></p>
             )}
-            <Link href={`/${lang}/blog/${data?.media_blog[0]?.slug}`}>
+            <Link href={`/${lang}/blog/${data?.media_blog[1]?.slug}`}>
               <button className={`btn btn-lg ${styles.button}`}>
                 {dict?.button?.more}
               </button>
@@ -52,7 +52,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
         className="d-none d-lg-block position-absolute top-0 end-0 h-100"
         style={{
           width: "50vw",
-          backgroundImage: `url(${data?.media_blog[0]?.main_image})`,
+          backgroundImage: `url(${data?.media_blog[1]?.main_image})`,
           backgroundSize: "cover",
           backgroundPosition: "right center",
           backgroundRepeat: "no-repeat",

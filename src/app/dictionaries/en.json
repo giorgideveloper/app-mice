@@ -47,5 +47,14 @@
 			"title": "Sports Venues",
 			"subtitle": "Celebrating every moment of victory"
 		}
+	},
+	
+	"events": {
+		"title": "Events",
+		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
+		"filter-btn": [{	"id": 1, "name": "Cultural Events"}, {"id": 2, "name": "Sports Events"}, {"id": 3, "name": "Business Events"}]
+			
+		
+
 	}
 }
