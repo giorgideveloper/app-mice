@@ -2,6 +2,7 @@ import styles from "./WigetEvent.module.css";
 import Link from "next/link";
 
 export const WigetEvent = ({ dict, data, lang }) => {
+
   return (
     <section className="position-relative" style={{ minHeight: "450px" }}>
       {/* Image for tablet and mobile - shown at top */}
@@ -32,7 +33,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
               <div
                 className={`mb-4 fs-5 text-secondary ${styles.des}`}
                 dangerouslySetInnerHTML={{
-                  __html: data?.media_blog[0]?.short_description,
+                  __html: data?.media_blog[1]?.short_description,
                 }}
               />
             ) : (
