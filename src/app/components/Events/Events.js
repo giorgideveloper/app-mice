@@ -6,7 +6,6 @@ import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 
 export default function Events({ dict, events }) {
-  console.log(events);
  
   return (
     <>
