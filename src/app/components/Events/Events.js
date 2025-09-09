@@ -5,7 +5,8 @@ import EventsBtn from './EventsBtn'
 import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 
-export default function Events({ dict }) {
+export default function Events({ dict, events }) {
+  console.log(events);
  
   return (
     <>
@@ -16,7 +17,13 @@ export default function Events({ dict }) {
           <EventsFilter dict={dict} />
         </div>
         <div className="row">
-          <EventsCard />
+          {events.results.length === 0 ? (
+            <p>No events available</p>
+          ) : (
+            events.results.map((event) => (
+              <EventsCard key={event.id} dict={dict} events={event} />
+            ))
+          )}
         </div>
       </div>
     </>

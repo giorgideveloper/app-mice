@@ -26,6 +26,7 @@
   line-height: 30px;
   color: #fcfcfd;
   max-width: 400px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {

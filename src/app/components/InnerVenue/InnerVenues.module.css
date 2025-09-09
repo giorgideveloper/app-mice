@@ -1,6 +1,7 @@
 .innerContainer {
   width: 900px;
   margin: 0 auto;
+  font-family: 'firaGO', sans-serif;
 }
 
 @media (max-width: 900px) {

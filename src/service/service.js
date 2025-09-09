@@ -174,3 +174,35 @@ export const fetchCategory = async local => {
 		throw error;
 	}
 };
+
+// Fetches the events
+export const fetchEvents = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the events page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching events', error);
+		throw error;
+	}
+}
+
+// Fetches Filter in category
+
+// Fetches Load More
+export const fetchLoadMore = async (local,url, page) => {
+	try {
+		const res = await fetch(`${API_URL}${local}${url}?page=${page}`, {
+			next: { revalidate: cacheDuration },
+		});
+		if (!res.ok) {
+			return notFound(); // Handle the case where the load more page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching load more', error);
+		throw error;
+	}
+}

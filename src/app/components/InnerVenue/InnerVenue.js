@@ -58,9 +58,7 @@ export default function InnerVenue({ data, backLink, id }) {
 						<h3 className={style.title}>{data?.name}</h3>
 						<span className={style.outdoorBadge}>{data?.location?.name}</span>
 					</div>
-					<h3 className='mt-3' style={{ marginBottom: '1em' }}>
-						Contact info:
-					</h3>
+					{/*  */}
 					<div className={style.contactInfoContainers}>
 						<div className={style.contactInfo}>
 							<ul>
@@ -105,7 +103,7 @@ export default function InnerVenue({ data, backLink, id }) {
 							</ul>
 						</div>
 					</div>
-					<h3 className='mt-3'>Description:</h3>
+					{/* <h3 className='mt-3'>Description:</h3> */}
 					<div
 						className={style.description}
 						dangerouslySetInnerHTML={{ __html: data?.description || '' }}

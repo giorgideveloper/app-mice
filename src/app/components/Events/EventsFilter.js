@@ -1,6 +1,11 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import styles from './EventsFilter.module.css'
+import calendar from '@/app/image/calendar.svg'
+import filterLines from '@/app/image/filter-lines.svg'
+
+
 import { IoMdClose } from "react-icons/io";
 
 export default function EventsFilter({ dict }) {
@@ -9,6 +14,7 @@ export default function EventsFilter({ dict }) {
 
     const handleClick = (key) => {
         setActive(active === key ? null : key);
+        console.log(key);
     }
      
   return (
@@ -21,15 +27,21 @@ export default function EventsFilter({ dict }) {
                       const label = typeof item === 'string' ? item : item?.name ?? '';
                       const key = (item && typeof item === 'object' && 'id' in item) ? item.id : index;
                         return (
-                          <button key={key} className='btn border-0' onClick={() =>  handleClick(key)}>
+                          <button key={key} className={`btn border-0 ${active === key ? styles.focus : ''}`} onClick={() =>  handleClick(key)}>
                             <span>{label}</span>
                                  {active === key ? <span className='ms-2'><IoMdClose/></span> : ''}
                             </button>
                                          );
                         })}
                 </div>
-            <div className="col-6">
-                <button className='btn border-0'>Filter 2</button>
+            <div className="col-6 justify-content-end d-flex">
+              <div className={styles.dataFilter}>
+                  <button className='btn  bg-none'><Image src={calendar} alt="Calendar" /> Select dates</button>
+                  <button className='btn  bg-none'><Image src={filterLines} alt="Filter" /> Clear filters</button>
+
+              </div>
+              
+              
             </div>
 
             </div>

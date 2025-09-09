@@ -7,6 +7,11 @@ import localFont from 'next/font/local';
             weight: '400',
             style: 'normal',
         },
+          {
+            path: './firago/FiraGO-SemiBold.otf',
+            weight: '500',
+            style: 'medium',
+        },
          {
             path: './firago/FiraGO-Bold.otf',
             weight: '700',

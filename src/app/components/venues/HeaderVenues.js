@@ -1,7 +1,7 @@
 import ImageApp from '@/app/plugins/ImageApp';
 import styles from './HeaderVenues.module.css';
 import slider from '@/app/image/sport.jpg';
-import cultural from '@/app/image/cultural.jpg';
+
 export default function HeaderVenues({ id, dict, data }) {
 	const fc = itm => {
 		if (itm === 'conference')

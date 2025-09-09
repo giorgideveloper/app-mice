@@ -1,3 +1,125 @@
-.EventsCard{
+.eventsCard{
     padding: 10px 40px;
+}
+
+.card{
+    display: flex;
+}
+
+.dataCard{
+    display: flex;
+    margin-right: 64px;
+    
+}
+.dataCard h1{
+    font-size: 60px;
+    font-family: 'firaGo', sans-serif;
+    font-weight: 600;
+    line-height: 72px;
+}
+.dataCard span{
+    font-size: 24px;
+    font-family: 'firaGo', sans-serif;
+    font-weight: 500;
+    margin-left: 10px;
+    color: #667085;
+    margin-left: 15px;
+    line-height: 32px;
+    margin-top: -25px;
+}
+.imageContainer{
+    width: 620px;
+    height: 200px;
+
+
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content{
+    width: 100%;
+    padding: 0 0 24px 24px;
+   
+}
+
+.coontent p{
+    font-size: 16px;
+    font-family: 'firaGo', sans-serif;
+    color: #101828 !important;
+    line-height: 24px;
+}
+.content p:nth-child(1){
+    font-weight: 600;
+    color: #667085;
+    text-transform: uppercase;
+}
+.content p:nth-child(2){
+    font-weight: 600;
+    font-size: 16px;
+    color: #101828;
+    line-height: 22px;
+    text-transform: uppercase;
+
+}
+.content p:nth-child(3){
+    font-weight: 600;
+    color: #667085;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 992px) {
+    .eventsCard{
+        padding: 10px 20px;
+    }
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .dataCard{
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+    .dataCard h1{
+        font-size: 48px;
+        line-height: 56px;
+    }
+    .dataCard span{
+        font-size: 20px;
+        line-height: 28px;
+        margin-left: 10px;
+        margin-top: -20px;
+    }
+    .imageContainer{
+        width: 100%;
+        height: auto;
+    }
+    .image{
+        height: auto;
+    }
+    .content{
+      padding-top: 20px;
+        text-align: left;
+    }
+}
+@media (max-width: 576px) {
+    .eventsCard{
+        padding: 10px 10px;
+    }
+    .dataCard h1{
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .dataCard span{
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 8px;
+        margin-top: -15px;
+    }
+    .content p:nth-child(2){
+        font-size: 14px;
+        line-height: 20px;
+    }
 }

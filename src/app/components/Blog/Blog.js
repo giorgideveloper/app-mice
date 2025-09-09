@@ -1,9 +1,16 @@
+'use client';
+import React, { useEffect, useState } from 'react';
+import LoadMore from '../LoadMore/LoadMore';
 import styles from './Blog.module.css'; 
 import BlogCard from './BlogCard';
 import ClientLink from './ClientLink';
 
 
 export default function Blog({data, lang}) {
+  const [post, setPost] = useState(data.results || []);
+  const [page, setPage] = useState(2);
+
+
   return (
     <>
     <div className="container-fluid px-0">
@@ -13,10 +20,10 @@ export default function Blog({data, lang}) {
     </div>
     <div className="container">
       <div className="row g-4">
-        {data?.results?.map((item) => {
+        {post?.map((item, index) => {
           const href = `/${lang}/blog/${item.slug}`;
           return (
-          <div className="col-12 col-lg-4" key={item.id}>
+          <div className="col-12 col-lg-4" key={index}>
             <ClientLink href={href}>
               <BlogCard data={item} />
             </ClientLink>
@@ -24,6 +31,10 @@ export default function Blog({data, lang}) {
 
          );
                 })}
+
+           <div className="col-12">
+            <LoadMore lang={lang} items={data?.results} post={post} setPost={setPost} page={page} setPage={setPage} />
+           </div>
       </div>
     </div>
     </>
