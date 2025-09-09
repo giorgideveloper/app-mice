@@ -9,7 +9,7 @@ export default function FooterLink({data}) {
     <div>
         <div className={`row ${style.footerLinks}`}>
             <div className="col-lg-6">
-                <h5>Our Other Websites</h5>
+                <h5>Our Websites</h5>
                 <ul>
                     {filteredData?.map((item, index) => (
                         <li key={index}><a href={item?.redirect || '#'} target='_blank'>{item?.name || 'Untitled'}</a></li>

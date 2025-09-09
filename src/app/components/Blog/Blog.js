@@ -15,7 +15,7 @@ export default function Blog({data, lang}) {
     <>
     <div className="container-fluid px-0">
       <div className="row text-center">
-        <div className={styles.header}> <h1>Blog-Articles</h1></div>
+        <div className={styles.header}> <h1>Media Blog</h1></div>
       </div>
     </div>
     <div className="container">
