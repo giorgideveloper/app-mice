@@ -11,6 +11,8 @@ import InnerTable from './InnerTable';
 import MapApp from '../MapApp/MapApp';
 
 export default function InnerVenue({ data, backLink, id }) {
+	console.log('data', data);
+
 	const galleryImages = [
 		...(data?.image ? [{ image: data.image }] : []),
 		...(data?.image_gallery || []),
@@ -25,6 +27,11 @@ export default function InnerVenue({ data, backLink, id }) {
 			<div className={`container ${style.innerContainer}`}>
 				<div className='row'>
 					<div className='col-12 mt-5'>
+						{/* <div className={style.swithcher}>
+						<span className={style.imageIcons}>Inner Venues</span>
+						</div> */}
+					
+
 						<div className={style.imageContainer} ref={fancyboxRef}>
 							{galleryImages && galleryImages.length > 0 && (
 								<div className={style.imageGallery}>
@@ -74,10 +81,23 @@ export default function InnerVenue({ data, backLink, id }) {
 									<IoMdAirplane />
 									Distance from airport: {data?.distance_from_airport} km
 								</li>
-								<li>
-									<FaDoorClosed />
-									Number of rooms: {data?.number_of_rooms}
-								</li>
+
+							
+									<li>
+										<FaDoorClosed />
+
+										{/* Number of venues | in cultural and sport*/}
+
+										{id !== 'conference' ? (
+											<>
+												Number of venues: {data?.number_of_rooms}
+											</>
+										) : <>
+												Number of rooms: {data?.number_of_rooms}
+											</>}
+									</li>
+								
+
 								<li>
 									<CiGlobe />
 									<a target='blank' href={data?.website}>

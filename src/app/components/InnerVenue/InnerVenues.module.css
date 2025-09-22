@@ -18,6 +18,29 @@
   margin-bottom: 20px;
 }
 
+.swithcher{
+  position: absolute;
+  margin-top: 20px;
+}
+
+.imageIcons{
+  background-color: white;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+
+}
+
+.mainImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+
 .innerTitle {
   font-weight: 500;
   font-size: 24px;
@@ -263,6 +286,7 @@
   background-color: rgba(46, 70, 95, 0.545);
   z-index: 1;
 }
+
 
 @media (max-width: 768px) {
   .mapContainer img {

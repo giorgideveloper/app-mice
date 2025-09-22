@@ -55,12 +55,14 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 											<li className={styles.dropdownItem} key={child.id}>
 												<Link
 													target={child.redirect? '_blank' : '_self'}
-													// style={{ cursor: child.redirect ? 'pointer' : 'default' }}
 													onClick={e => {
 														e.preventDefault();
-														if (child.redirect) {
+														if(child.param){
+															window.location.href = `/${lang}/${child.param}`;
+														}
+														else if (child.redirect) {
 															window.open(child.redirect, '_blank');
-														} else {
+														}   else {
 															window.location.href = href;
 														}
 													}}

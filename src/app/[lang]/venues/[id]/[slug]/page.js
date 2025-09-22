@@ -15,7 +15,7 @@ export default async function page({ params, searchParams }) {
 	if (searchParamsResolved?.location)
 		filterParams.set('location', searchParamsResolved.location);
 
-	console.log(data);
+
 	const backToVenuesLink = `/${lang}/venues/${id}${
 		filterParams.toString() ? `?${filterParams.toString()}` : ''
 	}`;
