@@ -3,7 +3,7 @@ import styles from './HeaderEvents.module.css'
 import eventsHeader from '@/app/image/events-header.jpg'
 import ImageApp from '@/app/plugins/ImageApp'
 
-export default function HeaderEvents() {
+export default function HeaderEvents({title}) {
   return (
     <div className='container-fluid px-0'>
       <div className="row">
@@ -11,8 +11,8 @@ export default function HeaderEvents() {
           <div className={styles.headerImage}>
           <ImageApp img={eventsHeader} alt="Events Header" />
            <div className={styles.headerContent}>
-                  <h1 className="">Events</h1>
-                  <p className="">Discover upcoming events, workshops, and activities to engage with our community and enhance your experience.</p>
+                  <h1 className="">{title}</h1>
+                  {/* <p className="">Discover upcoming events, workshops, and activities to engage with our community and enhance your experience.</p> */}
           </div>
           </div>
          

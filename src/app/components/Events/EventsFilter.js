@@ -8,13 +8,13 @@ import filterLines from '@/app/image/filter-lines.svg'
 
 import { IoMdClose } from "react-icons/io";
 
-export default function EventsFilter({ dict }) {
+export default function EventsFilter({ dict, eventTags, setFilterTag }) {
     const localDict = dict.events['filter-btn'];
     const [active, setActive] = React.useState(null);
 
-    const handleClick = (key) => {
+    const handleClick = (key, label) => {
         setActive(active === key ? null : key);
-        console.log(key);
+        setFilterTag(active === key ? null : label);
     }
      
   return (
@@ -22,13 +22,13 @@ export default function EventsFilter({ dict }) {
         <div className={styles.filterItem}>
             <div className="row">
              <div className="col-6">     
-                  {(Array.isArray(localDict) ? localDict : Object.values(localDict || {}))
+                  {(Array.isArray(eventTags) ? eventTags : Object.values(eventTags || {}))
                     .map((item, index) => {
                       const label = typeof item === 'string' ? item : item?.name ?? '';
                       const key = (item && typeof item === 'object' && 'id' in item) ? item.id : index;
                         return (
-                          <button key={key} className={`btn border-0 ${active === key ? styles.focus : ''}`} onClick={() =>  handleClick(key)}>
-                            <span>{label}</span>
+                          <button key={key} className={`btn border-0 ${active === key ? styles.focus : ''}`} onClick={() =>  handleClick(key, label)}>
+                            <span>{label + " Events"}</span>
                                  {active === key ? <span className='ms-2'><IoMdClose/></span> : ''}
                             </button>
                                          );

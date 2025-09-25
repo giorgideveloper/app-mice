@@ -7,6 +7,7 @@ const resolveTemplate = tpl => {
 	if (tpl === 'events') return 'events';
 	if (tpl === 'media_blog') return '';
 	if (tpl === 'about_batumi') return '';
+	
 	return tpl || '';
 };
 
@@ -15,6 +16,7 @@ const resolveSlug = slug => {
 	if (slug === 'conference') return 'venues';
 	if (slug === 'sport') return 'venues';
 	if (slug === 'events') return '';
+	if (slug === 'exhibitions') return '';
 	return slug || '';
 };
 
@@ -30,6 +32,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 					{dropdown.map(item => {
 						const section = resolveSlug(item.slug);
 						const href = `/${lang}/${section}/${item.slug}`;
+						console.log('item in hover', href);
 						return (
 							<div className='col' key={item.id}>
 								<div className={styles.mainTitle}>
@@ -46,11 +49,9 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 								</div>
 								<div className={styles.hoverItems}>
 									{item?.children?.map(child => {
-										
-
-									
 										const section = resolveTemplate(child.page_template);
 										const href = `/${lang}/${section}/${child.slug}`;
+										
 										return (
 											<li className={styles.dropdownItem} key={child.id}>
 												<Link

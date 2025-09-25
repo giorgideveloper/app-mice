@@ -178,7 +178,7 @@ export const fetchCategory = async local => {
 // Fetches the events
 export const fetchEvents = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=Events`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the events page is not found
 		}
@@ -189,6 +189,46 @@ export const fetchEvents = async local => {
 	}
 }
 
+// Fetches get tag 
+export const fetchEventsTag = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/tag/`, noStore); 
+		if (!res.ok) {
+			return notFound(); // Handle the case where the events tags page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching events tags', error);
+		throw error;
+	}
+}
+// Fetches Filter this tag events
+export const fetchEventsFilterTag = async (local, tag) => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/?tag=${tag}`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the events page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching events', error);
+		throw error;
+	}
+}
+
+// Fetches the Exhibitions
+export const fetchExhibitions = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/?category=Exebition`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the exhibitions page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching exhibitions', error);
+		throw error;
+	}
+}
 // Fetches Filter in category
 
 // Fetches Load More

@@ -54,7 +54,10 @@
 		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
 		"filter-btn": [{	"id": 1, "name": "Cultural Events"}, {"id": 2, "name": "Sports Events"}, {"id": 3, "name": "Business Events"}]
 			
-		
-
+	},
+	"exhibitions": {
+		"title": "Exhibitions",
+		"subtitle": "Explore captivating exhibitions showcasing art, culture, and creativity in Batumi and its surroundings"
 	}
+	
 }
