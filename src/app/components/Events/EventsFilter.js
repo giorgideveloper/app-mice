@@ -1,21 +1,77 @@
 'use client'
-import React from 'react'
+import React, { use } from 'react'
 import Image from 'next/image'
 import styles from './EventsFilter.module.css'
 import calendar from '@/app/image/calendar.svg'
 import filterLines from '@/app/image/filter-lines.svg'
-
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { IoMdClose } from "react-icons/io";
 
-export default function EventsFilter({ dict, eventTags, setFilterTag }) {
+export default function EventsFilter({ dict, eventTags, setFilterTag, setSelectedDate, setSelectedEndDate, handleClickReset, selectedReset }) {
+    const [startDate, setStartDate] = React.useState(null);
+    const [isOpen, setIsOpen] = React.useState(false);
     const localDict = dict.events['filter-btn'];
     const [active, setActive] = React.useState(null);
+    const [endDate, setEndDate] = React.useState(null);
+    
+    // Reset local state when selectedReset changes
+    React.useEffect(() => {
+      if (selectedReset) {
+        setStartDate(null);
+        setEndDate(null);
+        setActive(null);
+        setIsOpen(false);
+      }
+    }, [selectedReset]);
+
 
     const handleClick = (key, label) => {
         setActive(active === key ? null : key);
         setFilterTag(active === key ? null : label);
     }
+
+     const onChange = (dates) => {
+      const [start, end] = dates;
+      setStartDate(start);
+      setEndDate(end);
+
+    
+        if (start && end) {
+                setIsOpen(!isOpen);
+          const formatDate = (date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+          };
+      
+      const formattedStartDate = formatDate(start);
+      const formattedEndDate = formatDate(end);
+      
+      console.log(`Formatted dates: ${formattedStartDate} to ${formattedEndDate}`);
+      setSelectedDate(formattedStartDate);
+      setSelectedEndDate(formattedEndDate);
+    }
+  };
+
+ 
+
+  // useEffect(async () => {
+  //   if (selectedStartDate && selectedEndDate) {
+  //    await setFilterTag({ startDate: selectedStartDate, endDate: selectedEndDate });
+  //   }
+  // }, [startDate, endDate]);
+
+    // const handleChangeDate = (e) => {
+    //   setIsOpen(!isOpen);
+    //   setSelectedDate(e);
+    // };
+    const handleClickDate = (e) => {
+      e.preventDefault();
+      setIsOpen(true);
+
+  }
      
   return (
     <div className={styles.EventsFilter}>
@@ -31,13 +87,29 @@ export default function EventsFilter({ dict, eventTags, setFilterTag }) {
                             <span>{label + " Events"}</span>
                                  {active === key ? <span className='ms-2'><IoMdClose/></span> : ''}
                             </button>
-                                         );
+                                );
                         })}
                 </div>
             <div className="col-6 justify-content-end d-flex">
               <div className={styles.dataFilter}>
-                  <button className='btn  bg-none'><Image src={calendar} alt="Calendar" /> Select dates</button>
-                  <button className='btn  bg-none'><Image src={filterLines} alt="Filter" /> Clear filters</button>
+              <button className='btn  bg-none' onClick={handleClickDate}><Image src={calendar} alt="Calendar" /> {startDate && endDate ? startDate?.toISOString()?.split('T')[0] + ' to ' + endDate?.toISOString()?.split('T')[0] : 'Select date'} 
+                   
+                  </button>
+                  {isOpen && (
+                    <div className={styles.datePicker}>
+                  <DatePicker
+                      selected={startDate}
+                      onChange={onChange}
+                      startDate={startDate}
+                      endDate={endDate}
+                      selectsRange
+                      isClearable
+
+                      inline
+                      />
+                      </div>
+              )}
+                  <button className='btn bg-none' onClick={handleClickReset}><Image src={filterLines} alt="Filter" /> Clear filters</button>
 
               </div>
               

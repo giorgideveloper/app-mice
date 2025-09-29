@@ -216,6 +216,20 @@ export const fetchEventsFilterTag = async (local, tag) => {
 	}
 }
 
+// Fetches the events start date and end date
+export const fetchEventsDate = async (local, tag, startDate, endDate) => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/?category=Events${tag !== null ? `&tag=${tag}` : ""}&start_date=${startDate}&end_date=${endDate}`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the events page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching events', error);
+		throw error;
+	}
+}
+
 // Fetches the Exhibitions
 export const fetchExhibitions = async local => {
 	try {

@@ -10,6 +10,7 @@ export default async function page({params}) {
    const events = await fetchEvents(lang);
 
 
+
   return (
     <div>
       <Events dict={dict} lang={lang} events={events} />
