@@ -48,8 +48,9 @@ export default function InnerTable({ data, id }) {
 							<>
 								<th> Meeting Space</th>
 								<th>M²</th>
-								<th>Capacity</th>
 								<th>Sportsmen Capacity</th>
+								<th>Attendees Capacity</th>
+							
 							</>
 						)}
 						{id === 'cultural' && (
@@ -73,11 +74,12 @@ export default function InnerTable({ data, id }) {
 					{id === 'sport' && (
 						<>
 							{data?.meeting_space?.map((space, index) => (
+								
 								<tr key={index}>
 									<td>{space?.meeting_space_name || '-'}</td>
 									<td>{space?.square_meters || '-'}</td>
+									<td>{space?.sportsmen_capacity || '-'}</td>
 									<td>{space?.Attendees_capacity || '-'}</td>
-									<td>{space?.Sportsmen_capacity || '-'}</td>
 								</tr>
 							))}
 						</>

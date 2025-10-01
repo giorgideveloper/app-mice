@@ -49,24 +49,12 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
       const formattedStartDate = formatDate(start);
       const formattedEndDate = formatDate(end);
       
-      console.log(`Formatted dates: ${formattedStartDate} to ${formattedEndDate}`);
       setSelectedDate(formattedStartDate);
       setSelectedEndDate(formattedEndDate);
     }
   };
 
- 
 
-  // useEffect(async () => {
-  //   if (selectedStartDate && selectedEndDate) {
-  //    await setFilterTag({ startDate: selectedStartDate, endDate: selectedEndDate });
-  //   }
-  // }, [startDate, endDate]);
-
-    // const handleChangeDate = (e) => {
-    //   setIsOpen(!isOpen);
-    //   setSelectedDate(e);
-    // };
     const handleClickDate = (e) => {
       e.preventDefault();
       setIsOpen(true);
@@ -92,7 +80,8 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
                 </div>
             <div className="col-6 justify-content-end d-flex">
               <div className={styles.dataFilter}>
-              <button className='btn  bg-none' onClick={handleClickDate}><Image src={calendar} alt="Calendar" /> {startDate && endDate ? startDate?.toISOString()?.split('T')[0] + ' to ' + endDate?.toISOString()?.split('T')[0] : 'Select date'} 
+              <button className={`btn bg-none ${startDate && endDate ? styles.bgInput : ''}`} onClick={handleClickDate}><Image src={calendar} 
+               alt="Calendar" /> {startDate && endDate ? startDate?.toISOString()?.split('T')[0] + ' to ' + endDate?.toISOString()?.split('T')[0] : 'Select date'} 
                    
                   </button>
                   {isOpen && (
@@ -104,7 +93,6 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
                       endDate={endDate}
                       selectsRange
                       isClearable
-
                       inline
                       />
                       </div>

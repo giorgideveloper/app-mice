@@ -22,11 +22,19 @@
     font-weight: 500;
 }
 .dataFilter button{
-    background-color: rgba(255, 0, 0, 0) !important;
-    border:  1px solid #101828 !important;
+    background-color: rgba(255, 0, 0, 0) ;
+    border:  1px solid #101828 ;
 }
 .datePicker{
     position: absolute;
     z-index: 10;
     margin-top: 10px;
+}
+
+.bgInput{
+    background-color: #0c2d57 !important;
+    color: white !important;
+}
+.bgInput img{
+    color: white !important;
 }

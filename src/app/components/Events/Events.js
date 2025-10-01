@@ -5,6 +5,7 @@ import EventsBtn from './EventsBtn'
 import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 import { fetchEventsTag, fetchEventsDate, fetchEventsFilterTag } from '@/service/service';
+import { useRouter, useParams } from 'next/navigation';
 
 export default function Events({ dict, events, lang }) {
   const [eventTags, setEventTags] = useState([]);
@@ -15,6 +16,8 @@ export default function Events({ dict, events, lang }) {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
   const [selectedReset, setSelectedReset] = useState(false);
+  const router = useRouter();
+
 
   useEffect(() => {
     const fetchEventsTags = async () => {
@@ -37,9 +40,11 @@ export default function Events({ dict, events, lang }) {
         const data = await fetchEventsFilterTag(lang, filterTag);
         if(data.results.length > 0){
           setFilterTagEvents(data.results);
+          // router.push(`/${lang}/events?tag=${filterTag}`);
           return;
         }
         setFilterTagEvents(null);
+        
 
       } catch (error) {
         console.error('Error fetching event tags:', error);
@@ -54,7 +59,8 @@ export default function Events({ dict, events, lang }) {
       try {
         if (selectedStartDate && selectedEndDate) {
           const tagToFilter = filterTag || null;
-          const data = await fetchEventsDate(lang, tagToFilter, selectedStartDate, selectedEndDate);
+           const category = "Events";
+          const data = await fetchEventsDate(lang, category, tagToFilter, selectedStartDate, selectedEndDate);
           if(data.results && data.results.length > 0){
             setFilteredByDateEvents(data.results);
             return;
@@ -93,9 +99,6 @@ export default function Events({ dict, events, lang }) {
     }, [filterTagEvents, filterTag, events?.results, filteredByDateEvents, selectedStartDate, selectedEndDate]);
 
 
-
-
-
      const handleClickReset = (e) => {
        e.preventDefault();
        setFilterTag(null);
@@ -106,6 +109,7 @@ export default function Events({ dict, events, lang }) {
        setSelectedReset(prev => !prev); 
      };
 
+     
   return (
     <>
       <HeaderEvents title={dict.events.title} />
@@ -121,7 +125,7 @@ export default function Events({ dict, events, lang }) {
             <p>No events available</p>
           ) : (
            displayedEvents.map((event) => (
-              <EventsCard key={event.id} dict={dict} events={event} />
+              <EventsCard key={event.id} dict={dict} events={event} lang={lang} />
             ))
           )}
           </div>

@@ -217,9 +217,9 @@ export const fetchEventsFilterTag = async (local, tag) => {
 }
 
 // Fetches the events start date and end date
-export const fetchEventsDate = async (local, tag, startDate, endDate) => {
+export const fetchEventsDate = async (local, category, tag, startDate, endDate) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/?category=Events${tag !== null ? `&tag=${tag}` : ""}&start_date=${startDate}&end_date=${endDate}`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=${category}${tag !== null ? `&tag=${tag}` : ""}&start_date=${startDate}&end_date=${endDate}`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the events page is not found
 		}
