@@ -23,6 +23,7 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
         setActive(null);
         setIsOpen(false);
       }
+      console.log(selectedReset)
     }, [selectedReset]);
 
 
@@ -36,10 +37,9 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
       setStartDate(start);
       setEndDate(end);
 
-    
-        if (start && end) {
-                setIsOpen(!isOpen);
-          const formatDate = (date) => {
+      if (start && end) {
+          setIsOpen(!isOpen);
+            const formatDate = (date) => {
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, '0');
             const day = String(date.getDate()).padStart(2, '0');

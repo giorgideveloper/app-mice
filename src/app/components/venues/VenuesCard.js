@@ -30,7 +30,7 @@ export default function VenuesCard({ data, lang, id }) {
 	const formatTitle = id => {
 		if (id === 'cultural') return 'Cultural Venues';
 		if (id === 'conference') return 'Conference Venues';
-		if (id === 'sport') return 'Sport Venues';
+		if (id === 'sport') return 'Sports Venues';
 		return id;
 	};
 

@@ -45,7 +45,7 @@ export default function VenuesFilter({ dict, id, setCategories, setLocations, lo
                 router.push(currentPath, { scroll: false });
         }
 
-    return (
+return (
         <div className={style.venuesFilter}>
                 <div className={style.filterMap}>
                         <button className='btn'>View on Map</button>
@@ -54,7 +54,7 @@ export default function VenuesFilter({ dict, id, setCategories, setLocations, lo
                 <div className={style.border}>
                         <h4>{dict.filter.categoryName}</h4>
                                 <ul className={style.checkboxList}>
-                                         {categoryVenues?.results?.map(item => {
+                                         {categoryVenues?.results?.sort((a, b) => a.id - b.id).map(item => {
                                             
                                                 return (
                                                 <li key={item.id}>
@@ -77,8 +77,7 @@ export default function VenuesFilter({ dict, id, setCategories, setLocations, lo
                 <div className={style.border}>
                         <h4>{dict.filter.locationName}</h4>
                                 <ul className={style.checkboxList}>
-                                        {locationData?.results?.map(item => {
-                                            
+                                        {locationData?.results?.sort((a, b) => a.id - b.id).map(item => {
                                                 return (
                                                 <li key={item.id}>
                                                      <input 

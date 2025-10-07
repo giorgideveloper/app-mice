@@ -4,7 +4,7 @@
   import Image from 'next/image';
 
   export default function EventsCard({ dict, events, lang }) {
-    const eventDate = new Date(events?.event_date);
+    const eventDate = new Date(events?.event_start_date);
     
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const month = monthNames[eventDate.getMonth()];
@@ -13,7 +13,7 @@
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const dayOfWeek = dayNames[eventDate.getDay()];
     
-
+console.log(events)
     return (
       <div className={styles.eventsCard}>
         <Link onClick={(e) => {
@@ -24,7 +24,8 @@
         <div className="col">
           <div className={styles.card}>
             <div className={styles.dataCard}>
-            <h1>{events?.event_date?.slice(8, 10)}</h1>  
+            <h2>{events?.event_start_date?.slice(8, 10)}</h2> <h2>-</h2> <h2>{events?.event_end_date?.slice(8, 10)}</h2>  
+
             <span> <br/>{month}<br/>{dayOfWeek}</span> 
             </div>
             <div className={styles.imageContainer}>
