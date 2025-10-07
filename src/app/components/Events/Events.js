@@ -5,7 +5,7 @@ import EventsBtn from './EventsBtn'
 import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 import { fetchEventsTag, fetchEventsDate, fetchEventsFilterTag } from '@/service/service';
-import { useRouter, useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function Events({ dict, events, lang }) {
   const [eventTags, setEventTags] = useState([]);

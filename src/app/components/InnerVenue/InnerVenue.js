@@ -27,14 +27,12 @@ export default function InnerVenue({ data, backLink, id }) {
 			<div className={`container ${style.innerContainer}`}>
 				<div className='row'>
 					<div className='col-12 mt-5'>
-						{/* <div className={style.swithcher}>
-						<span className={style.imageIcons}>Inner Venues</span>
-						</div> */}
-					
-
 						<div className={style.imageContainer} ref={fancyboxRef}>
 							{galleryImages && galleryImages.length > 0 && (
 								<div className={style.imageGallery}>
+									<button className={`${style.navButton} ${style.prevButton}`} onClick={() => console.log('Previous image clicked')}>
+										&lt;
+									</button>
 									{galleryImages.map((image, index) => (
 										<a
 											key={index}
@@ -54,18 +52,21 @@ export default function InnerVenue({ data, backLink, id }) {
 											/>
 										</a>
 									))}
+									<button className={`${style.navButton} ${style.nextButton}`} onClick={() => console.log('Next image clicked')}>
+										&gt;
+									</button>
 								</div>
 							)}
 						</div>
-					</div>
-				</div>
+						</div>
+						</div>
 
-				<div className='row mt-3'>
-					<div className={style.titleContainer}>
-						<h3 className={style.title}>{data?.name}</h3>
-						<span className={style.outdoorBadge}>{data?.location?.name}</span>
-					</div>
-					{/*  */}
+						<div className='row mt-3'>
+						<div className={style.titleContainer}>
+							<h3 className={style.title}>{data?.name}</h3>
+							<span className={style.outdoorBadge}>{data?.location?.name}</span>
+						</div>
+						{/*  */}
 					<div className={style.contactInfoContainers}>
 						<div className={style.contactInfo}>
 							<ul>
