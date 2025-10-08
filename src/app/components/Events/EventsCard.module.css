@@ -1,5 +1,6 @@
 .eventsCard{
     padding: 10px 40px;
+      font-family: "FiraGO";
 }
 
 .card{
@@ -125,4 +126,10 @@
         font-size: 14px;
         line-height: 20px;
     }
+}
+.content svg{
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 25px;
+    margin-bottom: 5px;
 }

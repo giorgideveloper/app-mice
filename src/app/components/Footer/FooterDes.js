@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 
 export default function FooterDes({data}) {
-  console.log('footer data', data?.footer_logos?.description )
   
   return (
     <>

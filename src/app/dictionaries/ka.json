@@ -15,7 +15,7 @@
 		"more": "გაიგე მეტი",
 		"view": "სრულად"
 	},
-	"venue-title": "ღონისძიებების ადგილები",
+	"venue-title": "ღონისძიებების სირვცეები",
 
 	"filter": {
 		"locationName": "ადგილმდებარეობა",
@@ -57,6 +57,10 @@
 			"business": "Business Events"
 		}
 
+	},
+	"footer": {
+		"web-links": "ჩვენი ვებგვერდები",
+		"contact": "კონტაქტი",
+		"app-download": "აპლიკაცია"
 	}
-	
 }

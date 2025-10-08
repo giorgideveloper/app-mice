@@ -4,7 +4,7 @@ import FooterDes from "./FooterDes";
 import FooterLink from "./FooterLink";
 import FooterApp from "./FooterApp";
 
-export default function Footer({data}) {
+export default function Footer({data, dict}) {
   return (
     <div className={style.footer}>
       <div className="container">
@@ -13,10 +13,10 @@ export default function Footer({data}) {
                 <FooterDes data={data.footer_logos} />
             </div>
             <div className="col-12 col-lg-5 mt-4">
-                <FooterLink data={data.footer_menu} />
+                <FooterLink data={data.footer_menu} dict={dict} />
             </div>
             <div className="col-12 col-lg-2 mt-4">
-              <FooterApp/>
+              <FooterApp dict={dict} />
             </div>
         </div>
         <div className="col-12">

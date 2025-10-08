@@ -7,8 +7,8 @@ import { IoMdAirplane } from 'react-icons/io';
 import { FaDoorClosed } from 'react-icons/fa6';
 import useFancybox from './useFancybox';
 import InnerTable from './InnerTable';
-
 import MapApp from '../MapApp/MapApp';
+import { GrNext,GrPrevious } from "react-icons/gr";
 
 export default function InnerVenue({ data, backLink, id }) {
 	console.log('data', data);
@@ -31,7 +31,7 @@ export default function InnerVenue({ data, backLink, id }) {
 							{galleryImages && galleryImages.length > 0 && (
 								<div className={style.imageGallery}>
 									<button className={`${style.navButton} ${style.prevButton}`} onClick={() => console.log('Previous image clicked')}>
-										&lt;
+										<GrPrevious />
 									</button>
 									{galleryImages.map((image, index) => (
 										<a
@@ -53,7 +53,7 @@ export default function InnerVenue({ data, backLink, id }) {
 										</a>
 									))}
 									<button className={`${style.navButton} ${style.nextButton}`} onClick={() => console.log('Next image clicked')}>
-										&gt;
+										<GrNext />
 									</button>
 								</div>
 							)}

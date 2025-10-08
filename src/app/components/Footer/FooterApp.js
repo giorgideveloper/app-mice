@@ -6,11 +6,11 @@ import playStore from '@/app/image/playStore.png'
 import object from '@/app/image/OBJECTS.png'
 
 
-export default function FooterApp() {
+export default function FooterApp({dict}) {
   return (
     <>
         <div className={styles.downloadApp}>
-                <h5>GET THE APP</h5>
+                <h5>{dict?.footer?.['app-download']}</h5>
                 <a href='#' className="">
                     <Image src={appStore} alt="Google Play" width={100} height={30}  className={styles.appImg}  />
                 </a>

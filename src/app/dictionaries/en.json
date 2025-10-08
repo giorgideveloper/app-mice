@@ -58,6 +58,11 @@
 	"exhibitions": {
 		"title": "Exhibitions",
 		"subtitle": "Explore captivating exhibitions showcasing art, culture, and creativity in Batumi and its surroundings"
+	},
+	"footer": {
+		"web-links": "Our Websites",
+		"contact": "Contact",
+		"app-download": "GET THE APP"
 	}
 	
 }

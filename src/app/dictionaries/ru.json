@@ -57,5 +57,10 @@
 			"business": "Business Events"
 		}
 
+	},
+	"footer": {
+		"web-links": "ჩვენი ვებგვერდები",
+		"contact": "კონტაქტი",
+		"app-download": "აპლიკაციის ჩამოტვირთვა"
 	}
 }

@@ -6,6 +6,7 @@ import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 import { fetchEventsTag, fetchEventsDate, fetchEventsFilterTag } from '@/service/service';
 import { useRouter } from 'next/navigation';
+import styles from './Events.module.css'
 
 export default function Events({ dict, events, lang }) {
   const [eventTags, setEventTags] = useState([]);
@@ -114,7 +115,7 @@ export default function Events({ dict, events, lang }) {
     <>
       <HeaderEvents title={dict.events.title} />
       <div className="container">
-        <div className="row">
+        <div className={`row ${styles.events}`}>
           <EventsBtn dict={dict} lang={lang} />
           <EventsFilter dict={dict} eventTags={eventTags} setFilterTag={setFilterTag} setSelectedDate={setSelectedDate} setSelectedEndDate={setSelectedEndDate} handleClickReset={handleClickReset} selectedReset={selectedReset} />
         </div>

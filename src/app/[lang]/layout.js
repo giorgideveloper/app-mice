@@ -52,7 +52,7 @@ export default async function LangLayout({ children, params }) {
 			</Suspense>
 			{children}
 			<BootstrapClient />
-			<Footer className={`${firago.className}`} data={footerData} />
+			<Footer className={`${firago.className}`} data={footerData} dict={dict} />
 		</>
 	);
 }

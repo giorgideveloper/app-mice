@@ -2,6 +2,8 @@
   import Link from 'next/link';
   import styles from './EventsCard.module.css'
   import Image from 'next/image';
+  import { IoLocationOutline } from "react-icons/io5";
+
 
   export default function EventsCard({ dict, events, lang }) {
     const eventDate = new Date(events?.event_start_date);
@@ -36,7 +38,7 @@
               <p  className={styles.description} dangerouslySetInnerHTML={
                 { __html: events?.short_description || 'No description available' }
               }></p>
-              <p>WHERE: {events?.place}</p>
+              <p><IoLocationOutline /> {events?.place}</p>
             </div>
           </div>
         </div>
