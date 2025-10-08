@@ -13,7 +13,7 @@
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const dayOfWeek = dayNames[eventDate.getDay()];
     
-console.log(events)
+
     return (
       <div className={styles.eventsCard}>
         <Link onClick={(e) => {
@@ -34,7 +34,7 @@ console.log(events)
             <div className={styles.content}>
               <p>{events?.name}</p>
               <p  className={styles.description} dangerouslySetInnerHTML={
-                { __html: events?.description || 'No description available' }
+                { __html: events?.short_description || 'No description available' }
               }></p>
               <p>WHERE: {events?.place}</p>
             </div>

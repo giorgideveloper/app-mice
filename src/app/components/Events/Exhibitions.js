@@ -8,6 +8,7 @@ import { fetchEventsDate, } from '@/service/service';
 
 
 export default function Exhibitions({ dict, events, lang }) {
+  console.log('events', events);
     const [selectedStartDate, setSelectedDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
     const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
