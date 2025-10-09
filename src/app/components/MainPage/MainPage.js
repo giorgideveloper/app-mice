@@ -4,6 +4,7 @@ import { WigetEvent } from "./WigetEvent";
 import styles from './WhyBatumi.module.css'; 
 import { WigetBlog } from "./WigetBlog";
 import WigetEvents from "./WigetEvents";
+import VenueVideo from "./VenueVideo";
 
  export  const MainPage = ({data, dict, lang }) => {
  
@@ -19,6 +20,9 @@ import WigetEvents from "./WigetEvents";
           
             <section className={styles.whyBatumiSection}>
                 <WhyBatumi data={data} />
+            </section>
+            <section>
+                <VenueVideo  data={data} />
             </section>
          
             <section>

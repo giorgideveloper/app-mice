@@ -31,7 +31,14 @@
             <span> <br/>{month}<br/>{dayOfWeek}</span> 
             </div>
             <div className={styles.imageContainer}>
-              <Image src={events?.image} alt="Event Image" width={320} height={200} className={styles.image} />
+              <Image 
+                src={events?.image} 
+                alt="Event Image" 
+                width={820} 
+                height={200} 
+                className={styles.image}
+                priority={true} 
+              />
             </div>
             <div className={styles.content}>
               <p>{events?.name}</p>
