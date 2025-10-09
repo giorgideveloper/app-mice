@@ -1,0 +1,169 @@
+.galleryContainer {
+  position: relative;
+  margin: 20px 0;
+}
+
+.galleryWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.imageScrollContainer {
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.imageScrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.imageContainer {
+  flex: 0 0 auto;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.fancyboxLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.galleryImage {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.zoomIcon {
+  color: white;
+  width: 36px;
+  height: 36px;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imageWrapper:hover .zoomIcon {
+  transform: scale(1);
+}
+
+.imageWrapper:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.navButton {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navButton:focus {
+  outline: none;
+}
+
+/* Left button positioning */
+.navButton:first-of-type {
+  left: 10px;
+}
+
+/* Right button positioning */
+.navButton:last-of-type {
+  right: 10px;
+}
+
+/* Fancybox customization */
+:global(.fancybox__backdrop) {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+:global(.fancybox__container) {
+  --fancybox-bg: rgba(24, 24, 27, 0.93);
+}
+
+:global(.fancybox__toolbar) {
+  --fancybox-color: #fff;
+}
+
+:global(.fancybox-zoomIn) {
+  animation: fancyboxZoomIn .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+:global(.fancybox-zoomOut) {
+  animation: fancyboxZoomOut .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fancyboxZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fancyboxZoomOut {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .navButton {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .imageContainer {
+    margin-right: 10px;
+  }
+}

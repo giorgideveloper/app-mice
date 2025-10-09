@@ -5,15 +5,20 @@ import EventsBtn from './EventsBtn'
 import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 import { fetchEventsDate, } from '@/service/service';
+import LoadMore from '../LoadMore/LoadMore'
 
 
 export default function Exhibitions({ dict, events, lang }) {
-  console.log('events', events);
     const [selectedStartDate, setSelectedDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
     const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
     const [displayedEvents, setDisplayedEvents] = useState();
     const [selectedReset, setSelectedReset] = useState(false);
+    const [mainUrl, setMainUrl] = useState('/event/?category=Exebition/');
+    const [post, setPost] = useState(events.results || []);
+    const [page, setPage] = useState(2);
+    console.log(post.length, 'post length');
+
 
      useEffect(() => {
         const eventsFilterDate = async () => {
@@ -50,9 +55,9 @@ export default function Exhibitions({ dict, events, lang }) {
       }
       else {
         // Default: show all events
-        setDisplayedEvents(events?.results || []);
+        setDisplayedEvents(post|| []);
       }
-    }, [ events?.results, filteredByDateEvents, selectedStartDate, selectedEndDate]);
+    }, [post, events?.results, filteredByDateEvents, selectedStartDate, selectedEndDate]);
 
 
      const handleClickReset = (e) => {
@@ -62,8 +67,7 @@ export default function Exhibitions({ dict, events, lang }) {
        setFilteredByDateEvents([]);
        setSelectedReset(prev => !prev); 
      };
-
-     console.log('displayedEvents', displayedEvents);
+console.log(post, 'post length');
   return (
     <>
       <HeaderEvents title={dict.exhibitions.title} />
@@ -81,6 +85,13 @@ export default function Exhibitions({ dict, events, lang }) {
                   ))
                 )}
               </div>
+                <div className="row">
+                      <div className="col-12">
+                        {post?.length >= 10 && (
+                          <LoadMore lang={lang} items={events?.results} post={post} setPost={setPost} page={page} setPage={setPage} mainUrl={mainUrl} />
+                        )}
+                      </div>
+                    </div>
             </div>
     </>
   )

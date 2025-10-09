@@ -2,22 +2,24 @@
 import React, { useState } from 'react'
 import { fetchLoadMore } from '../../../service/service';
 import styles from './LoadMore.module.css';
-export default function LoadMore({lang, items, post, setPost, page, setPage}) {
+
+
+export default function LoadMore({lang, items, post, setPost, page, setPage, mainUrl}) {
     
     const [haseMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
-    const [url, setUrl] = useState('/pages/media-blog/');
+    const [url, setUrl] = useState(mainUrl || '/pages/media-blog/');
 
     const handleLoadMore = async () => {
        setLoading(true);
-       const data = await fetchLoadMore(lang,url, page)
+       const data = await fetchLoadMore(lang, url, page)
        
        if (data?.results?.length > 0) {
            setPost(prev => [...prev, ...data.results]);
            setPage(prev => prev + 1);
        }
        else{
-              setHasMore(false);
+           setHasMore(false);
        }
        setLoading(false);
        setHasMore(false);

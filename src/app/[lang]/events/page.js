@@ -8,6 +8,7 @@ export default async function page({params}) {
   const { lang } = await params;
    const dict = await getDictionary(lang); 
    const events = await fetchEvents(lang);
+   console.log('events:', events);
 
 
 
