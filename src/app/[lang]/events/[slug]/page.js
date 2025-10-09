@@ -1,4 +1,5 @@
 import InnerEvent from "@/app/components/InnerEvent/InnerEvent";
+import { fetchEventBySlug } from "@/service/service";
 
 export async function generateMetadata({ params })  {
     const { lang, slug } = await params;
@@ -9,8 +10,9 @@ export async function generateMetadata({ params })  {
   }
 export default async function page({ params }) {
     const { lang, slug } = await params;
+    const eventData = await fetchEventBySlug(lang, slug);
 
   return (
-    <div><InnerEvent slug={slug} lang={lang} /></div>
+    <div><InnerEvent slug={slug} lang={lang} eventData={eventData} /></div>
   )
 }

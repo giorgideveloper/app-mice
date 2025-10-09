@@ -243,7 +243,19 @@ export const fetchExhibitions = async local => {
 		throw error;
 	}
 }
-// Fetches Filter in category
+// Fetches inner event by slug
+export const fetchEventBySlug = async (local, slug) => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/${slug}/`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the event is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching event by slug', error);
+		throw error;
+	}
+}
 
 // Fetches Load More
 export const fetchLoadMore = async (local,url, page) => {

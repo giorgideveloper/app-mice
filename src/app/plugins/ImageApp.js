@@ -3,6 +3,8 @@ import React from 'react';
 import main from '@/app/image/main.png';
 
 export default function ImageApp({ img, alt }) {
+	
+	
 	return (
 		<>
 			{' '}

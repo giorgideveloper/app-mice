@@ -2,17 +2,18 @@
 import ImageApp from '@/app/plugins/ImageApp';
 import styles from './InnerEvent.module.css';
 
-export default function InnerEvent({ slug, lang }) {
+export default function InnerEvent({ eventData }) {
+  console.log('InnerEvent eventData:', eventData.image);
   return (
     <>
     <div className="container">
       <div className="row">
         <div className="col">
           <div className={styles.imageContainer}>
-             <ImageApp/>
+             <ImageApp img={eventData?.image} alt={eventData?.name} />
           </div>
-          <div className={styles.textContainer}>InnerEvent - {slug} - {lang}</div>
-          <div className={styles.descriptionContainer}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim fuga alias, dicta adipisci iusto minus labore eius omnis sequi consectetur impedit dolore laudantium voluptate, assumenda nostrum, laboriosam magnam nesciunt. Asperiores!</div>
+          <div className={styles.textContainer}>{eventData.name}</div>
+          <div className={styles.descriptionContainer}><div dangerouslySetInnerHTML={{ __html: eventData?.description || ""}}></div></div>
         </div>
       </div>
     </div>
