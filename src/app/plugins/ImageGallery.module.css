@@ -119,23 +119,23 @@
 }
 
 /* Fancybox customization */
-:global(.fancybox__backdrop) {
+.galleryContainer :global(.fancybox__backdrop) {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
-:global(.fancybox__container) {
+.galleryContainer :global(.fancybox__container) {
   --fancybox-bg: rgba(24, 24, 27, 0.93);
 }
 
-:global(.fancybox__toolbar) {
+.galleryContainer :global(.fancybox__toolbar) {
   --fancybox-color: #fff;
 }
 
-:global(.fancybox-zoomIn) {
+.galleryContainer :global(.fancybox-zoomIn) {
   animation: fancyboxZoomIn .3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-:global(.fancybox-zoomOut) {
+.galleryContainer :global(.fancybox-zoomOut) {
   animation: fancyboxZoomOut .3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
