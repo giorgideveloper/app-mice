@@ -21,12 +21,13 @@ import VenueVideo from "./VenueVideo";
             <section className={styles.whyBatumiSection}>
                 <WhyBatumi data={data} />
             </section>
-            <section>
-                <VenueVideo  data={data} />
-            </section>
+           
          
             <section>
                 <WigetEvents data={data} dict={dict} lang={lang} />
+            </section>
+             <section>
+                <VenueVideo  data={data} />
             </section>
         </>
     );

@@ -1,9 +1,13 @@
 "use client"
 import React from 'react'
 import styles from './VenueVideo.module.css';
+import SimpleParallax from "simple-parallax-js";
+import ImageApp from '@/app/plugins/ImageApp';
+import Image from 'next/image';
+import thumbnail from '@/app/image/cultural.jpg';
 
 export default function VenueVideo({data}) {
-    const [isVisible, setIsVisible] = React.useState(false);
+    const [hasBeenVisible, setHasBeenVisible] = React.useState(false);
     const videoRef = React.useRef(null);
     
     // Convert regular YouTube URL to embed URL
@@ -22,9 +26,18 @@ export default function VenueVideo({data}) {
     React.useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsVisible(entry.isIntersecting);
+                // If the video comes into view, set hasBeenVisible to true
+                // This will ensure the video continues playing even after scrolling away
+                if (entry.isIntersecting) {
+                    setHasBeenVisible(true);
+                    
+                    // Once the video has been visible once, we can disconnect the observer
+                    if (videoRef.current) {
+                        observer.unobserve(videoRef.current);
+                    }
+                }
             },
-            { threshold: 0.3 }
+            { threshold: 0.1 } // Reduced threshold to start video earlier
         );
         
         if (videoRef.current) {
@@ -41,13 +54,19 @@ export default function VenueVideo({data}) {
     return (
         <div className='container-fluid p-0'>
             <div className='row m-0'>
+                <div className="col-12">
+                     {/* <SimpleParallax  scale={1.7}>
+                         <Image src={thumbnail} alt={"image"} width={768} height={430} />
+                     </SimpleParallax> */}
+                </div>
                 <div className='col-12 p-0'>
+              
                     {data?.video_on_main?.video_url && (
                         <div 
                             className={styles.videoWrapper} 
                             style={{ 
                                 height: '100vh',  /* Force full viewport height */
-                                maxHeight: '600px',
+                                maxHeight: '700px',
                                 overflow: 'hidden',
                             
                             }}
@@ -64,7 +83,9 @@ export default function VenueVideo({data}) {
                                     overflow: 'hidden'
                                 }}
                             >
-                                {isVisible && (
+                               
+                                {hasBeenVisible && (
+                                           <SimpleParallax scale={1.5}>
                                     <iframe
                                         className={styles.fullVideo}
                                         src={getEmbedUrl(data?.video_on_main?.video_url)}
@@ -81,10 +102,12 @@ export default function VenueVideo({data}) {
                                             transform: 'scale(1.5)', /* Slightly scale up to remove black bars */
                                         }}
                                     ></iframe>
+                                    </SimpleParallax>
                                 )}
                             </div>
                         </div>
                     )}
+                 
                 </div>
             </div>
         </div>

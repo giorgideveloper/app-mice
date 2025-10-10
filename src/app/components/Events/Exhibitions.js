@@ -70,7 +70,7 @@ export default function Exhibitions({ dict, events, lang }) {
 console.log(post, 'post length');
   return (
     <>
-      <HeaderEvents title={dict.exhibitions.title} />
+      <HeaderEvents title={dict?.exhibitions?.title} />
       <div className="container">
               <div className="row">
                 <EventsBtn dict={dict} lang={lang} />

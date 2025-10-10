@@ -6,7 +6,6 @@ import event from '@/app/image/event-header2.png'
 
 
 export default function HeaderEvents({title}) {
-  console.log("Title in HeaderEvents:", title);
   return (
     <div className='container-fluid px-0'>
       <div className="row">
