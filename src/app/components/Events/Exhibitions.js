@@ -14,10 +14,10 @@ export default function Exhibitions({ dict, events, lang }) {
     const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
     const [displayedEvents, setDisplayedEvents] = useState();
     const [selectedReset, setSelectedReset] = useState(false);
-    const [mainUrl, setMainUrl] = useState('/event/?category=Exebition/');
+    const [mainUrl, setMainUrl] = useState('/event/?category=Exebition&page=');
     const [post, setPost] = useState(events.results || []);
     const [page, setPage] = useState(2);
-    console.log(post.length, 'post length');
+    console.log(post, 'post length');
 
 
      useEffect(() => {
@@ -67,7 +67,6 @@ export default function Exhibitions({ dict, events, lang }) {
        setFilteredByDateEvents([]);
        setSelectedReset(prev => !prev); 
      };
-console.log(post, 'post length');
   return (
     <>
       <HeaderEvents title={dict?.exhibitions?.title} />

@@ -258,9 +258,9 @@ export const fetchEventBySlug = async (local, slug) => {
 }
 
 // Fetches Load More
-export const fetchLoadMore = async (local,url, page) => {
+export const fetchLoadMore = async (local, url, page) => {
 	try {
-		const res = await fetch(`${API_URL}${local}${url}?page=${page}`, {
+		const res = await fetch(`${API_URL}${local}${url}${page}`, {
 			next: { revalidate: cacheDuration },
 		});
 		if (!res.ok) {

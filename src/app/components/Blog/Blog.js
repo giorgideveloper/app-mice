@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import LoadMore from '../LoadMore/LoadMore';
 import styles from './Blog.module.css'; 
 import BlogCard from './BlogCard';

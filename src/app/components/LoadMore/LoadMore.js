@@ -5,14 +5,15 @@ import styles from './LoadMore.module.css';
 
 
 export default function LoadMore({lang, items, post, setPost, page, setPage, mainUrl}) {
-    
+    console.log(page, 'items in load more');
     const [haseMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
-    const [url, setUrl] = useState(mainUrl || '/pages/media-blog/');
+    const [url, setUrl] = useState(mainUrl || '/pages/media-blog/?page=');
 
     const handleLoadMore = async () => {
        setLoading(true);
        const data = await fetchLoadMore(lang, url, page)
+       console.log(data, 'load more data');
        
        if (data?.results?.length > 0) {
            setPost(prev => [...prev, ...data.results]);

@@ -24,6 +24,7 @@ export default function Events({ dict, events, lang }) {
   const [page, setPage] = useState(2);
 
 
+
   useEffect(() => {
     const fetchEventsTags = async () => {
       try {
