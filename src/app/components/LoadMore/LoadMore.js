@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import { fetchLoadMore } from '../../../service/service';
 import styles from './LoadMore.module.css';
 
-
-export default function LoadMore({lang, items, post, setPost, page, setPage, mainUrl}) {
-    console.log(page, 'items in load more');
+export default function LoadMore({lang, items, post, setPost, page, setPage, mainUrl, dict}) {
     const [haseMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
     const [url, setUrl] = useState(mainUrl || '/pages/media-blog/?page=');
+    
+
+    
 
     const handleLoadMore = async () => {
        setLoading(true);
@@ -27,7 +28,6 @@ export default function LoadMore({lang, items, post, setPost, page, setPage, mai
       
     }
     
-   
   return (
     <div className={`text-center ${styles.loadMoreButton}`}>
     {haseMore &&(
@@ -39,7 +39,7 @@ export default function LoadMore({lang, items, post, setPost, page, setPage, mai
             
          }} onClick={handleLoadMore} disabled={loading}>
             <span>
-                 {loading ? 'Loading...' : 'Load More'}
+                 {loading ? 'Loading...' : dict['load-more'] || 'Load More'}
             </span>
      
     </button>

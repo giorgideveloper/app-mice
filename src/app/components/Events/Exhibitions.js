@@ -17,7 +17,6 @@ export default function Exhibitions({ dict, events, lang }) {
     const [mainUrl, setMainUrl] = useState('/event/?category=Exebition&page=');
     const [post, setPost] = useState(events.results || []);
     const [page, setPage] = useState(2);
-    console.log(post, 'post length');
 
 
      useEffect(() => {
@@ -87,7 +86,7 @@ export default function Exhibitions({ dict, events, lang }) {
                 <div className="row">
                       <div className="col-12">
                         {post?.length >= 10 && (
-                          <LoadMore lang={lang} items={events?.results} post={post} setPost={setPost} page={page} setPage={setPage} mainUrl={mainUrl} />
+                          <LoadMore  dict={dict} lang={lang} items={events?.results} post={post} setPost={setPost} page={page} setPage={setPage} mainUrl={mainUrl} />
                         )}
                       </div>
                     </div>

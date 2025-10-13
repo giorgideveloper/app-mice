@@ -6,7 +6,7 @@ import BlogCard from './BlogCard';
 import ClientLink from './ClientLink';
 
 
-export default function Blog({data, lang}) {
+export default function Blog({data, lang, dict}) {
   const [post, setPost] = useState(data.results || []);
   const [page, setPage] = useState(2);
 
@@ -33,7 +33,7 @@ export default function Blog({data, lang}) {
                 })}
 
            <div className="col-12">
-            <LoadMore lang={lang} items={data?.results} post={post} setPost={setPost} page={page} setPage={setPage} />
+            <LoadMore dict={dict} lang={lang} items={data?.results} post={post} setPost={setPost} page={page} setPage={setPage} />
            </div>
       </div>
     </div>
