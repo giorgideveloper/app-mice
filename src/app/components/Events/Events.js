@@ -22,7 +22,7 @@ export default function Events({ dict, events, lang }) {
   const [mainUrl, setMainUrl] = useState('/event/');
   const [post, setPost] = useState(events.results || []);
   const [page, setPage] = useState(2);
-console.log(displayedEvents)
+console.log(post)
 
 
   useEffect(() => {

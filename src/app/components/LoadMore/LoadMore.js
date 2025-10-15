@@ -7,6 +7,7 @@ export default function LoadMore({lang, items, post, setPost, page, setPage, mai
     const [haseMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
     const [url, setUrl] = useState(mainUrl || '/pages/media-blog/?page=');
+    console.log(mainUrl, 'main url');
     
 
     

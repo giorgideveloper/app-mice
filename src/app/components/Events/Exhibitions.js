@@ -14,7 +14,7 @@ export default function Exhibitions({ dict, events, lang }) {
     const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
     const [displayedEvents, setDisplayedEvents] = useState();
     const [selectedReset, setSelectedReset] = useState(false);
-    const [mainUrl, setMainUrl] = useState('/event/?category=Exebition&page=');
+    const [mainUrl, setMainUrl] = useState('/event/?category=EXHIBITIONS&page=');
     const [post, setPost] = useState(events.results || []);
     const [page, setPage] = useState(2);
 
