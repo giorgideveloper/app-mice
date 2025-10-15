@@ -98,7 +98,7 @@ return (
                                 </ul>
                 </div>
                 <div className={style.resetFilters}>
-                        <button onClick={resetFilters} className='btn btn-sm btn-secondary'>
+                        <button onClick={resetFilters} className='btn btn-sm '>
                             {dict.filter.resetFilters || "Reset Filters"}
                         </button>
                 </div>

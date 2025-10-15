@@ -18,6 +18,7 @@
 	"venue-title": "Available Venues",
 
 	"filter": {
+		"resetFilters": "Reset Filters",
 		"locationName": "Location",
 		"location": {
 			"Batumi": "Batumi",
@@ -48,7 +49,21 @@
 			"subtitle": "Celebrating every moment of victory"
 		}
 	},
-	
+	"venue": {
+		"conference-venue": "Conference Venues",
+		"sports-venue": "Sports Venues",
+		"cultural-venue": "Cultural Venues",
+		"location": {
+			"georgia": "Georgia"
+		},
+		"backToVenues": "Back To",
+		"space": "Conference",
+		"innerVenue":{
+			"airport": "Distance from airport:",
+			"rooms": "Number of rooms:"
+		}
+	},
+
 	"events": {
 		"title": "Events",
 		"slug": "events",

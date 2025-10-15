@@ -6,7 +6,7 @@ import reserve from '../../image/reserve.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
-export default function VenuesCard({ data, lang, id }) {
+export default function VenuesCard({ data, lang, id, dict }) {
 	const searchParams = useSearchParams();
 	const category = searchParams.get('category');
 	const locationParam = searchParams.get('location');
@@ -28,9 +28,9 @@ export default function VenuesCard({ data, lang, id }) {
 	};
 
 	const formatTitle = id => {
-		if (id === 'cultural') return 'Cultural Venues';
-		if (id === 'conference') return 'Conference Venues';
-		if (id === 'sport') return 'Sports Venues';
+		if (id === 'cultural') return dict.venue['cultural-venue'];
+		if (id === 'conference') return dict.venue['conference-venue'];
+		if (id === 'sport') return dict.venue['sports-venue'];
 		return id;
 	};
 
@@ -51,7 +51,7 @@ export default function VenuesCard({ data, lang, id }) {
 									<div className={styles.cardBody}>
 										<h3>{item?.name}</h3>
 										<button className='btn'>
-											{item?.location?.name}, Georgia
+											{item?.location?.name}, {dict.venue.location.georgia}
 										</button>
 									</div>
 									<div className={styles.cardFooter}>
@@ -63,7 +63,7 @@ export default function VenuesCard({ data, lang, id }) {
 													height={20}
 													alt='location'
 												/>
-												{item?.address?.slice(0, 10) + ' ...'}
+												{item?.address?.slice(0, 10) + ''}
 											</li>
 											<li>
 												<Image
@@ -72,7 +72,7 @@ export default function VenuesCard({ data, lang, id }) {
 													height={20}
 													alt='reserve'
 												/>
-												{id}
+												{dict.venue.space}
 											</li>
 										</ul>
 									</div>

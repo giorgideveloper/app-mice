@@ -71,7 +71,7 @@ export default function Venues({
 								/>
 							</div>
 							<div className='col-md-9'>
-								<VenuesCard data={result ? result : data} lang={lang} id={id} />
+								<VenuesCard data={result ? result : data} lang={lang} dict={dict} id={id} />
 							</div>
 						</div>
 					</div>

@@ -95,3 +95,16 @@
   color: #344054;
   cursor: pointer;
 }
+.resetFilters{
+  font-size: 8px;
+  font-family: "FiraGo", sans-serif;
+}
+.resetFilters button{
+  background-color: #f2f4f7;
+  border: 1px solid #d0d5dd;
+  color: #344054;
+}
+.resetFilters button:hover{
+  background-color: #d0d5dd;
+  color: #000;
+}

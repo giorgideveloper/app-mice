@@ -18,6 +18,7 @@
 	"venue-title": "Места проведения мероприятий",
 
 	"filter": {
+		"resetFilters": "Сбросить фильтры",
 		"locationName": "Расположение",
 		"location": {
 			"Batumi": "Батуми",
@@ -46,6 +47,20 @@
 		"sports": {
 			"title": "Sports Venues",
 			"subtitle": "Celebrating every moment of victory"
+		}
+	},
+	"venue": {
+		"conference-venue": "Conference Venues",
+		"sports-venue": "Sports Venues",
+		"cultural-venue": "Cultural Venues",
+		"location": {
+			"georgia": "Georgia"
+		},
+		"backToVenues": "Назад",
+		"space": "Conference",
+		"innerVenue":{
+			"airport": "Distance from airport:",
+			"rooms": "Number of rooms:"
 		}
 	},
 	"events": {

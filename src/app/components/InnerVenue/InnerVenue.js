@@ -10,7 +10,7 @@ import InnerTable from './InnerTable';
 import MapApp from '../MapApp/MapApp';
 import { GrNext,GrPrevious } from "react-icons/gr";
 
-export default function InnerVenue({ data, backLink, id }) {
+export default function InnerVenue({ data, backLink, id, dict }) {
 	console.log('data', data);
 
 	const galleryImages = [
@@ -80,12 +80,11 @@ export default function InnerVenue({ data, backLink, id }) {
 							<ul>
 								<li>
 									<IoMdAirplane />
-									Distance from airport: {data?.distance_from_airport} km
+									{dict.venue.innerVenue.airport} {data?.distance_from_airport} km
 								</li>
 
-							
-									<li>
-										<FaDoorClosed />
+								<li>
+									<FaDoorClosed />
 
 										{/* Number of venues | in cultural and sport*/}
 
@@ -94,7 +93,7 @@ export default function InnerVenue({ data, backLink, id }) {
 												Number of venues: {data?.number_of_rooms}
 											</>
 										) : <>
-												Number of rooms: {data?.number_of_rooms}
+												{dict.venue.innerVenue.rooms} {data?.number_of_rooms}
 											</>}
 									</li>
 								

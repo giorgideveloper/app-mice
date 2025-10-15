@@ -2,6 +2,7 @@
 	"products": {
 		"cart,": "გამარჯობა"
 	},
+	
 	"button": {
 		"main": "ეწვიე ბათუმს",
 		"add": "დამატება",
@@ -18,6 +19,7 @@
 	"venue-title": "ღონისძიებების სირვცეები",
 
 	"filter": {
+		"resetFilters": "ფილტრების გაწმენდა",
 		"locationName": "ადგილმდებარეობა",
 		"location": {
 			"Batumi": "ბათუმი",
@@ -48,6 +50,20 @@
 			"subtitle": "Celebrating every moment of victory"
 		}
 	},
+	"venue":{
+		"conference-venue": "საკონფერენციო სივრცეები",
+		"sports-venue": "სპორტული სივრცეები",
+		"cultural-venue": "კულტურული სივრცეები",
+		"location": {
+			"georgia": "საქართველო"
+		},
+		"backToVenues": "უკან",
+		"space": "საკონფერენციო",
+		"innerVenue":{
+			"airport": "მანძილი აეროპორტიდან:",
+			"rooms": "ოთახების რაოდენობა:"
+		}
+	},
 	"events": {
 		"title": "ღონისძიებები",
 		"slug": "events",
@@ -76,4 +92,7 @@
 		"contact": "კონტაქტი",
 		"app-download": "აპლიკაცია"
 	}
+	
+	
+
 }
