@@ -24,7 +24,7 @@ export default function Exhibitions({ dict, events, lang }) {
           try {
             if (selectedStartDate && selectedEndDate) {
               const tagToFilter =  null;
-              const category = "Exebition";
+              const category = "EXHIBITIONS";
               const data = await fetchEventsDate(lang, category, tagToFilter, selectedStartDate, selectedEndDate);
               if(data.results && data.results.length > 0){
                 setFilteredByDateEvents(data.results);
@@ -68,7 +68,7 @@ export default function Exhibitions({ dict, events, lang }) {
      };
   return (
     <>
-      <HeaderEvents title={dict?.exhibitions?.title} />
+      <HeaderEvents title={dict?.exhibitions?.title} lang={lang} />
       <div className="container">
               <div className="row">
                 <EventsBtn dict={dict} lang={lang} />

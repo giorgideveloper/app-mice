@@ -8,7 +8,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoMdClose } from "react-icons/io";
 
-export default function EventsFilter({ dict, eventTags, setFilterTag, setSelectedDate, setSelectedEndDate, handleClickReset, selectedReset }) {
+export default function EventsFilter({ dict, eventTags, setFilterTag, setSelectedDate, setSelectedEndDate, handleClickReset, selectedReset, lang }) {
     const [startDate, setStartDate] = React.useState(null);
     const [isOpen, setIsOpen] = React.useState(false);
     const localDict = dict.events['filter-btn'];
@@ -72,7 +72,7 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
                       const key = (item && typeof item === 'object' && 'id' in item) ? item.id : index;
                         return (
                           <button key={key} className={`btn border-0 ${active === key ? styles.focus : ''}`} onClick={() =>  handleClick(key, label)}>
-                            <span>{label + " Events"}</span>
+                            <span>{label + (lang === 'en' ? " Events" : '')}</span>
                                  {active === key ? <span className='ms-2'><IoMdClose/></span> : ''}
                             </button>
                                 );

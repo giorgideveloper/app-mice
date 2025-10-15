@@ -6,7 +6,7 @@ import NavbarLink from './NavbarLink';
 import NavbarLang from './NavbarLang';
 import Link from 'next/link';
 
-export default function  Navbar({lang,menu,dict}) {
+export default function  Navbar({lang, menu, dict}) {
         
  if (!menu || menu.length === 0) {
         return null;

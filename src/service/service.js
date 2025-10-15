@@ -175,10 +175,23 @@ export const fetchCategory = async local => {
 	}
 };
 
+// Fetches the event categories
+export const fetchEventCategories = async local => {
+	try {
+		const res = await fetch(`${API_URL}${local}/event/category/`, noStore);
+		if (!res.ok) {
+			return notFound(); // Handle the case where the event categories page is not found
+		}
+		return await res.json();
+	} catch (error) {
+		console.log('Error fetching event categories', error);
+		throw error;
+	}
+}
 // Fetches the events
 export const fetchEvents = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/?category=Events`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=EVENTS`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the events page is not found
 		}
@@ -233,7 +246,7 @@ export const fetchEventsDate = async (local, category, tag, startDate, endDate) 
 // Fetches the Exhibitions
 export const fetchExhibitions = async local => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/?category=Exebition`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=EXHIBITIONS`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the exhibitions page is not found
 		}
@@ -256,6 +269,7 @@ export const fetchEventBySlug = async (local, slug) => {
 		throw error;
 	}
 }
+
 
 // Fetches Load More
 export const fetchLoadMore = async (local, url, page) => {

@@ -49,14 +49,25 @@
 		}
 	},
 	"events": {
-		"title": "Events",
+		"title": "ღონისძიებები",
+		"slug": "events",
 		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
 		"filter-btn": {
-			"cultural": "Cultural Events",
-			"sports": "Sports Events",
-			"business": "Business Events"
+			"cultural": "კულტურული ღონისძიებები",
+			"sports": "სპორტული ღონისძიებები",
+			"business": "ბიზნეს ღონისძიებები"
 		}
 
+	},
+	"exhibitions": {
+		"title": "გამოფენები",
+		"slug": "exhibitions",
+		"subtitle": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings",
+		"filter-btn": {
+			"art": "ხელოვნების გამოფენები",
+			"history": "ისტორიული გამოფენები",
+			"science": "მეცნიერების გამოფენები"
+		}
 	},
 	"load-more": "იხილე მეტი",
 	"no-more-post": "მეტი პოსტი არ არის",

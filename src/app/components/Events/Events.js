@@ -22,7 +22,7 @@ export default function Events({ dict, events, lang }) {
   const [mainUrl, setMainUrl] = useState('/event/');
   const [post, setPost] = useState(events.results || []);
   const [page, setPage] = useState(2);
-
+console.log(displayedEvents)
 
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Events({ dict, events, lang }) {
       try {
         if (selectedStartDate && selectedEndDate) {
           const tagToFilter = filterTag || null;
-           const category = "Events";
+           const category = "EVENTS";
           const data = await fetchEventsDate(lang, category, tagToFilter, selectedStartDate, selectedEndDate);
           if(data.results && data.results.length > 0){
             setFilteredByDateEvents(data.results);
@@ -115,14 +115,13 @@ export default function Events({ dict, events, lang }) {
        setSelectedReset(prev => !prev); 
      };
 
-     
   return (
     <>
-      <HeaderEvents title={dict.events.title} />
+      <HeaderEvents title={dict.events} eventTags={eventTags} lang={lang} />
       <div className="container">
         <div className={`row ${styles.events}`}>
           <EventsBtn dict={dict} lang={lang} />
-          <EventsFilter dict={dict} eventTags={eventTags} setFilterTag={setFilterTag} setSelectedDate={setSelectedDate} setSelectedEndDate={setSelectedEndDate} handleClickReset={handleClickReset} selectedReset={selectedReset} />
+          <EventsFilter lang={lang} dict={dict} eventTags={eventTags} setFilterTag={setFilterTag} setSelectedDate={setSelectedDate} setSelectedEndDate={setSelectedEndDate} handleClickReset={handleClickReset} selectedReset={selectedReset} />
         </div>
         <div className="row">
           <div className="col"><h2 className="mb-4">{filterTag ? `${filterTag} Events` : 'All Events'}</h2></div>

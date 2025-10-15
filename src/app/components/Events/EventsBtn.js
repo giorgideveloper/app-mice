@@ -24,13 +24,13 @@ React.useEffect(() => {
    
           <Link href={`/${lang}/events`}>
                <button className='btn border-0'> 
-            <span className={active ? styles.active : ''} onClick={() => {setActive(true)}}>EVENTS</span>
+            <span className={active ? styles.active : ''} onClick={() => {setActive(true)}}>{dict?.events?.title}</span>
              </button>
           </Link>
        
         <Link href={`/${lang}/exhibitions`}>
           <button className='btn border-0'> 
-            <span className={!active ? styles.active : ''} onClick={() => {setActive(false)}}>EXHIBITIONS</span>
+            <span className={!active ? styles.active : ''} onClick={() => {setActive(false)}}>{dict?.exhibitions?.title}</span>
           </button>
         </Link>
     </div>
