@@ -7,9 +7,8 @@ import icon from '../../../../public/Icon.svg'; // Fixed capitalization in file 
 import {arialCaps, party} from '@/fonts/Fonts';
 
 
-const NavbarLink = ({ children, href, className, dropdown, parent, lang }) => {
+const NavbarLink = ({ children,  className, dropdown, parent, lang }) => {
     const [isHovered, setIsHovered] = useState(false);
-    console.log(party);
         return ( 
             <>
              <li className={`nav-item ${styles.item}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >

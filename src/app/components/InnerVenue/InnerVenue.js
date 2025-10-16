@@ -10,8 +10,7 @@ import InnerTable from './InnerTable';
 import MapApp from '../MapApp/MapApp';
 import { GrNext,GrPrevious } from "react-icons/gr";
 
-export default function InnerVenue({ data, backLink, id, dict }) {
-	console.log('data', data);
+export default function InnerVenue({ data,  id, dict }) {
 
 	const galleryImages = [
 		...(data?.image ? [{ image: data.image }] : []),

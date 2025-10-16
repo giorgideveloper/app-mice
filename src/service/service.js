@@ -189,9 +189,9 @@ export const fetchEventCategories = async local => {
 	}
 }
 // Fetches the events
-export const fetchEvents = async local => {
+export const fetchEvents = async (local, category) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/?category=EVENTS`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=${category}`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the events page is not found
 		}
@@ -244,9 +244,9 @@ export const fetchEventsDate = async (local, category, tag, startDate, endDate) 
 }
 
 // Fetches the Exhibitions
-export const fetchExhibitions = async local => {
+export const fetchExhibitions = async (local, category) => {
 	try {
-		const res = await fetch(`${API_URL}${local}/event/?category=EXHIBITIONS`, noStore);
+		const res = await fetch(`${API_URL}${local}/event/?category=${category}`, noStore);
 		if (!res.ok) {
 			return notFound(); // Handle the case where the exhibitions page is not found
 		}

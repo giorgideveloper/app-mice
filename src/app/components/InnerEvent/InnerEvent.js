@@ -10,7 +10,6 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 
 
 export default function InnerEvent({ eventData }) {
-  console.log('InnerEvent eventData:', eventData);
   return (
     <>
     <div className="container">

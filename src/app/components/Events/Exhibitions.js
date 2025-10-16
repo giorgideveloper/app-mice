@@ -8,13 +8,13 @@ import { fetchEventsDate, } from '@/service/service';
 import LoadMore from '../LoadMore/LoadMore'
 
 
-export default function Exhibitions({ dict, events, lang }) {
+export default function Exhibitions({ dict, events, lang, category }) {
     const [selectedStartDate, setSelectedDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
     const [filteredByDateEvents, setFilteredByDateEvents] = useState([]);
     const [displayedEvents, setDisplayedEvents] = useState();
     const [selectedReset, setSelectedReset] = useState(false);
-    const [mainUrl, setMainUrl] = useState('/event/?category=EXHIBITIONS&page=');
+    const [mainUrl, setMainUrl] = useState(`/event/?category=${category}&page=`);
     const [post, setPost] = useState(events.results || []);
     const [page, setPage] = useState(2);
 
@@ -24,7 +24,6 @@ export default function Exhibitions({ dict, events, lang }) {
           try {
             if (selectedStartDate && selectedEndDate) {
               const tagToFilter =  null;
-              const category = "EXHIBITIONS";
               const data = await fetchEventsDate(lang, category, tagToFilter, selectedStartDate, selectedEndDate);
               if(data.results && data.results.length > 0){
                 setFilteredByDateEvents(data.results);
@@ -79,7 +78,7 @@ export default function Exhibitions({ dict, events, lang }) {
                   <p>No events available</p>
                 ) : (
                   displayedEvents?.map((event) => (
-                    <EventsCard key={event.id} dict={dict} events={event} lang={lang} />
+                    <EventsCard key={event.id} dict={dict} events={event} lang={lang}  />
                   ))
                 )}
               </div>

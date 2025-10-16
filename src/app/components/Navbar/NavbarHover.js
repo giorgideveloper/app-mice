@@ -32,7 +32,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 					{dropdown.map(item => {
 						const section = resolveSlug(item.slug);
 						const href = `/${lang}/${section}/${item.slug}`;
-						console.log('item in hover', href);
+
 						return (
 							<div className='col' key={item.id}>
 								<div className={styles.mainTitle}>

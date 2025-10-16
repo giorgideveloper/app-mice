@@ -4,7 +4,7 @@ import style from './VenuesFilter.module.css';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function VenuesFilter({ dict, id, setCategories, setLocations, locationData, categoryVenues }) {
-        console.log(categoryVenues);
+       
         const router = useRouter();
         const searchParams = useSearchParams();
         const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');

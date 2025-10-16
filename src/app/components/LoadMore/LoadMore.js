@@ -7,7 +7,7 @@ export default function LoadMore({lang, items, post, setPost, page, setPage, mai
     const [haseMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
     const [url, setUrl] = useState(mainUrl || '/pages/media-blog/?page=');
-    console.log(mainUrl, 'main url');
+
     
 
     
@@ -15,7 +15,6 @@ export default function LoadMore({lang, items, post, setPost, page, setPage, mai
     const handleLoadMore = async () => {
        setLoading(true);
        const data = await fetchLoadMore(lang, url, page)
-       console.log(data, 'load more data');
        
        if (data?.results?.length > 0) {
            setPost(prev => [...prev, ...data.results]);

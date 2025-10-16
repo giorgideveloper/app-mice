@@ -5,6 +5,10 @@ import location from '../../image/location.svg';
 import reserve from '../../image/reserve.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import { GoArrowRight } from "react-icons/go";
+import { ImArrowDownRight2 } from "react-icons/im";
+
+
 
 export default function VenuesCard({ data, lang, id, dict }) {
 	const searchParams = useSearchParams();
@@ -51,12 +55,12 @@ export default function VenuesCard({ data, lang, id, dict }) {
 									<div className={styles.cardBody}>
 										<h3>{item?.name}</h3>
 										<button className='btn'>
-											{item?.location?.name}, {dict.venue.location.georgia}
+											{item?.location?.name}
 										</button>
 									</div>
 									<div className={styles.cardFooter}>
 										<ul>
-											<li>
+											{/* <li>
 												<Image
 													src={location}
 													width={20}
@@ -64,7 +68,7 @@ export default function VenuesCard({ data, lang, id, dict }) {
 													alt='location'
 												/>
 												{item?.address?.slice(0, 10) + ''}
-											</li>
+											</li> */}
 											<li>
 												<Image
 													src={reserve}
@@ -73,6 +77,9 @@ export default function VenuesCard({ data, lang, id, dict }) {
 													alt='reserve'
 												/>
 												{dict.venue.space}
+											</li>
+											<li>
+														<ImArrowDownRight2 />
 											</li>
 										</ul>
 									</div>

@@ -5,11 +5,10 @@ import EventsBtn from './EventsBtn'
 import EventsFilter from './EventsFilter'
 import EventsCard from './EventsCard'
 import { fetchEventsTag, fetchEventsDate, fetchEventsFilterTag } from '@/service/service';
-import { useRouter } from 'next/navigation';
 import styles from './Events.module.css'
 import LoadMore from '../LoadMore/LoadMore';
 
-export default function Events({ dict, events, lang }) {
+export default function Events({ dict, events, lang, category }) {
 
   const [eventTags, setEventTags] = useState([]);
   const [filterTag, setFilterTag] = useState(null);
@@ -22,7 +21,6 @@ export default function Events({ dict, events, lang }) {
   const [mainUrl, setMainUrl] = useState('/event/');
   const [post, setPost] = useState(events.results || []);
   const [page, setPage] = useState(2);
-console.log(post)
 
 
   useEffect(() => {
@@ -65,7 +63,6 @@ console.log(post)
       try {
         if (selectedStartDate && selectedEndDate) {
           const tagToFilter = filterTag || null;
-           const category = "EVENTS";
           const data = await fetchEventsDate(lang, category, tagToFilter, selectedStartDate, selectedEndDate);
           if(data.results && data.results.length > 0){
             setFilteredByDateEvents(data.results);

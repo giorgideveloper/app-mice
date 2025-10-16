@@ -8,6 +8,7 @@ import { fetchEventCategories } from '@/service/service'
 
 export default function HeaderEvents({title,lang}) {
   const [eventCategory, setEventCategory] = React.useState([]);
+  
   useEffect(() => {
     const fetchCategorys = async () => {
       try {

@@ -23,7 +23,6 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
         setActive(null);
         setIsOpen(false);
       }
-      console.log(selectedReset)
     }, [selectedReset]);
 
 
