@@ -7,14 +7,17 @@
 
   export default function EventsCard({ dict, events, lang }) {
     const eventDate = new Date(events?.event_start_date);
+    const monthNames = {
+      en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      geo: ["იან", "თებ", "მარ", "აპრ", "მაი", "ივნ", "ივლ", "აგვ", "სექ", "ოქტ", "ნოე", "დეკ"]
+    };
+    const month = monthNames[lang === 'ka' ? 'geo' : 'en'][eventDate.getMonth()];
     
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const month = monthNames[eventDate.getMonth()];
-    
-
-    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const dayOfWeek = dayNames[eventDate.getDay()];
-    
+    const dayNames = {
+      en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      geo: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"]
+    };
+    const dayOfWeek = dayNames[lang === 'ka' ? 'geo' : 'en'][eventDate.getDay()];  
 
     return (
       <div className={styles.eventsCard}>
