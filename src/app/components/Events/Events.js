@@ -121,7 +121,7 @@ export default function Events({ dict, events, lang, category }) {
           <EventsFilter lang={lang} dict={dict} eventTags={eventTags} setFilterTag={setFilterTag} setSelectedDate={setSelectedDate} setSelectedEndDate={setSelectedEndDate} handleClickReset={handleClickReset} selectedReset={selectedReset} />
         </div>
         <div className="row">
-          <div className="col"><h2 className="mb-4">{filterTag ? `${filterTag} Events` : 'All Events'}</h2></div>
+          {/* <div className="col"><h2 className="mb-4">{filterTag ? `${filterTag} Events` : 'All Events'}</h2></div> */}
           <div style={{marginBottom: '50px', minHeight: '300px'}} >
           {displayedEvents.length === 0 ? (
             <p>No events available</p>

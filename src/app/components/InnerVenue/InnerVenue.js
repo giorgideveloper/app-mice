@@ -137,7 +137,6 @@ export default function InnerVenue({ data,  id, dict }) {
 				
 			</div>
 			<div className="container-fluid px-0">
-				 {console.log('map data', data)	}
 				<MapApp data={data} />
 			</div>
 		</>

@@ -1,4 +1,4 @@
-
+"use client";
 import ImageApp from '@/app/plugins/ImageApp';
 import styles from './InnerEvent.module.css';
 import ImageGallery from '@/app/plugins/ImageGallery';
@@ -6,10 +6,10 @@ import { CiGlobe, CiLocationOn, CiMail } from 'react-icons/ci';
 import { CiPhone } from 'react-icons/ci';
 import { IoHomeOutline } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
-
-
+import MapApp from '../MapApp/MapApp';
 
 export default function InnerEvent({ eventData }) {
+	console.log("Event Data:", eventData);
   return (
     <>
     <div className="container">
@@ -76,6 +76,9 @@ export default function InnerEvent({ eventData }) {
         </div>
       </div>
     </div>
+	<div className="container-fluid px-0">
+		  <MapApp data={eventData} />
+	</div>
     </>
   )
 }

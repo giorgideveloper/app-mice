@@ -6,21 +6,23 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 export default function MapApp({ data }) {
   const [map, setMap] = React.useState(true);
+  console.log("Map Data:", data.coords);
    
-
+  const cordinations = data?.coords ? data?.coords.split(',').map(coord => parseFloat(coord.trim())) : [0, 0];
+  console.log("Cordinations:", cordinations);
 const containerStyle = {
   width: '100%',
   height: '600px'
 };
 
 const center = {
-  lat: data?.latitude,
-  lng: data?.longitude
+  lat: data?.latitude || cordinations[0],
+  lng: data?.longitude || cordinations[1]
 };
 
 const markers = [
-  { lat: data?.latitude, lng: data?.longitude, title: 'Location 1' },
-  { lat: data?.latitude, lng: data?.longitude, title: 'Location 2' }
+  { lat: data?.latitude || cordinations[0], lng: data?.longitude || cordinations[1], title: 'Location 1' },
+  { lat: data?.latitude || cordinations[0], lng: data?.longitude || cordinations[1], title: 'Location 2' }
 ];
   return (
     <div className="row">
@@ -31,7 +33,7 @@ const markers = [
               <a
                 href={
                 data?.latitude && data?.longitude
-                  ? `https://www.google.com/maps?q=${data?.latitude},${data?.longitude}`
+                  ? `https://www.google.com/maps?q=${data?.latitude || cordinations[0]},${data?.longitude || cordinations[1]}`
                   : "#"
               }
               target="_blank"
