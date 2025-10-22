@@ -5,10 +5,9 @@ import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import styles from './ImageGallery.module.css';
 
-export default function ImageGallery({ images }) {
+export default function ImageGallery({ images, lang }) {
   const scrollContainerRef = useRef(null);
   
-
   useEffect(() => {
     Fancybox.bind("[data-fancybox='gallery']", {
       compact: false,
@@ -47,7 +46,7 @@ export default function ImageGallery({ images }) {
   return (
     <>
       <div className={styles.galleryContainer}>
-        <h3>Gallery</h3>
+        <h3>{lang === 'ka' ? 'გალერეა' : 'Gallery'}</h3>
         <div className={styles.galleryWrapper}>
           <button 
             className={styles.navButton} 

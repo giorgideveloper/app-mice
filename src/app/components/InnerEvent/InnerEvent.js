@@ -8,8 +8,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import MapApp from '../MapApp/MapApp';
 
-export default function InnerEvent({ eventData }) {
-	console.log("Event Data:", eventData);
+export default function InnerEvent({ eventData, lang }) {
   return (
     <>
     <div className="container">
@@ -71,7 +70,7 @@ export default function InnerEvent({ eventData }) {
       <div className="row">
         <div className="col">
           {eventData?.images && eventData.images.length > 0 && (
-            <ImageGallery images={eventData.images} />
+            <ImageGallery images={eventData.images} lang={lang} />
           )}
         </div>
       </div>

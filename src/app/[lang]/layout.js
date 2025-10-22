@@ -45,15 +45,20 @@ export default async function LangLayout({ children, params }) {
 	const supportedLangs = ['en', 'ka', 'ru'];
 
 	if (!supportedLangs.includes(lang)) return notFound();
+	
+	// Apply font based on language
+	const fontClassName = lang === 'ka' ? arialCaps.className : firago.className;
 
 	return (
 		<>
-			<Suspense fallback={null}>
-				<Navbar className={lang === 'ka' ? `${params.className}` : `${firago.className}`} lang={lang} menu={menu} dict={dict} />
-			</Suspense>
-			{children}
-			<BootstrapClient />
-			<Footer className={`${firago.className}`} data={footerData} dict={dict} />
+			<div className={fontClassName}>
+				<Suspense fallback={null}>
+					<Navbar lang={lang} menu={menu} dict={dict} />
+				</Suspense>
+				{children}
+				<BootstrapClient />
+				<Footer data={footerData} dict={dict} />
+			</div>
 		</>
 	);
 }

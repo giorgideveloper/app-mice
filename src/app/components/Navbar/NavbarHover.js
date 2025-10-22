@@ -20,7 +20,7 @@ const resolveSlug = slug => {
 	return slug || '';
 };
 
-const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
+const NavbarHover = ({ dropdown, setIsHovered, lang, firago, arialCaps }) => {
 	return (
 		<ul
 			className={`dropdown ${styles.dropdown}`}
@@ -37,7 +37,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 							<div className='col' key={item.id}>
 								<div className={styles.mainTitle}>
 									<Link
-										style={{ cursor: item.is_active ? 'pointer' : 'default' }}
+										style={{ cursor: item.is_active ? 'pointer' : 'default', fontFamily: lang === 'ka' ? arialCaps.style.fontFamily : firago.style.fontFamily  }}
 										onClick={e => {
 											e.preventDefault();
 											window.location.href = item.redirect ? item.redirect :  item.is_active === false ? "#" : href;
@@ -55,6 +55,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang }) => {
 										return (
 											<li className={styles.dropdownItem} key={child.id}>
 												<Link
+												style={{fontFamily: lang === 'ka' ? arialCaps.style.fontFamily : firago.style.fontFamily}}
 													target={child.redirect? '_blank' : '_self'}
 													onClick={e => {
 														e.preventDefault();
