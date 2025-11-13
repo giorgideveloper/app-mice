@@ -10,7 +10,7 @@ export default async function page({params}) {
 
   return (
     <div>
-        <AboutBatumi className={party.className}  data={aboutBatumi}  />
+        <AboutBatumi className={party.className} lang={lang}  data={aboutBatumi}  />
     </div>
   )
 }

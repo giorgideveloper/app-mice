@@ -89,7 +89,7 @@ export default function InnerVenue({ data,  id, dict }) {
 
 										{id !== 'conference' ? (
 											<>
-												Number of venues: {data?.number_of_rooms}
+												{dict.venue.innerVenue.number} {data?.number_of_rooms}
 											</>
 										) : <>
 												{dict.venue.innerVenue.rooms} {data?.number_of_rooms}

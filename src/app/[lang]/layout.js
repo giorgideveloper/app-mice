@@ -42,6 +42,7 @@ export default async function LangLayout({ children, params }) {
 	const dict = await getDictionary(lang);
 	const footerData = await fetchMainPage(lang);
 
+
 	const supportedLangs = ['en', 'ka', 'ru'];
 
 	if (!supportedLangs.includes(lang)) return notFound();
@@ -53,11 +54,11 @@ export default async function LangLayout({ children, params }) {
 		<>
 			<div className={fontClassName}>
 				<Suspense fallback={null}>
-					<Navbar lang={lang} menu={menu} dict={dict} />
+					<Navbar lang={lang} menu={menu} dict={dict} footerData={footerData} />
 				</Suspense>
 				{children}
 				<BootstrapClient />
-				<Footer data={footerData} dict={dict} />
+				<Footer data={footerData} lang={lang} dict={dict} />
 			</div>
 		</>
 	);

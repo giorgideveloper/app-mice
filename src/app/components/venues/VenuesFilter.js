@@ -45,10 +45,23 @@ export default function VenuesFilter({ dict, id, setCategories, setLocations, lo
                 router.push(currentPath, { scroll: false });
         }
 
+        const handleMapView = () => {
+                console.log('Map View Clicked');
+                const currentPath = window.location.pathname;
+                const params = new URLSearchParams();
+                if (selectedCategory) params.set('category', selectedCategory);
+                if (selectedLocation) params.set('location', selectedLocation);
+                const newUrl = `${currentPath.replace('/venues/' , '/venues/map/')}${
+                        params.toString() ? `?${params.toString()}` : ''
+                }`;
+                router.push(newUrl);
+                
+        }
+
 return (
         <div className={style.venuesFilter}>
                 <div className={style.filterMap}>
-                        <button className='btn'>View on Map</button>
+                        <button className='btn' onClick={handleMapView}>View on Map</button>
                 </div>
                 {id !== 'conference' ? 
                 <div className={style.border}>

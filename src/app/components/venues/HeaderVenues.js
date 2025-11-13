@@ -2,7 +2,7 @@ import ImageApp from '@/app/plugins/ImageApp';
 import styles from './HeaderVenues.module.css';
 import slider from '@/app/image/sport.jpg';
 
-export default function HeaderVenues({ id, dict, data }) {
+export default function HeaderVenues({ id, dict, data, lang }) {
 	const fc = itm => {
 		if (itm === 'conference')
 			return dict['venue-header']['conference']['title'];
@@ -38,8 +38,9 @@ export default function HeaderVenues({ id, dict, data }) {
 					<div className='col'>
 						{data?.cover && (
 							<>
-								<h1 className={styles.title}>{data?.cover?.title}</h1>
+								<h1 className={styles.title} style={lang === "ka" ? { fontFamily: 'arialCaps' } : {}}>{data?.cover?.title}</h1>
 								<div
+									style={lang === "ka" ? { fontFamily: 'firago' } : {}}
 									dangerouslySetInnerHTML={{
 										__html: data?.cover?.description || '',
 									}}

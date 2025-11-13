@@ -6,7 +6,7 @@ import event from '@/app/image/event-header2.png'
 import { fetchEventCategories } from '@/service/service'
 
 
-export default function HeaderEvents({title,lang}) {
+export default function HeaderEvents({title, lang}) {
   const [eventCategory, setEventCategory] = React.useState([]);
   
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function HeaderEvents({title,lang}) {
           <div className={styles.headerImage}>
           <ImageApp img={title.slug === "events" ? event : eventsHeader} alt="Events Header" />
            <div className={styles.headerContent}>
-                  <h1 className="">{title.slug === "events" ? eventCategory?.[0]?.name : eventCategory?.[1]?.name}</h1>
+                  <h1 style={lang === "ka" ? { fontFamily: 'arialCaps' } : {}}>{title.slug === "events" ? eventCategory?.[0]?.name : eventCategory?.[1]?.name}</h1>
                   {/* <p className="">Discover upcoming events, workshops, and activities to engage with our community and enhance your experience.</p> */}
           </div>
           </div>

@@ -60,7 +60,8 @@
 		"space": "Conference",
 		"innerVenue":{
 			"airport": "Distance from airport:",
-			"rooms": "Number of rooms:"
+			"rooms": "Number of rooms:",
+			"number": "Number of venues:"
 		}
 	},
 

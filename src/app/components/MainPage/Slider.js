@@ -12,7 +12,7 @@ import image1 from '../../image/slider1.webp';
 import Button from '../Button/Button';
 import { party } from '@/fonts/Fonts';
 
-export const Slider = ({ data, dict }) => {
+export const Slider = ({ data, dict, lang }) => {
 	const swiperRef = useRef(null);
 	const swiperInstanceRef = useRef(null);
 
@@ -75,7 +75,7 @@ export const Slider = ({ data, dict }) => {
 								<div className='container'>
 									<div className='row'>
 										<div className={styles.textOverlay}>
-											<h1>{slide?.title || ''}</h1>
+											<h1 style={lang === "ka" ? { fontFamily: 'arialCaps' } : {}}>{slide?.title || ''}</h1>
 											{slide?.description ? (
 												<div
 													dangerouslySetInnerHTML={{

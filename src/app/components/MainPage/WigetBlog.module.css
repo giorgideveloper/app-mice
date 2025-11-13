@@ -6,6 +6,8 @@
   color: #101828;
 }
 
+
+
 @media (max-width: 426px) {
   .textContainer h1 {
     font-size: 29px;

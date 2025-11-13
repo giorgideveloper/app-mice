@@ -14,3 +14,35 @@
 .brand img {
   height: auto;
 }
+.navbarPosition{
+  position: absolute;
+  top: 30px;
+  right: 19%;
+  transform: translateX(50%);
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+
+
+
+  @media (max-width: 480px) {
+    font-size: 11px;
+  }
+
+}
+.navbarPosition:hover {
+  color: #3b4074;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbarPosition:hover svg {
+  color: #3b4074;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+}
+
+.navbarPosition:not(:hover) svg {
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.9);
+}

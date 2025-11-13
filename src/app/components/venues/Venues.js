@@ -54,7 +54,7 @@ export default function Venues({
 		<>
 			<div className={styles.venues}>
 				<section className={styles.venuesHeader}>
-					<HeaderVenues id={id} data={data} dict={dict} />
+					<HeaderVenues id={id} data={data} dict={dict} lang={lang} />
 				</section>
 				<section className={styles.venuesContent}>
 					<div className='container-fluid'>

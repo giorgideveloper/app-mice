@@ -4,8 +4,7 @@ import styles from './NavbarLink.module.css';
 import NavbarHover from './NavbarHover';
 import { useState } from 'react';
 import icon from '../../../../public/Icon.svg'; // Fixed capitalization in file name
-import {arialCaps, firago, party} from '@/fonts/Fonts';
-
+import {arialCaps, firago} from '@/fonts/Fonts';
 
 const NavbarLink = ({ children,  className, dropdown, parent, lang }) => {
     const [isHovered, setIsHovered] = useState(false);

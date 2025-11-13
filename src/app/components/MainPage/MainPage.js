@@ -10,7 +10,7 @@ import VenueVideo from "./VenueVideo";
  
     return (
         <>
-            <Slider data={data} dict={dict} />
+            <Slider data={data} dict={dict} lang={lang} />
               <section  >
                 <WigetEvent data={data} dict={dict} lang={lang} />
             </section>

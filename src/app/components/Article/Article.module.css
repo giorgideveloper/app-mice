@@ -89,9 +89,10 @@
 .description {
   padding: 0 300px;
   margin-bottom: 40px;
+  
 }
 .description img{
-  width: 100%;
+  width: auto;
   height: 340px !important;
   object-fit: cover;
   margin-bottom: 20px;

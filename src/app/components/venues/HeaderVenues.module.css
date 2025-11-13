@@ -13,7 +13,7 @@
 .title {
   color: white;
   font-family: 700;
-  font-size: 72px;
+  font-size: 55px;
   line-height: 86px;
   letter-spacing: 0.02em;
   margin-bottom: 32px;
@@ -25,7 +25,7 @@
   font-weight: 400;
   line-height: 30px;
   color: #fcfcfd;
-  max-width: 400px;
+  max-width: 600px;
   font-weight: bold;
 }
 

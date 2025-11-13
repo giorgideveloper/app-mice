@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-export default function FooterDes({data}) {
+export default function FooterDes({data, lang}) {
   
   return (
     <>
@@ -12,7 +12,7 @@ export default function FooterDes({data}) {
         <Image src='/logo.svg' width={180} height={180} alt='Footer logo' />
     </div>
       <div className={style.description}>
-        <div dangerouslySetInnerHTML={{ __html: data[0]?.description || '' }}></div>
+        <div style={ lang === "ka" ? { fontFamily: 'firago' } : {}} dangerouslySetInnerHTML={{ __html: data[0]?.description || '' }}></div>
       </div>
       <div className={style.minLogos}>
         {data[0]?.logos?.map((logo, index) => (

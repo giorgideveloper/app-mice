@@ -39,7 +39,7 @@ const markers = [
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ImageApp img={data?.map_cover?.image} alt="Map" />
+              <ImageApp  img={data?.map_cover?.image} alt="Map" />
             </a>
             <div className={style.mapImageBtn}>
               <button

@@ -37,7 +37,7 @@ export const WigetBlog = ({dict, data,lang }) => {
              {data?.media_blog[0]?.title}
             </h1>
                       {data?.media_blog[0]?.short_description ? (
-                                <div className="mb-4 fs-5 text-secondary" dangerouslySetInnerHTML={{ __html: data?.media_blog[0]?.short_description }} />
+                                <div className="mb-4 fs-5 text-secondary" style={ lang === "ka" ? { fontFamily: 'firago' } : {}} dangerouslySetInnerHTML={{ __html: data?.media_blog[0]?.short_description }} />
                             ) : (
                                 <p></p>
                             )}

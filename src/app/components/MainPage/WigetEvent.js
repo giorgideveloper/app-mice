@@ -32,6 +32,7 @@ export const WigetEvent = ({ dict, data, lang }) => {
             {data?.media_blog[1]?.short_description ? (
               <div
                 className={`mb-4 fs-5 text-secondary ${styles.des}`}
+                style={ lang === "ka" ? { fontFamily: 'firago' } : {}}
                 dangerouslySetInnerHTML={{
                   __html: data?.media_blog[1]?.short_description,
                 }}
