@@ -80,7 +80,7 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
             <div className="col-6 justify-content-end d-flex">
               <div className={styles.dataFilter}>
               <button className={`btn bg-none ${startDate && endDate ? styles.bgInput : ''}`} onClick={handleClickDate}><Image src={calendar} 
-               alt="Calendar" /> {startDate && endDate ? startDate?.toISOString()?.split('T')[0] + ' to ' + endDate?.toISOString()?.split('T')[0] : 'Select date'} 
+               alt="Calendar" /> {startDate && endDate ? startDate?.toISOString()?.split('T')[0] + ' to ' + endDate?.toISOString()?.split('T')[0] : dict.events['date-picker']['select-date']} 
                    
                   </button>
                   {isOpen && (
@@ -96,7 +96,7 @@ export default function EventsFilter({ dict, eventTags, setFilterTag, setSelecte
                       />
                       </div>
               )}
-                  <button className='btn bg-none' onClick={handleClickReset}><Image src={filterLines} alt="Filter" /> Clear filters</button>
+                  <button className='btn bg-none' onClick={handleClickReset}><Image src={filterLines} alt="Filter" /> {dict.events['date-picker']['clear']}</button>
 
               </div>
               

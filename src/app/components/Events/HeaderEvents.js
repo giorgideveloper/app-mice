@@ -23,7 +23,6 @@ export default function HeaderEvents({title, lang}) {
     fetchCategorys();
   }, []);
 
-
   return (
     <div className='container-fluid px-0'>
       <div className="row">

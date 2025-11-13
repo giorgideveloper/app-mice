@@ -70,13 +70,17 @@
 		"slug": "events",
 		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
 		"filter-btn": {
+			"business": "ბიზნეს ღონისძიებები",
 			"cultural": "კულტურული ღონისძიებები",
-			"sports": "სპორტული ღონისძიებები",
-			"business": "ბიზნეს ღონისძიებები"
+			"sports": "სპორტული ღონისძიებები"
+		},
+		"date-picker": {
+			"select-date": "აირჩიეთ თარიღი",
+			"clear": "ფილტრის გასუფთავება"
 		}
-
+		
 	},
-	"exhibitions": {
+	"exhibitions": {	
 		"title": "გამოფენები",
 		"slug": "exhibitions",
 		"subtitle": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings",

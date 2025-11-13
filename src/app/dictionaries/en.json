@@ -73,6 +73,10 @@
 			"cultural": "კულტურული ღონისძიებები",
 			"sports": "სპორტული ღონისძიებები",
 			"business": "ბიზნეს ღონისძიებები"
+		},
+		"date-picker": {
+			"select-date": "Select Date",
+			"clear": "Clear Filter"
 		}
 
 	},
