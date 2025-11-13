@@ -62,6 +62,13 @@
 			"airport": "Distance from airport:",
 			"rooms": "Number of rooms:",
 			"number": "Number of venues:"
+		},
+		"map" :{
+			"viewOnMap": "View on Map",
+			"selectLocation": "Select Location",
+			"selectVenue": "Select Venue",
+			"search": "Search",
+			"backToVenues": "Back to Venues"
 		}
 	},
 

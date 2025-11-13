@@ -1,17 +1,35 @@
 
-export default function MapSelects() {
+
+export default function MapSelects({ id, location, setLocationValue, dict, category, setCategoryValue }) {
+
+  
+  const handleLocationChange = (e) => {
+    setLocationValue(e.target.value);
+  };
+
+  const handleCategoryChange = (e) => {
+    setCategoryValue(e.target.value);
+    
+  };
+
+  console.log('Location Props:', dict.map);
+  
   return (
     <div className="d-flex gap-3">
-        <select className="form-select">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+        <select className="form-select" onChange={handleLocationChange}>
+          <option value="">{dict?.venue?.map?.selectLocation}</option> 
+             {location?.map(loc => (
+              <option key={loc.id} value={loc.name}>{loc.name}</option>
+            ))}
         </select>
-        <select className="form-select ">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-        </select>
+        {id === "conference" ? "" : (
+          <select className="form-select " onChange={handleCategoryChange}>
+            <option value="">{dict?.venue?.map?.selectVenue}</option>
+            {category?.map(cat => (
+              <option key={cat.id} value={cat.name}>{cat.name}</option>
+            ))}
+          </select>
+        )}
     </div>
   )
 }
