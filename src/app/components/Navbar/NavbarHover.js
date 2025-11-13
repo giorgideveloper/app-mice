@@ -55,7 +55,7 @@ const NavbarHover = ({ dropdown, setIsHovered, lang, firago, arialCaps }) => {
 										return (
 											<li className={styles.dropdownItem} key={child.id}>
 												<Link
-												style={{fontFamily: lang === 'ka' ? arialCaps.style.fontFamily : firago.style.fontFamily}}
+												style={{fontFamily: lang === 'ka' ? firago.style.fontFamily : firago.style.fontFamily}}
 													target={child.redirect? '_blank' : '_self'}
 													onClick={e => {
 														e.preventDefault();
