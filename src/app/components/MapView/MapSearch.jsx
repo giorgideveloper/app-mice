@@ -1,5 +1,15 @@
 import { IoSearch } from "react-icons/io5";
-export default function MapSearch({ dict, venues }) {
+export default function MapSearch({
+  dict,
+  venues,
+  searchTerm,
+  setSearchTerm,
+  handleSearchClick,
+}) {
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className="search d-flex justify-content-between mb-3">
       <input
@@ -12,8 +22,16 @@ export default function MapSearch({ dict, venues }) {
           borderBottom: "1px solid #ced4da",
         }}
         placeholder={dict?.venue?.map?.search}
+        value={searchTerm}
+        onChange={handleSearchChange}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleSearchClick();
+          }
+        }}
       />
       <button
+        onClick={handleSearchClick}
         className="btn btn-primary"
         style={{
           width: "22%",
