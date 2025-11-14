@@ -1,5 +1,5 @@
 "use client";
-import mainimage from "@/app/image/anbani2.png";
+import mainimage from "@/app/image/park-batumi2.jpeg";
 import { useState } from "react";
 import styles from "./VenueImage.module.css";
 import { ImPlay2 } from "react-icons/im";
