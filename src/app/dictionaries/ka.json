@@ -1,110 +1,111 @@
 {
-	"products": {
-		"cart,": "გამარჯობა"
-	},
-	
-	"button": {
-		"main": "ეწვიე ბათუმს",
-		"add": "დამატება",
-		"edit": "რედაქტირება",
-		"delete": "წაშლა",
-		"save": "შენახვა",
-		"cancel": "გაუქმება",
-		"confirm": "დადასტურება",
-		"close": "დახურვა",
-		"back": "უკან",
-		"more": "გაიგე მეტი",
-		"view": "სრულად"
-	},
-	"venue-title": "ღონისძიებების სირვცეები",
+  "products": {
+    "cart,": "გამარჯობა"
+  },
 
-	"filter": {
-		"resetFilters": "ფილტრების გაწმენდა",
-		"locationName": "ადგილმდებარეობა",
-		"location": {
-			"Batumi": "ბათუმი",
-			"Kobuleti Municipality": "კობულეთი",
-			"Khelvachauri Municipality": "ხულოს მუნიციპალიტეტი",
-			"Kheda Municipality": "ქედის მუნიციპალიტეტი",
-			"Shuakhevi Municipality": "შუახევი მუნიციპალიტეტი",
-			"Khulo Municipality": "ხულო მუნიციპალიტეტი"
-		},
-		"categoryName": "კატეგორია",
-		"category": {
-			"Indoor": "შიდა",
-			"Outdoor": "გარე"
-		}
-		
-	},
-		"venue-header": {
-		"cultural": {
-			"title": "Cultural Venues",
-			"subtitle": "Trip to Crossroads"
-		},
-		"conference": {
-			"title": "BUSINESS / CORPORATE VENUES",
-			"subtitle": "Meeting and Conference venues, where ideas meet success"
-		},
-		"sports": {
-			"title": "Sports Venues",
-			"subtitle": "Celebrating every moment of victory"
-		}
-	},
-	"venue":{
-		"conference-venue": "საკონფერენციო სივრცეები",
-		"sports-venue": "სპორტული სივრცეები",
-		"cultural-venue": "კულტურული სივრცეები",
-		"location": {
-			"georgia": "საქართველო"
-		},
-		"backToVenues": "უკან",
-		"space": "საკონფერენციო",
-		"innerVenue":{
-			"airport": "მანძილი აეროპორტიდან:",
-			"rooms": "ოთახების რაოდენობა:",
-			"number": "სივრცეების რაოდენობა:"
-		},
-		"map" :{
-			"viewOnMap": "ნახე რუკაზე",
-			"selectLocation": "აირჩიეთ ადგილმდებარეობა",
-			"selectVenue": "აირჩიეთ სივრცე",
-			"search": "ძიება",
-			"backToVenues": "უკან სივრცეებში"
-		}
-	},
-	"events": {
-		"title": "ღონისძიებები",
-		"slug": "events",
-		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
-		"filter-btn": {
-			"business": "ბიზნეს ღონისძიებები",
-			"cultural": "კულტურული ღონისძიებები",
-			"sports": "სპორტული ღონისძიებები"
-		},
-		"date-picker": {
-			"select-date": "აირჩიეთ თარიღი",
-			"clear": "ფილტრის გასუფთავება"
-		}
-		
-	},
-	"exhibitions": {	
-		"title": "გამოფენები",
-		"slug": "exhibitions",
-		"subtitle": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings",
-		"filter-btn": {
-			"art": "ხელოვნების გამოფენები",
-			"history": "ისტორიული გამოფენები",
-			"science": "მეცნიერების გამოფენები"
-		}
-	},
-	"load-more": "იხილე მეტი",
-	"no-more-post": "მეტი პოსტი არ არის",
-	"footer": {
-		"web-links": "ჩვენი ვებგვერდები",
-		"contact": "კონტაქტი",
-		"app-download": "აპლიკაცია"
-	}
-	
-	
+  "button": {
+    "main": "ეწვიე ბათუმს",
+    "add": "დამატება",
+    "edit": "რედაქტირება",
+    "delete": "წაშლა",
+    "save": "შენახვა",
+    "cancel": "გაუქმება",
+    "confirm": "დადასტურება",
+    "close": "დახურვა",
+    "back": "უკან",
+    "more": "გაიგე მეტი",
+    "view": "სრულად"
+  },
+  "venue-title": "ღონისძიებების სირვცეები",
 
+  "blog": {
+    "title": "მედია ბლოგი",
+    "slug": "blog",
+    "subtitle": "Discover insightful articles and stories about Batumi and its surroundings"
+  },
+
+  "filter": {
+    "resetFilters": "ფილტრების გაწმენდა",
+    "locationName": "ადგილმდებარეობა",
+    "location": {
+      "Batumi": "ბათუმი",
+      "Kobuleti Municipality": "კობულეთი",
+      "Khelvachauri Municipality": "ხულოს მუნიციპალიტეტი",
+      "Kheda Municipality": "ქედის მუნიციპალიტეტი",
+      "Shuakhevi Municipality": "შუახევი მუნიციპალიტეტი",
+      "Khulo Municipality": "ხულო მუნიციპალიტეტი"
+    },
+    "categoryName": "კატეგორია",
+    "category": {
+      "Indoor": "შიდა",
+      "Outdoor": "გარე"
+    }
+  },
+  "venue-header": {
+    "cultural": {
+      "title": "Cultural Venues",
+      "subtitle": "Trip to Crossroads"
+    },
+    "conference": {
+      "title": "BUSINESS / CORPORATE VENUES",
+      "subtitle": "Meeting and Conference venues, where ideas meet success"
+    },
+    "sports": {
+      "title": "Sports Venues",
+      "subtitle": "Celebrating every moment of victory"
+    }
+  },
+  "venue": {
+    "conference-venue": "საკონფერენციო სივრცეები",
+    "sports-venue": "სპორტული სივრცეები",
+    "cultural-venue": "კულტურული სივრცეები",
+    "location": {
+      "georgia": "საქართველო"
+    },
+    "backToVenues": "უკან",
+    "space": "საკონფერენციო",
+    "innerVenue": {
+      "airport": "მანძილი აეროპორტიდან:",
+      "rooms": "ოთახების რაოდენობა:",
+      "number": "სივრცეების რაოდენობა:"
+    },
+    "map": {
+      "viewOnMap": "ნახე რუკაზე",
+      "selectLocation": "აირჩიეთ ადგილმდებარეობა",
+      "selectVenue": "აირჩიეთ სივრცე",
+      "search": "ძიება",
+      "backToVenues": "უკან სივრცეებში"
+    }
+  },
+  "events": {
+    "title": "ღონისძიებები",
+    "slug": "events",
+    "subtitle": "Discover exciting events happening in Batumi and its surroundings",
+    "filter-btn": {
+      "business": "ბიზნეს ღონისძიებები",
+      "cultural": "კულტურული ღონისძიებები",
+      "sports": "სპორტული ღონისძიებები"
+    },
+    "date-picker": {
+      "select-date": "აირჩიეთ თარიღი",
+      "clear": "ფილტრის გასუფთავება"
+    }
+  },
+  "exhibitions": {
+    "title": "გამოფენები",
+    "slug": "exhibitions",
+    "subtitle": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings",
+    "filter-btn": {
+      "art": "ხელოვნების გამოფენები",
+      "history": "ისტორიული გამოფენები",
+      "science": "მეცნიერების გამოფენები"
+    }
+  },
+  "load-more": "იხილე მეტი",
+  "no-more-post": "მეტი პოსტი არ არის",
+  "footer": {
+    "web-links": "ჩვენი ვებგვერდები",
+    "contact": "კონტაქტი",
+    "app-download": "აპლიკაცია"
+  }
 }
