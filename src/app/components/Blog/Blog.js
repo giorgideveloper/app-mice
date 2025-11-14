@@ -15,7 +15,7 @@ export default function Blog({ data, lang, dict }) {
         <div className="row text-center">
           <div className={styles.header}>
             {" "}
-            <h1 style={lang === "ka" ? { fontFamily: "firaGo" } : {}}>
+            <h1 style={lang === "ka" ? { fontFamily: "arialCaps" } : {}}>
               {dict.blog.title}
             </h1>
           </div>

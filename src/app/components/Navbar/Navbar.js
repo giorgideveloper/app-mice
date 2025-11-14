@@ -32,7 +32,10 @@ export default function Navbar({ lang, menu, dict, footerData }) {
 
             <Link href={footerData?.downloadable_files[0]?.file} target="blank">
               {" "}
-              <span className={styles.navbarPosition}>
+              <span
+                style={{ fontFamily: "firaGo" }}
+                className={styles.navbarPosition}
+              >
                 {footerData?.downloadable_files[0]?.title} <IoMdDownload />
               </span>
             </Link>
