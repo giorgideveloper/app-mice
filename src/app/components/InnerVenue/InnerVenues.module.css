@@ -1,7 +1,7 @@
 .innerContainer {
   width: 900px;
   margin: 0 auto;
-  font-family: 'firaGO', sans-serif;
+  font-family: "firaGO", sans-serif;
 }
 
 @media (max-width: 900px) {
@@ -18,20 +18,19 @@
   margin-bottom: 20px;
 }
 
-.swithcher{
+.swithcher {
   position: absolute;
   margin-top: 20px;
 }
 
-.imageIcons{
+.imageIcons {
   background-color: white;
   font-size: 18px;
   padding: 10px;
   font-weight: bold;
-
 }
 
-.mainImage{
+.mainImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -78,6 +77,7 @@
   margin-bottom: 2rem;
   border-radius: 8px;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .titleContainer {
@@ -259,9 +259,8 @@
   height: auto;
   object-fit: cover;
 }
-.mapImage{
+.mapImage {
   position: relative;
-
 }
 .mapImageBtn {
   position: absolute;
@@ -273,11 +272,11 @@
   border: 1px solid rgb(56, 86, 177);
 }
 
-.mapImageBtn button{
-    color: rgb(56, 86, 177); 
-    font-family: "FiraGo", sans-serif;
+.mapImageBtn button {
+  color: rgb(56, 86, 177);
+  font-family: "FiraGo", sans-serif;
 }
-.mapImage::before{
+.mapImage::before {
   content: "";
   position: absolute;
   top: 0;
@@ -288,7 +287,6 @@
   z-index: 1;
 }
 
-
 @media (max-width: 768px) {
   .mapContainer img {
     width: 100%;
@@ -296,27 +294,27 @@
   }
 }
 @media (max-width: 321px) {
-  .mapImageBtn button{
+  .mapImageBtn button {
     font-size: 12px !important;
   }
 }
-.imageGallery{
+.imageGallery {
   position: relative;
 }
-.navButton{
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background-color: rgba(255, 255, 255, 0.7);
-border: none; 
-padding: 10px;
-cursor: pointer;
-border-radius: 50%;
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
 }
-.prevButton{
+.prevButton {
   left: 10px;
-  }
+}
 
-  .nextButton {
+.nextButton {
   right: 10px;
-  }
+}
