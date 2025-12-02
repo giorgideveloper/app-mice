@@ -25,7 +25,7 @@ export default function Navbar({ lang, menu, dict, footerData }) {
                 e.preventDefault();
                 window.location.href = `/${lang}`;
               }}
-              href={"/"}
+              href={`/${lang}`}
             >
               <Image src="/logo.svg" alt="logo" width={130} height={100} />
             </Link>
