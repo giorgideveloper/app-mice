@@ -37,6 +37,7 @@ export async function generateMetadata({ params }) {
 
 export default async function LangLayout({ children, params }) {
   const { lang } = await params;
+  console.log("lang layout render", lang);
   // i need menu ssr
   const menu = await fetchMenu(lang);
   const dict = await getDictionary(lang);

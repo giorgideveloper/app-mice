@@ -3,7 +3,7 @@ import MapView from "@/app/components/MapView/MapView";
 import { getDictionary } from "../../../dictionaries";
 
 export default async function page({ params }) {
-  const { lang, id } = params;
+  const { lang, id } = await params;
   const dict = await getDictionary(lang);
 
   return (
