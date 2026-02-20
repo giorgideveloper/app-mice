@@ -45,7 +45,7 @@ export default function LoadMore({
           disabled={loading}
         >
           <span>
-            {loading ? "Loading..." : dict["load-more"] || "Load More"}
+            {loading ? "Loading..." : dict?.["load-more"] || "Load More"}
           </span>
         </button>
       )}
