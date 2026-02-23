@@ -28,7 +28,8 @@ export default function LoadMore({
       setHasMore(false);
     }
     setLoading(false);
-    setHasMore(false);
+
+    if (data.next === null) setHasMore(false);
   };
 
   return (

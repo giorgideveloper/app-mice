@@ -8,7 +8,6 @@ import Link from "next/link";
 import { IoMdDownload } from "react-icons/io";
 
 export default function Navbar({ lang, menu, dict, footerData }) {
-  console.log("Navbar footerData:", footerData);
   if (!menu || menu.length === 0) {
     return null;
   }

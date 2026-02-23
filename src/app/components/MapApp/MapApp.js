@@ -6,7 +6,6 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 export default function MapApp({ data }) {
   const [map, setMap] = React.useState(true);
-  console.log("Map Data:", data.coords);
 
   const cordinations = data?.coords
     ? data?.coords.split(",").map((coord) => parseFloat(coord.trim()))
