@@ -62,7 +62,22 @@
     },
     "backToVenues": "Back To",
     "space": "Conference",
+    "tableVenue": {
+      "m2": "M2",
+      "sportsmensCapacity": "Sportsmen Capacity",
+      "attendeesCapacity": "Attendees Capacity",
+      "capacity": "Capacity",
+      "rooms": "Rooms",
+      "school": "School",
+      "square": "Square",
+      "uShape": "U-Shape",
+      "theatre": "Theatre",
+      "banquet": "Banquet",
+      "cocktail": "Cocteil"
+    },
     "innerVenue": {
+      "meetingSpaces": "Meeting Spaces",
+      "meetingSpace": "Meeting Space",
       "airport": "Distance from airport:",
       "rooms": "Number of rooms:",
       "number": "Number of venues:"

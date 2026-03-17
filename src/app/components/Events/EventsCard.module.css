@@ -1,156 +1,152 @@
-.eventsCard{
-    padding: 10px 10px;
-    font-family: "FiraGO";
-    cursor: pointer;
-    margin-bottom: 20px; /* Add consistent spacing between event cards */
+.eventsCard {
+  padding: 10px 10px;
+  font-family: "FiraGO";
+  cursor: pointer;
+  margin-bottom: 20px; /* Add consistent spacing between event cards */
 }
 
-
-.card{
-    display: flex;
-    align-items: center;
+.card {
+  display: flex;
+  align-items: center;
 }
 
-.dataCard{
-    display: flex;
-    margin-right: 64px;
+.dataCard {
+  display: flex;
+  margin-right: 64px;
 }
-.dataCard h1{
-    font-size: 60px;
-    font-family: 'firaGo', sans-serif;
-    font-weight: 600;
-    line-height: 72px;
+.dataCard h1 {
+  font-size: 60px;
+  font-family: "firaGo", sans-serif;
+  font-weight: 600;
+  line-height: 72px;
 }
 .dataCard h2 {
-    margin-top: 0.50em;
+  margin-top: 0.5em;
 }
-.dataCard span{
-    font-size: 24px;
-    font-family: 'firaGo', sans-serif;
-    font-weight: 500;
-    margin-left: 10px;
-    color: #667085;
-    margin-left: 15px;
-    line-height: 32px;
-    margin-top: -25px;
+.dataCard span {
+  font-size: 24px;
+  font-family: "firaGo", sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  color: #667085;
+  margin-left: 15px;
+  line-height: 32px;
+  margin-top: -25px;
 }
-.imageContainer{
-    width: 820px;
-    height: 200px; /* Fixed height for all images */
-    display: flex;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+.imageContainer {
+  width: 820px;
+  height: 200px; /* Fixed height for all images */
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
 }
-.image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-.content{
-    width: 100%;
-    padding: 20px 20px 24px 24px;
-    align-self: center; /* Aligns with other elements */
-    overflow: hidden;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-.coontent p{
-    font-size: 16px;
-    font-family: 'firaGo', sans-serif;
-    color: #101828 !important;
-    line-height: 24px;
-    
-}
-.content p:nth-child(1){
-    font-weight: 600;
-    color: #667085;
-    text-transform: uppercase;
-}
-.content p:nth-child(2){
-    font-weight: 600;
-    font-size: 16px;
-    color: #101828;
-    line-height: 22px;
-    text-transform: uppercase;
-
-}
-.content p:nth-child(3){
-    font-weight: 600;
-    color: #667085;
-    text-transform: uppercase;
+.content {
+  width: 100%;
+  padding: 20px 20px 24px 24px;
+  align-self: center; /* Aligns with other elements */
+  overflow: hidden;
 }
 
-.description{
-    font-size: 14px !important;
-    font-family: 'firaGo', sans-serif;
-    color: #101828 !important;
-    line-height: 22px;
-   
+.coontent p {
+  font-size: 16px;
+  font-family: "firaGo", sans-serif;
+  color: #101828 !important;
+  line-height: 24px;
+}
+.content p:nth-child(1) {
+  font-weight: 600;
+  color: #667085;
+  text-transform: uppercase;
+}
+.content p:nth-child(2) {
+  font-weight: 600;
+  font-size: 16px;
+  color: #101828;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+.content p:nth-child(3) {
+  font-weight: 600;
+  color: #667085;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 14px !important;
+  font-family: "firaGo", sans-serif;
+  color: #101828 !important;
+  line-height: 22px;
 }
 
 @media (max-width: 992px) {
-    .eventsCard{
-        padding: 10px 20px;
-    }
-    .card{
-        flex-direction: column;
-        align-items: center;
-    }
-    .dataCard{
-        margin-right: 0;
-        margin-bottom: 16px;
-        align-self: center;
-    }
-    .dataCard h1{
-        font-size: 48px;
-        line-height: 56px;
-    }
-    .dataCard span{
-        font-size: 20px;
-        line-height: 28px;
-        margin-left: 10px;
-        margin-top: -20px;
-    }
-    .imageContainer{
-        width: 100%;
-        height: 200px; /* Keep consistent height even on mobile */
-    }
-    .image{
-        height: 100%;
-        width: 100%;
-    }
-    .content{
-        padding-top: 20px;
-        text-align: left;
-        align-self: flex-start; /* Align to start in column layout */
-    }
+  .eventsCard {
+    padding: 10px 20px;
+  }
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .dataCard {
+    margin-right: 0;
+    margin-bottom: 16px;
+    align-self: center;
+  }
+  .dataCard h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .dataCard span {
+    font-size: 20px;
+    line-height: 28px;
+    margin-left: 10px;
+    margin-top: -20px;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 200px; /* Keep consistent height even on mobile */
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+  .content {
+    padding-top: 20px;
+    text-align: left;
+    align-self: flex-start; /* Align to start in column layout */
+  }
 }
 @media (max-width: 576px) {
-    .eventsCard{
-        padding: 10px 10px;
-    }
-    .dataCard h1{
-        font-size: 36px;
-        line-height: 44px;
-    }
-    .dataCard span{
-        font-size: 16px;
-        line-height: 24px;
-        margin-left: 8px;
-        margin-top: -15px;
-    }
-    .content p:nth-child(2){
-        font-size: 14px;
-        line-height: 20px;
-    }
+  .eventsCard {
+    padding: 10px 10px;
+  }
+  .dataCard h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .dataCard span {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 8px;
+    margin-top: -15px;
+  }
+  .content p:nth-child(2) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
-.content svg{
-    margin-right: 8px;
-    vertical-align: middle;
-    font-size: 25px;
-    margin-bottom: 5px;
+.content svg {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 25px;
+  margin-bottom: 5px;
 }

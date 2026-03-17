@@ -64,7 +64,22 @@
     },
     "backToVenues": "უკან",
     "space": "საკონფერენციო",
+    "tableVenue": {
+      "m2": "მ2",
+      "sportsmensCapacity": "სპორტსმენების ტევადობა",
+      "attendeesCapacity": "მონაწილეების ტევადობა",
+      "capacity": "ტევადობა",
+      "rooms": "ოთახები",
+      "school": "საკლასო",
+      "square": "კვადრატი",
+      "uShape": "U-ფორმა",
+      "theatre": "თეატრალური",
+      "banquet": "საბანკეტო",
+      "cocktail": "კოქტეილი"
+    },
     "innerVenue": {
+      "meetingSpaces": "შეხვედრების სივრცეები",
+      "meetingSpace": "შეხვედრის ადგილი ",
       "airport": "მანძილი აეროპორტიდან:",
       "rooms": "ოთახების რაოდენობა:",
       "number": "სივრცეების რაოდენობა:"

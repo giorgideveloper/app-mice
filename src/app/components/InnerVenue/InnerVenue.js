@@ -135,9 +135,11 @@ export default function InnerVenue({ data, id, dict }) {
             dangerouslySetInnerHTML={{ __html: data?.description || "" }}
           />
           <div className={style.meetingSpacesContainer}>
-            <h3 className={style.sectionTitle}>Meeting Spaces</h3>
+            <h3 className={style.sectionTitle}>
+              {dict.venue.innerVenue.meetingSpaces}
+            </h3>
             <div className={style.tableContainer}>
-              <InnerTable data={data} id={id} />
+              <InnerTable data={data} id={id} dict={dict} />
             </div>
           </div>
         </div>
