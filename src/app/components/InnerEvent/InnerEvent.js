@@ -22,49 +22,52 @@ export default function InnerEvent({ eventData, lang }) {
             </div>
             <div className={styles.textContainer}>{eventData.name}</div>
             <div className={styles.contactInfoContainers}>
-              <div className={styles.contactInfo}>
-                <ul>
-                  <li className={styles.contactLogo}>
-                    <ImageApp img={eventData?.image} alt={eventData?.name} />
-                  </li>
-                </ul>
-              </div>
+              <div className={styles.containerInfo}>
+                <div className={styles.contactInfo}>
+                  <ul>
+                    <li className={styles.contactLogo}>
+                      <ImageApp img={eventData?.image} alt={eventData?.name} />
+                    </li>
+                  </ul>
+                </div>
 
-              <div className={styles.contactInfo}>
-                <ul>
-                  <li>
-                    <CiPhone />
-                    <a href={`tel:${eventData?.phone}`}>{eventData?.phone}</a>
-                  </li>
-                  <li>
-                    <CiMail />
-                    <a href={`mailto:${eventData?.email}`}>
-                      {eventData?.email}
-                    </a>
-                  </li>
-                  <li>
-                    <CiGlobe />
-                    <a target="blank" href={eventData?.website}>
-                      {eventData?.website}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.contactInfo}>
-                <ul>
-                  <li>
-                    <CiLocationOn />
-                    {eventData?.eventhall_address}
-                  </li>
-                  <li>
-                    <IoHomeOutline />
-                    {eventData?.place}
-                  </li>
-                  <li>
-                    <FaRegCalendarAlt />
-                    {eventData?.event_start_date} - {eventData?.event_end_date}
-                  </li>
-                </ul>
+                <div className={styles.contactInfo}>
+                  <ul>
+                    <li>
+                      <CiPhone />
+                      <a href={`tel:${eventData?.phone}`}>{eventData?.phone}</a>
+                    </li>
+                    <li>
+                      <CiMail />
+                      <a href={`mailto:${eventData?.email}`}>
+                        {eventData?.email}
+                      </a>
+                    </li>
+                    <li>
+                      <CiGlobe />
+                      <a target="blank" href={eventData?.website}>
+                        {eventData?.website}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className={styles.contactInfo}>
+                  <ul>
+                    <li>
+                      <CiLocationOn />
+                      {eventData?.eventhall_address}
+                    </li>
+                    <li>
+                      <IoHomeOutline />
+                      {eventData?.place}
+                    </li>
+                    <li>
+                      <FaRegCalendarAlt />
+                      {eventData?.event_start_date} -{" "}
+                      {eventData?.event_end_date}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div
