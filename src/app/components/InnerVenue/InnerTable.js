@@ -58,23 +58,31 @@ export default function InnerTable({ data, id, dict }) {
             {id === "sport" && (
               <>
                 <th>{dict.venue.innerVenue.meetingSpace}</th>
-                <th>{dict.venue.tableVenue.m2}</th>
-                <th>{dict.venue.tableVenue.sportsmensCapacity}</th>
-                <th>{dict.venue.tableVenue.attendeesCapacity}</th>
+                <th className={styles.tableCell}>{dict.venue.tableVenue.m2}</th>
+                <th className={styles.tableCell}>
+                  {dict.venue.tableVenue.sportsmensCapacity}
+                </th>
+                <th className={styles.tableCell}>
+                  {dict.venue.tableVenue.attendeesCapacity}
+                </th>
               </>
             )}
             {id === "cultural" && (
               <>
                 <th> {dict.venue.innerVenue.meetingSpace}</th>
-                <th>{dict.venue.tableVenue.m2}</th>
-                <th>{dict.venue.tableVenue.capacity}</th>
+                <th className={styles.tableCell}>{dict.venue.tableVenue.m2}</th>
+                <th className={styles.tableCell}>
+                  {dict.venue.tableVenue.capacity}
+                </th>
               </>
             )}
             {id === "conference" && (
               <>
                 <th>{dict.venue.tableVenue.rooms}</th>
                 {uniqueSeatingNames.map((name) => (
-                  <th key={name}>{tableHeader(name)}</th>
+                  <th className={styles.tableCell} key={name}>
+                    {tableHeader(name)}
+                  </th>
                 ))}
               </>
             )}
@@ -86,9 +94,15 @@ export default function InnerTable({ data, id, dict }) {
               {data?.meeting_space?.map((space, index) => (
                 <tr key={index}>
                   <td>{space?.meeting_space_name || "-"}</td>
-                  <td>{space?.square_meters || "-"}</td>
-                  <td>{space?.sportsmen_capacity || "-"}</td>
-                  <td>{space?.Attendees_capacity || "-"}</td>
+                  <td className={styles.tableCell}>
+                    {space?.square_meters || "-"}
+                  </td>
+                  <td className={styles.tableCell}>
+                    {space?.sportsmen_capacity || "-"}
+                  </td>
+                  <td className={styles.tableCell}>
+                    {space?.Attendees_capacity || "-"}
+                  </td>
                 </tr>
               ))}
             </>
@@ -98,8 +112,12 @@ export default function InnerTable({ data, id, dict }) {
               {data?.meeting_space?.map((space, index) => (
                 <tr key={index}>
                   <td>{space?.meeting_space_name || "-"}</td>
-                  <td>{space?.square_meters || "-"}</td>
-                  <td>{space?.Attendees_capacity || "-"}</td>
+                  <td className={styles.tableCell}>
+                    {space?.square_meters || "-"}
+                  </td>
+                  <td className={styles.tableCell}>
+                    {space?.Attendees_capacity || "-"}
+                  </td>
                 </tr>
               ))}
             </>
@@ -116,7 +134,9 @@ export default function InnerTable({ data, id, dict }) {
                     );
 
                     return (
-                      <td key={name}>{match ? match.capacity || "-" : "-"}</td>
+                      <td className={styles.tableCell} key={name}>
+                        {match ? match.capacity || "-" : "-"}
+                      </td>
                     );
                   })}
                 </tr>

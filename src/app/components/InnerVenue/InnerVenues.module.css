@@ -1,5 +1,5 @@
 .innerContainer {
-  width: 900px;
+  /* width: 900px; */
   margin: 0 auto;
   font-family: "firaGO", sans-serif;
 }
@@ -170,7 +170,7 @@
 .meetingSpacesTable th,
 .meetingSpacesTable td {
   padding: 1rem;
-  text-align: left;
+
   border-bottom: 1px solid #e9ecef;
 }
 
@@ -318,4 +318,8 @@
 
 .nextButton {
   right: 10px;
+}
+
+.tableCell {
+  text-align: center;
 }
