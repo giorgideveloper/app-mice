@@ -80,7 +80,8 @@
       "meetingSpace": "Meeting Space",
       "airport": "Distance from airport:",
       "rooms": "Number of rooms:",
-      "number": "Number of venues:"
+      "number": "Number of venues:",
+      "km": "km"
     },
     "map": {
       "viewOnMap": "View on Map",

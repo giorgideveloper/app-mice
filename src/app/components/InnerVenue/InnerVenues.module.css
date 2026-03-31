@@ -78,6 +78,7 @@
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
+  width: 100% !important;
 }
 
 .titleContainer {
@@ -245,6 +246,10 @@
   object-fit: cover;
 }
 
+.imageGalleryImage {
+  width: 100% !important;
+}
+
 .imageGalleryImage img {
   width: 100% !important;
   height: 100% !important;
@@ -262,6 +267,7 @@
 }
 .mapImage {
   position: relative;
+  width: 100% !important;
 }
 .mapImageBtn {
   position: absolute;
@@ -301,7 +307,17 @@
 }
 .imageGallery {
   position: relative;
+  width: 100% !important;
 }
+/* .imageGallery:hover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+} */
 .navButton {
   position: absolute;
   top: 50%;

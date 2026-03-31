@@ -3,8 +3,8 @@ import ImageApp from "@/app/plugins/ImageApp";
 import style from "./InnerVenues.module.css";
 import { CiGlobe, CiLocationOn, CiMail } from "react-icons/ci";
 import { CiPhone } from "react-icons/ci";
-import { IoMdAirplane } from "react-icons/io";
-import { FaDoorClosed } from "react-icons/fa6";
+import { BsAirplane } from "react-icons/bs";
+import { BsDoorClosed } from "react-icons/bs";
 import useFancybox from "./useFancybox";
 import InnerTable from "./InnerTable";
 import MapApp from "../MapApp/MapApp";
@@ -27,7 +27,10 @@ export default function InnerVenue({ data, id, dict }) {
           <div className="col-12 mt-5">
             <div className={style.imageContainer} ref={fancyboxRef}>
               {galleryImages && galleryImages.length > 0 && (
-                <div className={style.imageGallery}>
+                <div
+                  className={style.imageGallery}
+                  onChange={console.log("Image gallery clicked")}
+                >
                   <button
                     className={`${style.navButton} ${style.prevButton}`}
                     onClick={() => console.log("Previous image clicked")}
@@ -83,13 +86,13 @@ export default function InnerVenue({ data, id, dict }) {
             <div className={style.contactInfo}>
               <ul>
                 <li>
-                  <IoMdAirplane />
+                  <BsAirplane />
                   {dict.venue.innerVenue.airport} {data?.distance_from_airport}{" "}
-                  km
+                  {dict.venue.innerVenue.km}
                 </li>
 
                 <li>
-                  <FaDoorClosed />
+                  <BsDoorClosed />
 
                   {/* Number of venues | in cultural and sport*/}
 

@@ -13,6 +13,7 @@
 .dataCard {
   display: flex;
   margin-right: 64px;
+  width: 125px;
 }
 .dataCard h1 {
   font-size: 60px;
