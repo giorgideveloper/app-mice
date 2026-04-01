@@ -122,5 +122,35 @@
     "web-links": "Our Websites",
     "contact": "Contact",
     "app-download": "GET THE APP"
+  },
+  "metaData": {
+    "about": {
+      "title": "About Batumi | Visit Batumi",
+      "description": "Discover the history, culture, and attractions of Batumi with this comprehensive guide."
+    },
+    "mediaBlog": {
+      "title": "Media Blog | Visit Batumi",
+      "description": "Explore interesting articles and stories about Batumi and Adjara"
+    },
+    "conference": {
+      "title": "Conferences | Visit Batumi",
+      "description": "Discover exciting conferences happening in Batumi and its surroundings"
+    },
+    "cultural": {
+      "title": "Cultural Venues | Visit Batumi",
+      "description": "Explore cultural venues in Batumi and its surroundings"
+    },
+    "sports": {
+      "title": "Sports Venues | Visit Batumi",
+      "description": "Explore sports venues in Batumi and its surroundings"
+    },
+    "events": {
+      "title": "Events | Visit Batumi",
+      "description": "Discover exciting events happening in Batumi and its surroundings"
+    },
+    "exhibitions": {
+      "title": "Exhibitions | Visit Batumi",
+      "description": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings"
+    }
   }
 }

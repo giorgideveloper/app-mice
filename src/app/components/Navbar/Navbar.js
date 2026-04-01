@@ -70,7 +70,10 @@ export default function Navbar({ lang, menu, dict, footerData }) {
               ))}
             </ul>
             <Button>
-              <a href="https://visitbatumi.com/ka"> {dict?.button?.main}</a>
+              <Link href="https://visitbatumi.com/ka">
+                {" "}
+                {dict?.button?.main}
+              </Link>
             </Button>
             <NavbarLang className={styles.lang} lang={lang} />
           </div>

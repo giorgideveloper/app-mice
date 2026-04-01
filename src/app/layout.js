@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }) {
   return (
     <html>
+      <head>
+        <link rel="icon" href="/logo.svg" sizes="any" />
+      </head>
       <body>
         <NextTopLoader
           initialPosition={0.08}

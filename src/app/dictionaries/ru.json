@@ -1,84 +1,112 @@
 {
-	"products": {
-		"cart": "Привет"
-	},
-	"button": {
-		"main": "ПОСЕТИТЕ БАТУМИ",
-		"add": "Добавить",
-		"edit": "Редактировать",
-		"delete": "Удалить",
-		"save": "Сохранить",
-		"cancel": "Отменить",
-		"confirm": "Подтвердить",
-		"close": "Закрыть",
-		"back": "Назад",
-		"more": "Узнать больше",
-		"view": "Читать Далее"
-	},
-	"venue-title": "Места проведения мероприятий",
+  "products": {
+    "cart": "Привет"
+  },
+  "button": {
+    "main": "ПОСЕТИТЕ БАТУМИ",
+    "add": "Добавить",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "save": "Сохранить",
+    "cancel": "Отменить",
+    "confirm": "Подтвердить",
+    "close": "Закрыть",
+    "back": "Назад",
+    "more": "Узнать больше",
+    "view": "Читать Далее"
+  },
+  "venue-title": "Места проведения мероприятий",
 
-	"filter": {
-		"resetFilters": "Сбросить фильтры",
-		"locationName": "Расположение",
-		"location": {
-			"Batumi": "Батуми",
-			"Kobuleti Municipality": "Кобулети Муниципалитет",
-			"Khelvachauri Municipality": "Хелвачаури Муниципалитет",
-			"Kheda Municipality": "Кеда Муниципалитет",
-			"Shuakhevi Municipality": "Шуакахеви Муниципалитет",
-			"Khulo Municipality": "Хуло Муниципалитет"
-		},
-		"categoryName": "Категория",
-		"category": {
-			"Indoor": "Закрытое",
-			"Outdoor": "Открытое"
-		}
-		
-	},
-		"venue-header": {
-		"cultural": {
-			"title": "Cultural Venues",
-			"subtitle": "Trip to Crossroads"
-		},
-		"conference": {
-			"title": "BUSINESS / CORPORATE VENUES",
-			"subtitle": "Meeting and Conference venues, where ideas meet success"
-		},
-		"sports": {
-			"title": "Sports Venues",
-			"subtitle": "Celebrating every moment of victory"
-		}
-	},
-	"venue": {
-		"conference-venue": "Conference Venues",
-		"sports-venue": "Sports Venues",
-		"cultural-venue": "Cultural Venues",
-		"location": {
-			"georgia": "Georgia"
-		},
-		"backToVenues": "Назад",
-		"space": "Conference",
-		"innerVenue":{
-			"airport": "Distance from airport:",
-			"rooms": "Number of rooms:",
-			"number": "Number of venues:"
-		}
-	},
-	"events": {
-		"title": "Events",
-		"subtitle": "Discover exciting events happening in Batumi and its surroundings",
-		"filter-btn": {
-			"cultural": "Cultural Events",
-			"sports": "Sports Events",
-			"business": "Business Events"
-		}
-
-	},
-	"load-more": "Загрузить еще",
-	"no-more-post": "Больше нет доступных постов",
-	"footer": {
-		"web-links": "ჩვენი ვებგვერდები",
-		"contact": "კონტაქტი",
-		"app-download": "აპლიკაციის ჩამოტვირთვა"
-	}
+  "filter": {
+    "resetFilters": "Сбросить фильтры",
+    "locationName": "Расположение",
+    "location": {
+      "Batumi": "Батуми",
+      "Kobuleti Municipality": "Кобулети Муниципалитет",
+      "Khelvachauri Municipality": "Хелвачаури Муниципалитет",
+      "Kheda Municipality": "Кеда Муниципалитет",
+      "Shuakhevi Municipality": "Шуакахеви Муниципалитет",
+      "Khulo Municipality": "Хуло Муниципалитет"
+    },
+    "categoryName": "Категория",
+    "category": {
+      "Indoor": "Закрытое",
+      "Outdoor": "Открытое"
+    }
+  },
+  "venue-header": {
+    "cultural": {
+      "title": "Cultural Venues",
+      "subtitle": "Trip to Crossroads"
+    },
+    "conference": {
+      "title": "BUSINESS / CORPORATE VENUES",
+      "subtitle": "Meeting and Conference venues, where ideas meet success"
+    },
+    "sports": {
+      "title": "Sports Venues",
+      "subtitle": "Celebrating every moment of victory"
+    }
+  },
+  "venue": {
+    "conference-venue": "Conference Venues",
+    "sports-venue": "Sports Venues",
+    "cultural-venue": "Cultural Venues",
+    "location": {
+      "georgia": "Georgia"
+    },
+    "backToVenues": "Назад",
+    "space": "Conference",
+    "innerVenue": {
+      "airport": "Distance from airport:",
+      "rooms": "Number of rooms:",
+      "number": "Number of venues:"
+    }
+  },
+  "events": {
+    "title": "Events",
+    "subtitle": "Discover exciting events happening in Batumi and its surroundings",
+    "filter-btn": {
+      "cultural": "Cultural Events",
+      "sports": "Sports Events",
+      "business": "Business Events"
+    }
+  },
+  "load-more": "Загрузить еще",
+  "no-more-post": "Больше нет доступных постов",
+  "footer": {
+    "web-links": "ჩვენი ვებგვერდები",
+    "contact": "კონტაქტი",
+    "app-download": "აპლიკაციის ჩამოტვირთვა"
+  },
+  "metaData": {
+    "about": {
+      "title": "About Batumi | Visit Batumi",
+      "description": "Discover the history, culture, and attractions of Batumi with this comprehensive guide."
+    },
+    "mediaBlog": {
+      "title": "Media Blog | Visit Batumi",
+      "description": "Explore interesting articles and stories about Batumi and Adjara"
+    },
+    "conference": {
+      "title": "Conferences | Visit Batumi",
+      "description": "Discover exciting conferences happening in Batumi and its surroundings"
+    },
+    "cultural": {
+      "title": "Cultural Venues | Visit Batumi",
+      "description": "Explore cultural venues in Batumi and its surroundings"
+    },
+    "sports": {
+      "title": "Sports Venues | Visit Batumi",
+      "description": "Explore sports venues in Batumi and its surroundings"
+    },
+    "events": {
+      "title": "Events | Visit Batumi",
+      "description": "Discover exciting events happening in Batumi and its surroundings"
+    },
+    "exhibitions": {
+      "title": "Exhibitions | Visit Batumi",
+      "description": "Explore captivating exhibitions showcasing art, culture, and innovation in Batumi and its surroundings"
+    }
+  }
 }
